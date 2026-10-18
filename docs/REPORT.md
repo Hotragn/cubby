@@ -39,7 +39,7 @@ Held-out, by rule (Cubby / Gemma alone): sleep checks 9/9 vs 6/9 · ratio 4/4 vs
 - A pickup line with no person named ("who picked up at 4:43?").
 
 ## Speed and cost per day of notes
-- Cloud, Gemma 4 26B A4B on AI Studio: 33.9 s average per day (about 27 notes, 3 batches in parallel), ~6.7k tokens per day. Google's pricing page lists Gemma 4 as "Free of charge" on the free tier, with no paid tier (checked 2026-10-18, https://ai.google.dev/gemini-api/docs/pricing). So the model cost is $0 at the cost of rate limits. One baseline call took 282 s while waiting on retries.
+- Cloud, Gemma 4 26B A4B on AI Studio: 33.9 s average per day (about 27 notes, 3 batches in parallel), ~6.7k tokens per day. Google's pricing page lists Gemma 4 as "Free of charge" on the free tier, with no paid tier (checked 2026-10-18, https://ai.google.dev/gemini-api/docs/pricing). So the model cost is $0 at the cost of rate limits. On a paid host, OpenRouter lists gemma-4-26b-a4b-it at $0.0675/M input and $0.225/M output (API, checked 2026-10-18), which works out to about $0.00096 per day of notes. One baseline call took 282 s while waiting on retries.
 - Local, Gemma 4 E4B (q4_K_M) through Ollama on an Apple M4 Mac with 24 GB: 108.6 s average per day on the 2 hand-written held-out days (46 notes). It caught 16/16, with 4 false alarms; the cloud model had 3 on the same days. The extra one: "Greta picked up by mom" wasn't read as a sign-out. Marginal cost is electricity.
 - Speech: Whisper tiny.en in the browser transcribed a 5-second note in 1.2 s after a one-time ~40 MB model download. It misheard "Leo" as "Theo", so the text stays editable before it's sent.
 

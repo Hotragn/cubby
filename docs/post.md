@@ -1,10 +1,10 @@
-*This is a submission for the [Hacktoberfest Open-Source AI Challenge: Week 2](https://dev.to/challenges/hf26), Side Hustle.*
+*This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle](https://dev.to/challenges/hacktoberfest-week2-2026-10-12)*
 
 It's 2:45 pm at a home daycare. Two toddlers just woke up, the baby is fussing, and the assistant heads out for the school run. The provider taps a note into her phone: **"Dana out for school run."**
 
 Four of the children in the house are under two. Massachusetts allows one adult to have up to six children, but [no more than three under age two](https://www.law.cornell.edu/regulations/massachusetts/606-CMR-7-10). For the next 30 minutes the house is out of ratio, and nobody notices. It's in the notes. It just isn't anywhere anyone will look.
 
-An hour earlier, while she cleaned up lunch, 35 minutes passed between checks on the sleeping baby. The rule is every 15 minutes. That's in the notes too.
+Earlier, between 12:50 and 1:25, 35 minutes passed without a check on the sleeping baby. The rule is every 15 minutes. That's in the notes too.
 
 (Rosa, Dana and the kids are invented. The demo day is fictional, and so is every test day below.)
 
@@ -12,7 +12,7 @@ An hour earlier, while she cleaned up lunch, 35 minutes passed between checks on
 
 ## What I Built
 
-Cubby is a daily-report and licensing-log assistant for **home daycare providers**. Family child care is one of the most common side businesses in America, and also one of the most paperwork-heavy. Child Care Aware of America counted [94,227 licensed family child care homes in 2023](https://www.childcareaware.org/?p=76062) across the 39 states with data, down 12% since 2019.
+Cubby is a daily-report and licensing-log assistant for **home daycare providers**. Running a licensed daycare out of your own home is a classic side business, and one of the most paperwork-heavy. Child Care Aware of America counted [94,227 licensed family child care homes in 2023](https://www.childcareaware.org/?p=76062) across the 39 states with data, down 12% since 2019.
 
 Every day, a provider owes two kinds of paperwork:
 
@@ -91,15 +91,10 @@ Gemma alone missed 3 of the 4 ratio problems; it doesn't count heads minute by m
 
 **Speed and cost per day of notes** (about 27 notes):
 
-- **Cloud** (Gemma 4 26B A4B on Google AI Studio): 34 s, about 6.7k tokens. Gemma 4 is listed as [free of charge on the free tier](https://ai.google.dev/gemini-api/docs/pricing), so the model costs $0, with rate limits.
+- **Cloud** (Gemma 4 26B A4B on Google AI Studio): 34 s, about 6.7k tokens. Gemma 4 is listed as [free of charge on the free tier](https://ai.google.dev/gemini-api/docs/pricing), so the model costs $0, with rate limits. On a paid host, [OpenRouter lists it](https://openrouter.ai/google/gemma-4-26b-a4b-it) at $0.0675 per million input tokens and $0.225 per million output, so a day of notes costs about $0.001, or roughly 2 cents a month.
 - **Local** (Gemma 4 E4B through Ollama on an M4 Mac): about 109 s per day, $0 beyond electricity. On the two hand-written days it caught all 16 planted problems, with one more false alarm than the cloud model.
 
-**Stack:**
-- a zero-build Node 26 TypeScript server
-- React with a small esbuild bundle
-- React Bits for the voice pill, number counters, status marks and check animations
-- jsPDF for the export
-- transformers.js for Whisper
+**Stack:** a zero-build Node 26 TypeScript server, React with a small esbuild bundle, [React Bits](https://github.com/DavidHDev/react-bits) for the voice pill, counters and check animations, jsPDF for the export, and transformers.js for Whisper.
 
 ## Why Does Open Innovation Matter?
 
@@ -107,7 +102,7 @@ Because the data is **children's**. Nap times, diapers, injuries and medicine ar
 
 With an open-weight model, the whole pipeline runs on the provider's own laptop. Gemma 4 E4B goes through Ollama, Whisper runs in the browser, and the rule engine runs in the page. No note, voice or photo goes to anyone. The hosted demo uses Google AI Studio *only* because every child in it is made up.
 
-It also keeps the business viable. A home provider with 6 kids won't pay per-child pricing. Daily Connect's 6-kid plan is $12.99/month. An open model running locally has no per-token bill, so a flat few dollars a month (or free, self-hosted) actually works.
+It also keeps the business viable. Home providers complain in public reviews about per-child pricing they only found after a trial. Daily Connect's 6-kid plan is $12.99/month. With an open model, a day of reading costs a tenth of a cent hosted, or nothing locally. So I'd charge a **flat $9 a month for up to 12 children**, and the open-source version stays free to self-host.
 
 Finally, openness is what lets you check the work. Every rule cites its regulation, every flag shows its evidence, and the code that decides is readable. A provider doesn't have to trust me. They can read the line that flagged them.
 
@@ -125,3 +120,5 @@ Finally, openness is what lets you check the work. Every rule cites its regulati
 - Whisper tiny mishears names ("Leo" became "Theo"), so the note stays editable before it's sent.
 - This isn't legal advice.
 - I don't have a first user yet. A 2-minute test kit is in `docs/TEST-KIT.md`, and I won't claim a user until one has actually tried it.
+
+*How I used AI: I picked this idea and directed the build. Claude Code wrote the code, generated the synthetic test days, ran the evaluations and drafted this post from the repo's results. Every child, adult and note in the demo and the tests is invented.*
