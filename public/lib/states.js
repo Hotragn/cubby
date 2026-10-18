@@ -31,7 +31,34 @@ export const PACKS = {
       attendance: { sec: "606 CMR 7.04(4)", text: "Daily attendance with each child's arrival and departure times, dated and signed. Keep 5 years.", url: MA_BASE + "04" },
       records: { sec: "606 CMR 7.04(4)", text: "Records must be accurate, legible and dated.", url: MA_BASE + "04" },
       release: { sec: "Your pickup policy", text: "Massachusetts requires written parent authorization for who may take a child when you transport (7.13(6)(h)); Cubby applies your pickup list at the door too.", url: MA_BASE + "13" },
+      allergy: { sec: "Your allergy list", text: "Allergies come from each child's record in Setup. Cubby flags any logged food that names one.", url: MA_BASE + "04" },
       late: { sec: "Your late-pickup policy (7.08(6)(g))", text: "MA asks that your fee policy state any late-pickup fee. Cubby flags pickups after your closing time.", url: MA_BASE + "08" },
     },
   },
 };
+
+// A provider's own settings layered over the state pack. Anything looser than the
+// state's rule is still allowed (it's their program) but setup shows a warning.
+export const AGE_GROUPS = { infant: { label: "Infant (under 15 months)", months: 9 }, young_toddler: { label: "Toddler, 15–23 months", months: 19 }, toddler: { label: "Toddler, 2 years", months: 30 }, preschool: { label: "Preschool, 3–5 years", months: 48 }, school: { label: "School age", months: 84 } };
+
+export function makePack(program) {
+  const base = PACKS[program?.state ?? "MA"] ?? PACKS.MA;
+  const s = program?.settings ?? {};
+  const pack = structuredClone(base);
+  if (s.open) pack.defaults.open = s.open;
+  if (s.close) pack.defaults.close = s.close;
+  if (s.sleepEvery) { pack.sleep.everyMin = +s.sleepEvery; }
+  if (s.infantSleepEvery) pack.sleep.infantEveryMin = +s.infantSleepEvery;
+  if (s.ratio?.byAdults) pack.ratio.byAdults = s.ratio.byAdults;
+  return pack;
+}
+
+export function looserThanState(program) {
+  const base = PACKS[program?.state ?? "MA"] ?? PACKS.MA, s = program?.settings ?? {}, out = [];
+  if (s.sleepEvery && +s.sleepEvery > base.sleep.everyMin) out.push(`Sleep checks every ${s.sleepEvery} min is longer than ${base.short}'s ${base.sleep.everyMin} min (${base.cites.sleep.sec}).`);
+  if (s.infantSleepEvery && +s.infantSleepEvery > base.sleep.infantEveryMin) out.push(`Infant checks every ${s.infantSleepEvery} min is longer than the state's ${base.sleep.infantEveryMin} min.`);
+  (s.ratio?.byAdults ?? []).forEach((row, i) => { const b = base.ratio.byAdults[i]; if (!row || !b) return;
+    if (row.total > b.total) out.push(`${i} adult${i > 1 ? "s" : ""}: ${row.total} children is above the state's ${b.total} (${base.cites.ratio.sec}).`);
+    (row.under ?? []).forEach((u, j) => { const bu = b.under?.find((x) => x.months === u.months); if (bu && u.max > bu.max) out.push(`${i} adult${i > 1 ? "s" : ""}: ${u.max} under ${u.months} months is above the state's ${bu.max}.`); }); });
+  return out;
+}

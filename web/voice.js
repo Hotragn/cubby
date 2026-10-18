@@ -55,3 +55,14 @@ export async function transcribe(blob, status) {
   if (!ready) onStatus({ s: "load", label: "Loading on-device speech model (about 40 MB, once)…" });
   return await new Promise((ok, no) => { waiters.set(id, { ok, no }); getWorker().postMessage({ type: "run", audio, id }, [audio.buffer]); });
 }
+
+// What this browser can do. In-app browsers (WhatsApp, Instagram, some Brave
+// setups) may hide the mic or block module workers; then the app is text-only.
+export function voiceSupport() {
+  if (typeof window === "undefined") return { ok: false, why: "No browser." };
+  if (!window.isSecureContext) return { ok: false, why: "Voice needs a secure (https) page. Type the note instead." };
+  if (!navigator.mediaDevices?.getUserMedia) return { ok: false, why: "This browser doesn't give apps the microphone (common in in-app browsers). Type the note, or open the page in Safari or Chrome." };
+  if (!window.MediaRecorder) return { ok: false, why: "This browser can't record audio. Type the note, or open the page in Safari or Chrome." };
+  if (!window.Worker || !(window.AudioContext || window.webkitAudioContext)) return { ok: false, why: "This browser can't run speech-to-text on the device. Type the note instead." };
+  return { ok: true };
+}

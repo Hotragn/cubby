@@ -72,3 +72,31 @@ export const PLANTED = [
   { rule: "late", kid: "ava", what: "Ava picked up 5:50 pm, after 5:30 close" },
   { rule: "question", kid: null, what: "\"the baby\" — which child?" },
 ];
+
+// Four earlier fictional days for the week view (days before the demo day).
+export const DEMO_WEEK = [
+  { back: 4, notes: [
+    ["07:25", "Rosa in"], ["07:35", "Ava here w mom"], ["07:44", "Leo in, dad dropped"], ["07:58", "Mila arrived with Hana"], ["08:02", "Dana in"], ["08:12", "Theo here w dad"],
+    ["08:45", "breakfast cheerios and banana, Leo all, Ava most, Theo half. Mila 5 oz bottle"], ["09:40", "Mila down 9:40"], ["09:55", "checked Mila 9:55"], ["10:10", "checked Mila 10:10 on back"], ["10:22", "Mila up 10:20"],
+    ["11:40", "lunch chicken and rice, all ate most"], ["12:30", "Mila Theo Ava Leo down for nap 12:30"], ["12:45", "checked all 12:45"], ["13:00", "checked all 1:00"], ["13:15", "checked all 1:15 on backs"], ["13:30", "checked all 1:30"], ["13:45", "checked all 1:45"], ["14:00", "checked all 2:00"], ["14:16", "everyone up 2:15"],
+    ["15:00", "snack crackers and cheese, all ate most"], ["16:10", "Mila picked up by Hana"], ["16:30", "Leo picked up by Sami"], ["16:50", "Theo home with dad"], ["17:10", "Ava picked up by mom"], ["17:15", "Dana out"],
+  ] },
+  { back: 3, notes: [
+    ["07:20", "Rosa in"], ["07:31", "Ava here mom"], ["07:50", "Mila in w Hana"], ["08:05", "Theo here w mom"], ["08:30", "Dana in"],
+    ["08:50", "breakfast oatmeal, Ava all, Theo most. Mila bottle 6 oz"], ["10:05", "Theo tripped on the rug and bumped his lip, cold cloth, Dana saw"],
+    ["11:45", "lunch pasta and peas, Ava half, Theo all, Mila sweet potato puree all"], ["12:40", "Mila Theo Ava down 12:40"], ["12:55", "checked all 12:55"], ["13:10", "checked all 1:10"], ["13:25", "checked all 1:25, all asleep"], ["13:40", "checked all 1:40"], ["13:55", "checked all 1:55"], ["14:06", "all up 2:05"],
+    ["15:05", "snack apples, all ate some"], ["16:20", "Mila picked up by Hana"], ["16:55", "Theo home w mom"], ["17:20", "Ava picked up by mom"], ["17:25", "Dana out"],
+  ] },
+  { back: 2, notes: [
+    ["07:22", "Rosa in"], ["07:30", "Leo in w dad"], ["07:38", "Ava here w mom"], ["07:55", "Mila arrived Hana"], ["08:10", "Theo w dad"], ["08:15", "Dana in"],
+    ["08:40", "breakfast toast and eggs, Leo most, Ava all, Theo little. Mila 5 oz"], ["10:00", "Gave Leo 2.5 ml Tylenol at 10, teething, Rosa"],
+    ["11:45", "lunch fish sticks and corn, all ate most"], ["12:35", "Mila Theo Ava Leo down 12:35"], ["12:50", "checked all 12:50"], ["13:05", "checked all 1:05"], ["13:35", "checked all 1:35"], ["13:50", "checked all 1:50"], ["14:05", "checked all 2:05"], ["14:21", "everyone up 2:20"],
+    ["15:00", "snack goldfish, all ate most"], ["16:05", "Mila picked up by Hana"], ["16:35", "Leo picked up by Rania"], ["17:00", "Theo home w dad"], ["17:40", "Ava picked up 5:40 by mom"], ["17:42", "Dana out"],
+  ] },
+  { back: 1, notes: [
+    ["07:24", "Rosa in"], ["07:33", "Ava in w mom"], ["07:41", "Leo here w dad"], ["07:52", "Mila here with Hana"], ["08:05", "Dana in"], ["08:09", "Theo in w dad"],
+    ["08:40", "breakfast yogurt and berries, all ate all. Mila 5 oz bottle"], ["09:45", "Mila down 9:45"], ["10:00", "Mila check 10:00"], ["10:15", "Mila check 10:15"], ["10:31", "Mila up 10:30"],
+    ["11:45", "lunch turkey wraps, Leo all, Ava most, Theo most, Mila puree half"], ["12:30", "Mila Theo Ava Leo down 12:30"], ["12:45", "checked all 12:45"], ["13:00", "checked all 1:00"], ["13:15", "checked all 1:15"], ["13:30", "checked all 1:30"], ["13:45", "checked all 1:45"], ["14:00", "checked all 2:00"], ["14:11", "all up 2:10"],
+    ["15:00", "snack pears, all ate all"], ["16:15", "Mila picked up by Hana"], ["16:40", "Leo home with Sami"], ["17:00", "Theo picked up by dad"], ["17:15", "Ava picked up by mom"], ["17:20", "Dana out"],
+  ] },
+];

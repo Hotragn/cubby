@@ -1,0 +1,27 @@
+day-01 caught 0/0 fa 1 30.7s  FA med: Note mentions "medicine" but no medication was logged
+day-02 caught 2/2 fa 0 32.4s  
+day-03 caught 1/1 fa 0 33.2s  
+day-04 caught 2/2 fa 0 32.4s  
+day-05 caught 2/2 fa 0 29.3s  
+day-06 caught 2/2 fa 0 33.4s  
+day-07 caught 4/4 fa 0 32.6s  
+day-08 caught 2/2 fa 0 41.8s  
+day-09 caught 2/2 fa 0 31.1s  
+day-10 caught 0/0 fa 0 32.2s  
+day-11 caught 3/3 fa 0 32.8s  
+day-12 caught 1/1 fa 1 35.2s  FA med:nora Note mentions "diaper cream" but no medication was logged
+{
+  mode: 'pipeline',
+  model: 'gemma-4-26b-a4b-it',
+  ranAt: '2026-10-18T23:07:23.558Z',
+  days: 12,
+  planted: 21,
+  caught: 21,
+  missed: 0,
+  fa: 2,
+  ms: 396993,
+  inT: 43565,
+  outT: 39013,
+  notes: 337,
+  avgSecPerDay: 33.1
+}

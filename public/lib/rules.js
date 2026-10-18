@@ -8,10 +8,19 @@ const MEDS = /\b(tylenol|motrin|advil|ibuprofen|acetaminophen|benadryl|zyrtec|cl
 
 const sev = { fix: 0, check: 1 };
 
+const GROUP_MONTHS = { infant: 9, young_toddler: 19, toddler: 30, preschool: 48, school: 84 };
 export function ageMonths(child, dateISO) {
-  if (!child.dob) return child.ageMonths ?? null;
+  if (!child) return null;
+  if (!child.dob) return child.ageMonths ?? GROUP_MONTHS[child.ageGroup] ?? null;
   const d = new Date(dateISO + "T12:00:00"), b = new Date(child.dob + "T12:00:00");
   return (d.getFullYear() - b.getFullYear()) * 12 + (d.getMonth() - b.getMonth()) - (d.getDate() < b.getDate() ? 1 : 0);
+}
+
+// An allergy also matches the everyday foods that contain it.
+const ALLERGEN = { dairy: "milk|cheese|yogurt|butter|cream|mac and cheese", milk: "milk|cheese|yogurt|butter|cream", egg: "eggs?|omelet|french toast", peanut: "peanuts?|pb&j|peanut butter", "tree nut": "almonds?|cashews?|walnuts?|pecans?|nuts?", nut: "nuts?|peanuts?|almonds?|cashews?", gluten: "bread|toast|pasta|crackers?|cheerios|waffles?|pancakes?|wraps?|flour|wheat|graham", wheat: "bread|toast|pasta|crackers?|waffles?|pancakes?|wraps?|wheat|graham", fish: "fish|salmon|tuna|cod", shellfish: "shrimp|crab|lobster", soy: "soy|tofu|edamame", sesame: "sesame|hummus|tahini" };
+export function allergenRe(a) {
+  const k = String(a).toLowerCase().trim().replace(/ies$/, "y").replace(/s$/, "");
+  return new RegExp(`\\b(${ALLERGEN[k] ?? k.replace(/[^a-z ]/g, "") + "s?"})\\b`, "i");
 }
 
 const nameOf = (day, id) => day.roster.find((c) => c.id === id)?.name ?? id;
@@ -153,6 +162,13 @@ export function checkDay(day, pack, opts = {}) {
     add({ rule: "med", level: "check", kids: day.roster.filter((c) => new RegExp(`\\b${c.name.split(" ")[0]}\\b`, "i").test(n.text)).map((c) => c.id), title: `Note mentions "${m[0]}" but no medication was logged`, detail: "If medicine was given, it needs a log entry.", evidence: [{ noteId: n.id, t: n.t, quote: n.text, verified: true }], cite: cite("med") });
   }
 
+  // 4b. Allergies on file: any food logged for that child that names an allergen.
+  for (const e of day.events.filter((e) => (e.type === "meal" || e.type === "bottle") && e.food)) for (const k of e.kids ?? []) {
+    const child = day.roster.find((c) => c.id === k); if (!child?.allergies?.length) continue;
+    const hit = child.allergies.find((a) => a && allergenRe(a).test(e.food));
+    if (hit) add({ rule: "allergy", level: "fix", kids: [k], title: `${child.name}: ${e.food} logged, allergy on file: ${hit}`, detail: "Check what was actually served and tell the parent.", evidence: [ev2evidence(day, e)], cite: cite("allergy") });
+  }
+
   // 5. Ratio over the day, minute by minute, from sign-in/out times.
   const open = dayTime(day.settings?.open ?? pack.defaults.open);
   const windows = [];
@@ -190,9 +206,9 @@ export function checkDay(day, pack, opts = {}) {
   }
 
   // 7. Questions the reader raised instead of guessing.
-  for (const q of day.questions ?? []) if (!q.answered) add({ rule: "question", level: "check", kids: [], title: q.ask, evidence: [{ noteId: q.noteId, t: noteById(day, q.noteId)?.t, quote: q.quote || noteById(day, q.noteId)?.text, verified: true }] });
+  for (const q of day.questions ?? []) if (!q.answered) add({ rule: "question", level: "check", kids: [], title: q.ask, q, evidence: [{ noteId: q.noteId, t: noteById(day, q.noteId)?.t, quote: q.quote || noteById(day, q.noteId)?.text, verified: true }] });
 
-  const ORDER = { ratio: 0, incident: 1, med: 2, sleep: 3, attendance: 4, time: 5, late: 6, evidence: 7, question: 8 };
+  const ORDER = { ratio: 0, incident: 1, allergy: 2, med: 2, sleep: 3, attendance: 4, time: 5, late: 6, evidence: 7, question: 8 };
   flags.sort((a, b) => sev[a.level] - sev[b.level] || (ORDER[a.rule] ?? 9) - (ORDER[b.rule] ?? 9));
   return flags;
 }

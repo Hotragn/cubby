@@ -1,0 +1,6 @@
+day-01 caught 0/0 fa 5 99.6s  FA incident:hazel Hazel: injury mentioned, no incident report | incident:amara Amara: injury mentioned, no incident report | incident:nora Nora: injury mentioned, no incident report | incident:mateo Mateo: injury mentioned, no incident report | med: Note mentions "medicine" but no medication was logged
+day-02 caught 2/2 fa 0 105.4s  
+day-03 caught 1/1 fa 1 137.0s  FA attendance:priya Priya: no sign-out time
+day-04 caught 2/2 fa 0 154.6s  
+day-05 caught 2/2 fa 0 134.6s  
+day-06 caught 2/2 fa 0 161.8s  

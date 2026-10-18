@@ -2,7 +2,7 @@
 //   node evals/run.ts pipeline   Gemma reads notes → code checks rules (Cubby)
 //   node evals/run.ts baseline   Gemma alone, given the same notes, roster and rules, asked to list problems
 //   GEMMA_LOCAL=1 node evals/run.ts pipeline   same pipeline on Gemma 4 E4B via Ollama on this machine
-import { readFileSync, readdirSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 if (existsSync(".env")) process.loadEnvFile(".env");
 const { extract, callGemma, newUsage, MODEL, LOCAL } = await import("../src/gemma.ts");
 const { normalizeNote, mergeNaps } = await import("../public/lib/normalize.js");
@@ -28,10 +28,21 @@ function score(day: any, found: { rule: string; kids: string[]; title: string }[
   return { caught, missed, falseAlarms };
 }
 
+// Raw model output is saved per model and day, so a rule change can be re-scored
+// without re-reading (RESCORE=1). Timings in a re-score come from the saved run.
 async function pipeline(day: any) {
-  const usage = newUsage(); const t0 = Date.now();
-  const raw = await extract(day.notes, day.roster, day.staff, usage);
-  const wallMs = Date.now() - t0;
+  const dir = `evals/raw/${String(process.env.RAW_TAG ?? MODEL).replace(/[^\w.-]/g, "_")}/${DIR.split("/").pop()}`;
+  mkdirSync(dir, { recursive: true });
+  const file = `${dir}/${day.id}.json`;
+  let raw: any, usage = newUsage(), wallMs = 0;
+  if (process.env.RESCORE === "1" && existsSync(file)) {
+    const saved = JSON.parse(readFileSync(file, "utf8")); raw = saved.raw; usage = saved.usage; wallMs = saved.wallMs;
+  } else {
+    const t0 = Date.now();
+    raw = process.env.EXTRACTOR === "tinker" ? await (await import("./tinker_extract.ts")).extractTinker(day, usage) : await extract(day.notes, day.roster, day.staff, usage);
+    wallMs = Date.now() - t0;
+    writeFileSync(file, JSON.stringify({ model: MODEL, wallMs, usage, raw }));
+  }
   const d: any = { ...day, events: [], questions: [], reports: [] };
   for (const n of day.notes) { const r = normalizeNote(n, raw[n.id], day.roster, day.staff); d.events.push(...r.events); d.questions.push(...r.questions); }
   d.events = mergeNaps(d.events, d.questions);
@@ -76,7 +87,7 @@ for (const f of files) {
   tot.planted += day.planted.length; tot.caught += s.caught.length; tot.missed += s.missed.length; tot.fa += s.falseAlarms.length; tot.ms += r.wallMs; tot.inT += r.usage.inTokens; tot.outT += r.usage.outTokens; tot.notes += day.notes.length;
   console.log(`${day.id} caught ${s.caught.length}/${day.planted.length} fa ${s.falseAlarms.length} ${(r.wallMs / 1000).toFixed(1)}s ${s.missed.length ? "MISSED " + s.missed.map((p) => p.rule + ":" + p.kid).join(" ") : ""} ${s.falseAlarms.length ? "FA " + s.falseAlarms.map((x) => x.rule + ":" + x.kids + " " + x.title).join(" | ") : ""}`);
 }
-const tag = `${mode}${LOCAL ? "-local" : ""}${DIR.includes("holdout") ? "-holdout" : ""}`;
+const tag = `${mode}${process.env.EXTRACTOR === "tinker" ? "-tinker" : LOCAL ? "-local" : ""}${DIR.includes("holdout") ? "-holdout" : ""}`;
 const summary = { mode: tag, model: MODEL, ranAt: new Date().toISOString(), days: files.length, ...tot, avgSecPerDay: +(tot.ms / files.length / 1000).toFixed(1) };
 writeFileSync(`evals/results-${tag}${only ? "-" + only : ""}.json`, JSON.stringify({ summary, results }, null, 1));
 console.log(summary);

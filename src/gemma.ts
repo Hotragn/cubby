@@ -108,7 +108,7 @@ export type Note = { id: string; t: string; text: string };
 export type Person = { name: string; ageMonths?: number | null };
 
 // Notes go in batches so a long day stays fast and one bad answer only costs a few notes.
-export async function extract(notes: Note[], roster: Person[], staff: Person[], usage: Usage, batch = 12) {
+export async function extract(notes: Note[], roster: Person[], staff: Person[], usage: Usage, batch = 12, aliases: Record<string, string> = {}) {
   const out: Record<string, any> = {};
   const chunks: Note[][] = [];
   for (let i = 0; i < notes.length; i += batch) chunks.push(notes.slice(i, i + batch));
@@ -116,7 +116,7 @@ export async function extract(notes: Note[], roster: Person[], staff: Person[], 
     const prompt = `${EXTRACT_RULES}
 
 Children on today's roster: ${roster.map((r) => r.name).join(", ")}
-Adults (staff): ${staff.map((s) => s.name).join(", ")}
+Adults (staff): ${staff.map((s) => s.name).join(", ")}${Object.keys(aliases).length ? `\nNicknames the provider confirmed today: ${Object.entries(aliases).map(([a, n]) => `"${a}" = ${n}`).join("; ")}` : ""}
 
 Notes:
 ${chunk.map((n) => `[${n.id}] (logged ${n.t}) ${n.text}`).join("\n")}`;

@@ -2,7 +2,6 @@
 .env.*
 node_modules/
 .DS_Store
-evals/out/raw/
 *.log
 public/build/
 public/_test-voice.wav

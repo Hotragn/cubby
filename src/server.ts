@@ -54,11 +54,13 @@ const server = createServer(async (req, res) => {
     if (url.pathname === "/api/extract" && req.method === "POST") {
       if (!allow(ip)) return send(res, 429, { error: "Too many requests. Wait a minute." });
       const b = await body(req);
-      const notes = (Array.isArray(b.notes) ? b.notes : []).slice(0, 80).map((n: any) => ({ id: String(n.id).slice(0, 12), t: String(n.t).slice(0, 8), text: String(n.text).slice(0, 600) }));
+      const notes = (Array.isArray(b.notes) ? b.notes : []).slice(0, 120).map((n: any) => ({ id: String(n.id).slice(0, 12), t: String(n.t).slice(0, 8), text: String(n.text).slice(0, 600) }));
       const roster = (b.roster ?? []).slice(0, 16).map((r: any) => ({ name: String(r.name).slice(0, 40) }));
       const staff = (b.staff ?? []).slice(0, 6).map((r: any) => ({ name: String(r.name).slice(0, 40) }));
       const usage = newUsage(); const t0 = Date.now();
-      const out = await span("cubby.extract", "extract notes", { "cubby.notes": notes.length }, () => extract(notes, roster, staff, usage));
+      const aliases: Record<string, string> = {};
+      for (const [k, v] of Object.entries(b.aliases ?? {}).slice(0, 20)) aliases[String(k).slice(0, 30)] = String(v).slice(0, 40);
+      const out = await span("cubby.extract", "extract notes", { "cubby.notes": notes.length }, () => extract(notes, roster, staff, usage, 12, aliases));
       return send(res, 200, { notes: out, usage: { ...usage, wallMs: Date.now() - t0 } });
     }
 
