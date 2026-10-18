@@ -23,13 +23,19 @@ export function sheetFacts(day, kid) {
     if (e.type === "med") facts.push({ k: "med", t: e.start, text: `Medicine: ${e.med ?? "?"} ${e.dose ?? ""} at ${fmt(e.start)}${e.by ? `, given by ${e.by}` : ""}.`.replace(/\s+/g, " ") });
     if (e.type === "incident") {
       const rep = (day.reports ?? []).find((r) => r.kid === kid && r.noteId === e.noteId && r.status === "done");
-      facts.push({ k: "incident", t: e.start, text: `At ${fmt(e.start)}: ${e.what ?? "an incident"}${e.action ? `. Care given: ${e.action}` : ""}. ${rep ? "A written incident report is attached." : "Incident report to follow."}` });
+      // The provider's own words, with other children's names taken out: one parent's sheet
+      // never names someone else's child.
+      let words = (e.verified && e.quote) ? e.quote : (e.what ?? "an incident");
+      for (const o of day.roster) if (o.id !== kid) words = words.replace(new RegExp(`\\b${o.name}\\b`, "g"), "another child");
+      words = words.replace(/^another child/, "Another child");
+      facts.push({ k: "incident", t: e.start, text: `At ${fmt(e.start)}: “${words.replace(/[.\s]+$/, "")}.” ${rep ? "A written incident report is attached." : "Incident report to follow."}` });
     }
     if (e.type === "mood" && e.mood) facts.push({ k: "mood", t: e.start, text: `Mood: ${e.mood}.` });
     if (e.type === "activity" && e.what) facts.push({ k: "activity", t: e.start, text: `Played: ${e.what}.` });
   }
   const dep = [...mine].reverse().find((e) => e.type === "depart");
   if (dep) facts.push({ k: "depart", t: dep.start, text: `Went home at ${fmt(dep.start)}${dep.by ? ` with ${dep.by}` : ""}.` });
+  for (const f of facts) if (f.k !== "incident") for (const o of day.roster) if (o.id !== kid) f.text = f.text.replace(new RegExp(`\\b${o.name}\\b`, "g"), "a friend");
   return { child: c, facts };
 }
 
