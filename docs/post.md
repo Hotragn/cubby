@@ -8,7 +8,7 @@ Earlier, between 12:50 and 1:25, 35 minutes passed without a check on the sleepi
 
 (Rosa, Dana and the kids are invented. The demo day is fictional, and so is every test day below.)
 
-**Cubby** reads those notes. On 14 held-out synthetic days, it caught **37 of 37 planted licensing problems, with 6 false alarms**. The same open model asked to find the problems on its own caught 30 and raised 72 false alarms.
+**Cubby** reads those notes. On 14 held-out synthetic days, it caught **37 of 37 planted licensing problems, with 4 false alarms**. The same open model asked to find the problems on its own caught 30 and raised 72 false alarms.
 
 ## What I Built
 
@@ -43,11 +43,24 @@ None of those pricing pages mention medication consent or incident-report checks
 
    **Every flag shows the note that caused it and the rule it comes from.**
 4. **Send.** Each parent gets a short sheet built from the checked events. Gemma can make it warmer or write it in Spanish, Portuguese, Haitian Creole, Arabic and more. Before anyone sees it, code checks every time, number, food and health word against the log. If Gemma added anything, the plain version is used. Injuries and medicine are **never re-worded**: they stay in the provider's exact words. And one parent's sheet never names another child ("Another child bit Leo on the arm…"). (A [public App Store review](https://apps.apple.com/us/app/id428376881) of another daycare app describes a Spanish machine translation that turned a child being "out" sick into a child who had "died".)
-5. **Inspector log.** One tap exports the day as PDF or CSV. Each entry keeps the note it came from.
+5. **Inspector log.** One tap exports the day, or the whole week, as PDF or CSV. Each entry keeps the note it came from.
+
+**It's set up for a real program, not just the demo.** Under "My program", a provider adds their own children:
+- date of birth or age group
+- allergies, which are checked against every logged food
+- medication consents with an expiry date
+- photo consent (no consent, no photo slot)
+- the authorized pickup list
+
+They also add their staff and the program's rules: sleep-check interval and ratio limits, which start at the state's numbers and warn if set looser. It all lives on the device, with export and import as a file.
+
+**Questions get answered once.** When Gemma asks "Which child is 'the baby'?", the provider taps Mila. The bottle moves to Mila's sheet, every rule re-runs, and "the baby" means Mila for the rest of the day, so the next "the baby napped 3:30 to 4" lands on her without asking again.
+
+**A week view** shows each day's attendance, flags opened and resolved, incidents and medicine.
 
 ## Demo
 
-**Live:** https://cubby-daycare.onrender.com. It opens on a fictional day with 4 fictional children and 9 planted problems, so the flags are there on first load. It's built for a phone.
+**Live:** https://cubby-daycare.onrender.com. It opens on a fictional week for 4 fictional children, with 9 planted problems on the latest day, so the flags are there on first load. Tap **My program** to set up your own. It's built for a phone.
 
 ![Today at 2:50 pm: over ratio right now](https://cubby-daycare.onrender.com/shots/today.jpg)
 
@@ -59,7 +72,7 @@ Try typing a note in the bottom bar (made-up names only, please), for example "T
 
 ## Code
 
-{% github Hotragn/cubby %}
+[github.com/Hotragn/cubby](https://github.com/Hotragn/cubby): the rule engine (`public/lib/rules.js`), the Massachusetts rule pack with citations (`public/lib/states.js`), the Gemma prompt (`src/gemma.ts`), the Temporal workflows (`src/temporal/`), and the evaluation (`evals/`, `docs/REPORT.md`).
 
 ## How I Built It
 
@@ -80,14 +93,20 @@ A backstop catches what the model misses. Code also scans the raw notes for inju
 - A 06:59 sign-in was read as 6:59 pm, so the whole day looked like it had no adult.
 - My generator put late pickups in the data that weren't in the answer key.
 
-After fixing those, I committed a **held-out set** of 14 days, answer key included, and ran it once:
+After fixing those, I committed a **held-out set** of 14 days, answer key included, before running it. The first run caught 37 of 37 with 6 false alarms. The table shows the latest run, after the fixes described below:
 
 | Held-out (37 planted) | Caught | False alarms |
 |---|---|---|
-| **Cubby** (Gemma reads, code checks) | **37** | **6** |
+| **Cubby** (Gemma reads, code checks) | **37** | **4** |
 | **Gemma alone** (same model, same rules in plain English, same notes) | 30 | 72 |
 
-Gemma alone missed 3 of the 4 ratio problems; it doesn't count heads minute by minute. It also missed every 20-minute sleep-check gap on the hand-written day. Most of its false alarms were confused complaints about times. **Where Gemma alone wins:** it uses about a quarter of the tokens, and it caught every incident too. Cubby's 6 false alarms are real weaknesses. "Grapes cut in quarters" tripped my injury-word backstop (fixed after the run, not re-scored). A pretend doctor kit raised a "check" item. "Bodhi's mom here" wasn't read as a sign-out. The full report is in `docs/REPORT.md`.
+Gemma alone missed 3 of the 4 ratio problems; it doesn't count heads minute by minute. It also missed every 20-minute sleep-check gap on the hand-written day. Most of its false alarms were confused complaints about times. **Where Gemma alone wins:** it uses about a quarter of the tokens, and it caught every incident too. Two of the first run's 6 false alarms came from "grapes cut in quarters" tripping my injury-word backstop. I fixed that after seeing it, which is why the latest run has 4. The remaining 4 are real weaknesses:
+- A pretend doctor kit raised a "check" item.
+- "Bodhi's mom here" wasn't read as a sign-out.
+- A diaper-cream application was logged without a dose, which the answer key didn't count as a problem.
+- One pickup note named no person.
+
+The full report is in `docs/REPORT.md`.
 
 **Speed and cost per day of notes** (about 27 notes):
 
@@ -112,6 +131,7 @@ Finally, openness is what lets you check the work. Every rule cites its regulati
 - **Best Use of Render:** the demo runs as a Render web service built from the repo on every push.
 - **Best Use of ElevenLabs:** "Listen" reads the checked parent sheet aloud, for parents who'd rather hear the day than read it.
 - **Best Use of Sentry Agent Tracing:** every Gemma call is a `gen_ai.chat` span with the model, task and token counts. The spans never include note text or names.
+- **Best Use of Temporal:** each live "down for nap" note starts a `napWatch` workflow that reminds when a sleep check is overdue, and each arrival starts a `pickupWatch` workflow for closing time. In a test, I killed the worker 5 s into a 20 s timer and restarted it at 12 s; the reminder still fired at 20.1 s. It runs on the local Temporal dev server, not the hosted demo.
 - **Best Use of MongoDB Atlas:** it stores one thing, anonymous tester feedback from `/feedback.html`. No child data, by design.
 
 **Honest limits:**
