@@ -169,3 +169,4 @@ label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(-
 .h1 span { display: inline-block; animation: blurin .6s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes blurin { from { opacity: 0; filter: blur(10px); transform: translateY(-14px); } }
 @media (prefers-reduced-motion: reduce) { .h1 span { animation: none; } }
+.row.between { gap: 8px; flex-wrap: wrap; }
