@@ -16,7 +16,7 @@ if cmd == "services":
 if cmd == "create":
     owner = sys.argv[2]
     body = {"type": "web_service", "name": "cubby-daycare", "ownerId": owner, "repo": "https://github.com/Hotragn/cubby", "branch": "master", "autoDeploy": "yes",
-            "serviceDetails": {"runtime": "node", "plan": "starter", "region": "ohio", "healthCheckPath": "/api/health",
+            "serviceDetails": {"runtime": "node", "plan": "free", "region": "ohio", "healthCheckPath": "/api/health",
                                "envSpecificDetails": {"buildCommand": "npm ci --include=dev && npm run build", "startCommand": "node src/server.ts"}},
             "envVars": [{"key": "NODE_VERSION", "value": "24"}, {"key": "GEMINI_API_KEY", "value": env["GEMINI_API_KEY"]}, {"key": "ELEVENLABS", "value": env["ELEVENLABS"]}, {"key": "SENTRY_DSN", "value": env["SENTRY_DSN"]}]}
     r = call("POST", "/services", body)
@@ -26,3 +26,5 @@ if cmd == "deploy":
     r = call("POST", f"/services/{sys.argv[2]}/deploys", {"clearCache": "do_not_clear"}); print(r.get("id"), r.get("status"), r.get("http_error"), r.get("body", "")[:200])
 if cmd == "status":
     for d in call("GET", f"/services/{sys.argv[2]}/deploys?limit=3"): print(d["deploy"]["id"], d["deploy"]["status"], d["deploy"].get("commit", {}).get("message", "")[:50])
+if cmd == "setenv":
+    k = sys.argv[3]; r = call("PUT", f"/services/{sys.argv[2]}/env-vars/{k}", {"value": env[k]}); print(k, "set" if "key" in r else r)
