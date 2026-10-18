@@ -13,6 +13,7 @@ const tracing = await initTracing();
 const { extract, warmSheet, newUsage, LOCAL, MODEL } = await import("./gemma.ts");
 
 const PORT = +(process.env.PORT ?? 8787);
+const BOOT = Date.now().toString(36);
 const ROOT = join(import.meta.dirname, "..", "public");
 const TYPES: Record<string, string> = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".json": "application/json", ".webmanifest": "application/manifest+json", ".mp3": "audio/mpeg", ".jpg": "image/jpeg", ".woff2": "font/woff2" };
 
@@ -91,7 +92,9 @@ const server = createServer(async (req, res) => {
     const s = await stat(file).catch(() => null);
     if (!s || !s.isFile()) { res.writeHead(404); return res.end("Not found"); }
     const ext = extname(file);
-    res.writeHead(200, { "content-type": TYPES[ext] ?? "application/octet-stream", "cache-control": ext === ".html" ? "no-cache" : "public, max-age=300" });
+    res.writeHead(200, { "content-type": TYPES[ext] ?? "application/octet-stream", "cache-control": p.startsWith("/build/chunk-") || p.includes("autotable") || p.includes("html2canvas") ? "public, max-age=86400" : "no-cache" });
+    // index.html: stamp asset URLs with the boot time so a new deploy is never served stale.
+    if (p === "/index.html") return res.end(String(await readFile(file)).replace(/(\/(?:build\/main|styles)\.(?:js|css))"/g, `$1?v=${BOOT}"`));
     res.end(await readFile(file));
   } catch (e: any) {
     if (tracing) { const S: any = await import("@sentry/node"); S.captureException(e); }

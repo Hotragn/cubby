@@ -3,7 +3,7 @@
 
 import { fmt, dur, dayTime } from "./time.js";
 
-const INJURY = /\b(bump(ed|s)?|bit(?! (sleepy|tired|fussy|cranky|of|more|less|better|quiet|slow|late|early|warm|cold|teary|clingy))|bites?|bitten|biting|scratch(ed|es)?|fell|fall|tripped|bleed(ing)?|blood|bruis(e|ed)|cut|hit (his|her|their) head|pinched|scraped?|swollen|swelling|split lip|nosebleed|choked|choking|burn(ed|t)?|sting|stung|injur(y|ed)|ouch|ice pack|bandaid|band-aid|goose ?egg)\b/i;
+const INJURY = /\b(bump(ed|s)?|bit(?! (sleepy|tired|fussy|cranky|of|more|less|better|quiet|slow|late|early|warm|cold|teary|clingy|into))|bites?|bitten|biting|scratch(ed|es)?|fell(?! asleep)|fall(?! asleep)|tripped|bleed(ing)?|blood|bruis(e|ed)|cut|hit (his|her|their) head|pinched|scraped?|swollen|swelling|split lip|nosebleed|choked|choking|burn(ed|t)?|sting|stung|injur(y|ed)|ouch|ice pack|bandaid|band-aid|goose ?egg)\b/i;
 const MEDS = /\b(tylenol|motrin|advil|ibuprofen|acetaminophen|benadryl|zyrtec|claritin|amoxicillin|antibiotic|inhaler|albuterol|epipen|epi-pen|diaper cream|desitin|hydrocortisone|eye drops|ear drops|medicine|medication|meds|dose(d)?|\d+(\.\d+)?\s?(ml|mg|cc|puffs?))\b/i;
 
 const sev = { fix: 0, check: 1 };
@@ -172,7 +172,7 @@ export function checkDay(day, pack, opts = {}) {
     const near = (e) => e.start != null && (Math.abs(e.start - w.start) <= 1 || Math.abs(e.start - w.end) <= 1);
     const staffEv = day.events.filter((e) => (e.type === "staff_in" || e.type === "staff_out") && near(e)).map((e) => ev2evidence(day, e));
     const kidEv = day.events.filter((e) => (e.type === "arrive" || e.type === "depart") && near(e)).map((e) => ev2evidence(day, e));
-    add({ rule: "ratio", level: "fix", kids: w.kids, title: `${fmt(w.start)}–${fmt(w.end)}: ${w.problem}`, detail: `${w.kids.length} children (${w.kids.map((k) => `${nameOf(day, k)} ${ageLabel(ageMonths(day.roster.find((c) => c.id === k), day.date))}`).join(", ")}) with ${w.adults.length ? w.adults.map((a) => staffName(day, a)).join(" and ") : "no adult signed in"}.`, evidence: [...staffEv, ...kidEv].slice(0, 4), cite: cite("ratio") });
+    add({ rule: "ratio", level: "fix", kids: w.kids, window: [w.start, w.end], title: `${fmt(w.start)}–${fmt(w.end)}: ${w.problem}`, detail: `${w.kids.length} children (${w.kids.map((k) => `${nameOf(day, k)} ${ageLabel(ageMonths(day.roster.find((c) => c.id === k), day.date))}`).join(", ")}) with ${w.adults.length ? w.adults.map((a) => staffName(day, a)).join(" and ") : "no adult signed in"}.`, evidence: [...staffEv, ...kidEv].slice(0, 4), cite: cite("ratio") });
   }
 
   // 6. Attendance: every child seen today needs a sign-in and a sign-out; late pickups.

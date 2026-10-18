@@ -1,0 +1,57 @@
+// Voice notes: record with MediaRecorder, decode to 16 kHz mono, transcribe with
+// Whisper inside a worker on this device (public/whisper-worker.js).
+
+let worker = null, ready = false, seq = 0;
+const waiters = new Map();
+let onStatus = () => {};
+
+function getWorker() {
+  if (worker) return worker;
+  worker = new Worker("/whisper-worker.js", { type: "module" });
+  worker.onmessage = (e) => {
+    const m = e.data;
+    if (m.type === "progress") onStatus({ s: "load", label: `Loading on-device speech model (about 40 MB, once) · ${m.pct}%` });
+    if (m.type === "ready") { ready = true; onStatus(null); }
+    if ((m.type === "text" || m.type === "error") && waiters.has(m.id)) { const w = waiters.get(m.id); waiters.delete(m.id); m.type === "text" ? w.ok(m.text) : w.no(new Error(m.error)); }
+  };
+  worker.onerror = (e) => { for (const w of waiters.values()) w.no(new Error("worker failed")); waiters.clear(); onStatus(null); };
+  return worker;
+}
+
+export function warmUpWhisper(status) {
+  onStatus = status ?? onStatus;
+  if (!ready) { try { getWorker().postMessage({ type: "load" }); } catch {} }
+}
+
+export async function recordAudio() {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  const type = ["audio/webm;codecs=opus", "audio/mp4", "audio/webm"].find((t) => window.MediaRecorder?.isTypeSupported?.(t)) ?? "";
+  const mr = new MediaRecorder(stream, type ? { mimeType: type } : undefined);
+  const chunks = [];
+  mr.ondataavailable = (e) => e.data.size && chunks.push(e.data);
+  mr.start();
+  return {
+    stop: () => new Promise((res) => { mr.onstop = () => { stream.getTracks().forEach((t) => t.stop()); res(new Blob(chunks, { type: mr.mimeType })); }; mr.state !== "inactive" ? mr.stop() : res(new Blob(chunks)); }),
+  };
+}
+
+async function toPcm16k(blob) {
+  const buf = await blob.arrayBuffer();
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  const ctx = new Ctx();
+  const decoded = await ctx.decodeAudioData(buf);
+  ctx.close?.();
+  const off = new OfflineAudioContext(1, Math.ceil(decoded.duration * 16000), 16000);
+  const src = off.createBufferSource(); src.buffer = decoded; src.connect(off.destination); src.start();
+  const out = await off.startRendering();
+  return out.getChannelData(0);
+}
+
+export async function transcribe(blob, status) {
+  onStatus = status ?? onStatus;
+  const audio = await toPcm16k(blob);
+  if (audio.length < 16000 * 0.4) throw new Error("too short");
+  const id = ++seq;
+  if (!ready) onStatus({ s: "load", label: "Loading on-device speech model (about 40 MB, once)…" });
+  return await new Promise((ok, no) => { waiters.set(id, { ok, no }); getWorker().postMessage({ type: "run", audio, id }, [audio.buffer]); });
+}

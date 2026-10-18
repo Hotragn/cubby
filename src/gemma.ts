@@ -136,7 +136,7 @@ ${chunk.map((n) => `[${n.id}] (logged ${n.t}) ${n.text}`).join("\n")}`;
 // text is checked again before anyone sees it (see public/lib/sheet.js).
 export async function warmSheet(child: string, facts: string[], lang: string, usage: Usage): Promise<string> {
   const prompt = `Write a short, warm daily note from a home daycare provider to ${child}'s parent, in ${lang}.
-Use ONLY these facts. Do not add foods, times, amounts, feelings, health details or events that are not listed. Do not give advice.
+Use ONLY these facts. Do not add foods, times, amounts, feelings, health details or events that are not listed. Do not soften, exaggerate or judge anything. Do not mention injuries, incidents or medicine at all (they are sent separately). Do not give advice.
 Keep every time and number exactly as written. 3 to 5 sentences, plain words, no emojis, no greeting line, no sign-off.
 Facts:
 ${facts.map((f) => `- ${f}`).join("\n")}`;

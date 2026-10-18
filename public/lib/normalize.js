@@ -53,7 +53,7 @@ export function normalizeNote(note, raw, roster, staff) {
         else questions.push({ noteId: note.id, quote: ev.quote, ask: `Who is "${n}"? No child by that name on today's roster.` });
       }
       // "all" only counts when the note says so; otherwise it's the model filling a gap.
-      if (ev.all && !/\b(all|everyone|everybody|kids|children|whole group)\b/i.test(note.text)) { if (list.length > 1) continue; questions.push({ noteId: note.id, quote: ev.quote, ask: "Which children is this about?" }); continue; }
+      if (ev.all && !/\b(all|everyone|everybody|kids|children|whole group)\b/i.test(ev.quote || note.text)) { if (list.length > 1) continue; questions.push({ noteId: note.id, quote: ev.quote, ask: "Which children is this about?" }); continue; }
       if (ev.all) ev.kids = null; // resolved later to "everyone present at that time"
       else if (!ev.kids.length) { if (e.type !== "note" && !(raw?.questions ?? []).length) questions.push({ noteId: note.id, quote: ev.quote, ask: `Which child is this about?` }); continue; }
     }
