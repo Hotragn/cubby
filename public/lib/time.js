@@ -1,0 +1,46 @@
+// Times are minutes after midnight. Plain code, no model.
+
+export function toMin(s) {
+  if (s == null || s === "") return null;
+  if (typeof s === "number") return s;
+  const m = String(s).trim().toLowerCase().match(/^(\d{1,2})(?::(\d{2}))?\s*(a\.?m\.?|p\.?m\.?)?$/);
+  if (!m) return null;
+  let h = +m[1];
+  const min = m[2] ? +m[2] : 0;
+  if (h > 23 || min > 59) return null;
+  if (m[3]?.startsWith("p") && h < 12) h += 12;
+  if (m[3]?.startsWith("a") && h === 12) h = 0;
+  return h * 60 + min;
+}
+
+// 24h → "1:10 pm"
+export function fmt(min) {
+  if (min == null) return "—";
+  const h = Math.floor(min / 60), m = min % 60;
+  const ap = h >= 12 ? "pm" : "am";
+  const h12 = ((h + 11) % 12) + 1;
+  return `${h12}:${String(m).padStart(2, "0")} ${ap}`;
+}
+
+export function hhmm(min) {
+  if (min == null) return "";
+  return `${String(Math.floor(min / 60)).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`;
+}
+
+export function dur(mins) {
+  if (mins == null || mins < 0) return "—";
+  const h = Math.floor(mins / 60), m = mins % 60;
+  return h ? (m ? `${h} hr ${m} min` : `${h} hr`) : `${m} min`;
+}
+
+// Providers write "1:10" meaning 1:10 pm. A clock time from 1:00 to 6:59 with no am/pm
+// inside a daycare day (6 am – 7 pm) is read as pm. Anything else stays as written.
+export function dayTime(s) {
+  if (s == null) return null;
+  if (typeof s === "number") return s;
+  const raw = String(s).trim().toLowerCase();
+  const v = toMin(raw);
+  if (v == null) return null;
+  if (!/[ap]\.?m/.test(raw) && v >= 60 && v < 7 * 60) return v + 12 * 60;
+  return v;
+}
