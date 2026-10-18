@@ -1,0 +1,285 @@
+{
+ "summary": {
+  "mode": "baseline",
+  "model": "gemma-4-26b-a4b-it",
+  "ranAt": "2026-10-18T21:57:35.227Z",
+  "days": 12,
+  "planted": 21,
+  "caught": 16,
+  "missed": 5,
+  "fa": 67,
+  "ms": 146027,
+  "inT": 11734,
+  "outT": 5131,
+  "notes": 337,
+  "avgSecPerDay": 12.2
+ },
+ "results": [
+  {
+   "day": "day-01",
+   "notes": 27,
+   "planted": 0,
+   "caught": [],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:felix No sign-out time recorded",
+    "attendance:tomas No sign-out time recorded",
+    "attendance:wren No sign-out time recorded",
+    "attendance:ravi No sign-out time recorded",
+    "time:felix Nap end time (2:30) is after recorded wake time (2:31/14:31)",
+    "time:tomas Nap end time (2:30) is after recorded wake time (2:31/14:31)",
+    "time:wren Nap end time (2:30) is after recorded wake time (2:31/14:31)",
+    "time:ravi Nap end time (2:30) is after recorded wake time (2:31/14:31)"
+   ],
+   "wallMs": 8694,
+   "inTokens": 916,
+   "outTokens": 373,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-02",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "incident:zoe",
+    "attendance:jonah"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "time:zoe Nap end time (2:30) recorded after the note entry time (14:31) implies a logic error or nap end time mismatch.",
+    "time:finn Nap end time (2:30) recorded after the note entry time (14:31) implies a logic error or nap end time mismatch.",
+    "time:jonah Nap end time (2:30) recorded after the note entry time (14:31) implies a logic error or nap end time mismatch.",
+    "time:omar Nap end time (2:30) recorded after the note entry time (14:31) implies a logic error or nap end time mismatch."
+   ],
+   "wallMs": 7784,
+   "inTokens": 906,
+   "outTokens": 343,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-03",
+   "notes": 28,
+   "planted": 1,
+   "caught": [],
+   "missed": [
+    "ratio:- (4 under 2 with one adult)"
+   ],
+   "falseAlarms": [
+    "time:zoe Nap end time (2:30) is after the recorded wake time (2:31) or recorded nap start (12:32) vs note (12:30) is inconsistent.",
+    "time:finn Nap end time (2:30) is after the recorded wake time (2:31) or recorded nap start (12:32) vs note (12:30) is inconsistent.",
+    "time:kai Nap end time (2:30) is after the recorded wake time (2:31) or recorded nap start (12:32) vs note (12:30) is inconsistent.",
+    "time:ezra Nap end time (2:30) is after the recorded wake time (2:31) or recorded nap start (12:32) vs note (12:30) is inconsistent."
+   ],
+   "wallMs": 6886,
+   "inTokens": 914,
+   "outTokens": 302,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-04",
+   "notes": 29,
+   "planted": 2,
+   "caught": [
+    "med:ivy"
+   ],
+   "missed": [
+    "med:amara (no dose, no time stated, no giver)"
+   ],
+   "falseAlarms": [
+    "time:omar Nap end time (2:30) recorded after nap wake time (2:31)",
+    "time:ivy Nap end time (2:30) recorded after nap wake time (2:31)",
+    "time:wren Nap end time (2:30) recorded after nap wake time (2:31)",
+    "time:amara Nap end time (2:30) recorded after nap wake time (2:31)",
+    "attendance:omar Missing sign-out time",
+    "attendance:ivy Missing sign-out time",
+    "attendance:wren Missing sign-out time",
+    "attendance:amara Missing sign-out time",
+    "attendance:hazel Missing sign-in time",
+    "attendance:hazel Missing sign-out time",
+    "late:hazel Picked up after closing time (5:31 pm)"
+   ],
+   "wallMs": 10964,
+   "inTokens": 1023,
+   "outTokens": 490,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-05",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "sleep:tomas",
+    "late:ivy"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "time:tomas Nap end time (2:30) recorded after the log entry time (2:31) but the check interval was inconsistent",
+    "attendance:tomas Missing sign-out time",
+    "attendance:otto Missing sign-out time",
+    "attendance:ivy Missing sign-out time",
+    "attendance:ezra Missing sign-out time",
+    "late:ezra Picked up at 17:07, which is after 5:30 pm"
+   ],
+   "wallMs": 8379,
+   "inTokens": 887,
+   "outTokens": 365,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-06",
+   "notes": 25,
+   "planted": 2,
+   "caught": [],
+   "missed": [
+    "incident:jonah (Jonah has a goose egg on his forehead after the slide, ice pack)",
+    "attendance:ezra (picked up by his uncle Dev, not on list)"
+   ],
+   "falseAlarms": [],
+   "wallMs": 26744,
+   "inTokens": 915,
+   "outTokens": 642,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-07",
+   "notes": 28,
+   "planted": 4,
+   "caught": [
+    "incident:amara",
+    "incident:mateo",
+    "time:zoe",
+    "attendance:tomas"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:jonah Missing sign-in time."
+   ],
+   "wallMs": 5085,
+   "inTokens": 1014,
+   "outTokens": 211,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-08",
+   "notes": 35,
+   "planted": 2,
+   "caught": [
+    "med:eli",
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "time:amara Nap end time (2:30) recorded after the log entry for waking (2:31/2:30) but the log entry says they were up at 2:30 while the timestamp is 14:31.",
+    "time:omar Nap end time (2:30) recorded after the log entry for waking (2:31/2:30) but the log entry says they were up at 2:30 while the timestamp is 14:31.",
+    "time:june Nap end time (2:30) recorded after the log entry for waking (2:31/2:30) but the log entry says they were up at 2:30 while the timestamp is 14:31.",
+    "time:wren Nap end time (2:30) recorded after the log entry for waking (2:31/2:30) but the log entry says they were up at 2:30 while the timestamp is 14:31.",
+    "time:eli Nap end time (2:30) recorded after the log entry for waking (2:31/2:30) but the log entry says they were up at 2:30 while the timestamp is 14:31.",
+    "time:ivy Nap end time (2:30) recorded after the log entry for waking (2:31/2:30) but the log entry says they were up at 2:30 while the timestamp is 14:31.",
+    "attendance:ivy No sign-out time recorded for Ivy.",
+    "attendance:tomas No sign-out time recorded for Tomas.",
+    "late:ivy Picked up at 17:38, which is after the 17:30 closing time.",
+    "late:tomas Picked up at 17:50, which is after the 17:30 closing time."
+   ],
+   "wallMs": 16981,
+   "inTokens": 1192,
+   "outTokens": 783,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-09",
+   "notes": 26,
+   "planted": 2,
+   "caught": [
+    "med:ravi",
+    "sleep:otto"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "time:lucia Nap end time (2:30) recorded after the last check (2:00) but the log shows they were 'up at 2:30' while the previous check was at 2:00, however, the 14:00 check missed Otto.",
+    "attendance:zoe No sign-out time recorded for Zoe (only pickup time mentioned)."
+   ],
+   "wallMs": 25021,
+   "inTokens": 941,
+   "outTokens": 300,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-10",
+   "notes": 29,
+   "planted": 0,
+   "caught": [],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:eli Missing sign-out time",
+    "attendance:priya Missing sign-out time",
+    "attendance:otto Missing sign-out time",
+    "attendance:amara Missing sign-out time",
+    "attendance:kai Missing sign-out time",
+    "time:eli Nap end time (2:30) is before recorded wake time (2:31)",
+    "time:priya Nap end time (2:30) is before recorded wake time (2:31)",
+    "time:otto Nap end time (2:30) is before recorded wake time (2:31)",
+    "time:amara Nap end time (2:30) is before recorded wake time (2:31)"
+   ],
+   "wallMs": 8418,
+   "inTokens": 994,
+   "outTokens": 378,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-11",
+   "notes": 27,
+   "planted": 3,
+   "caught": [
+    "incident:omar",
+    "attendance:hazel",
+    "late:eli"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "time:nora Nap end time (2:30) recorded after the log entry time (2:31) but the note says they were up at 2:30 while the log entry is 14:31; however, the specific error is that the nap end time 2:30 is recorded in a log entry timestamped 14:31, but more importantly, the nap start time was 12:30 and the log entry for them being up is 14:31, but the note says 'up at 2:30' which is inconsistent with the 14:31 timestamp.",
+    "time:hazel Nap end time (2:30) recorded in a log entry timestamped 14:31.",
+    "time:lucia Nap end time (2:30) recorded in a log entry timestamped 14:31.",
+    "time:omar Nap end time (2:30) recorded in a log entry timestamped 14:31.",
+    "attendance:eli No sign-out time recorded for Eli (only a mention of pickup time in text)."
+   ],
+   "wallMs": 11444,
+   "inTokens": 958,
+   "outTokens": 514,
+   "calls": 1,
+   "retries": 0
+  },
+  {
+   "day": "day-12",
+   "notes": 33,
+   "planted": 1,
+   "caught": [],
+   "missed": [
+    "ratio:- (after Joy leaves: 4 under 2 with one adult)"
+   ],
+   "falseAlarms": [
+    "med:nora Medication log for diaper cream is missing dose and who gave it.",
+    "time:nora Nap end time (2:30) recorded after the check time (2:31) but the log entry for waking up is inconsistent with the check interval.",
+    "time:lucia Nap end time (2:30) recorded after the check time (2:31) but the log entry for waking up is inconsistent with the check interval.",
+    "time:felix Nap end time (2:30) recorded after the check time (2:31) but the log entry for waking up is inconsistent with the check interval.",
+    "time:kai Nap end time (2:30) recorded after the check time (2:31) but the log entry for waking up is inconsistent with the check interval.",
+    "time:leila Nap end time (2:30) recorded after the check time (2:31) but the log entry for waking up is inconsistent with the check interval.",
+    "time:hazel Nap end time (2:30) recorded after the check time (2:31) but the log entry for waking up is inconsistent with the check interval."
+   ],
+   "wallMs": 9627,
+   "inTokens": 1074,
+   "outTokens": 430,
+   "calls": 1,
+   "retries": 0
+  }
+ ]
+}

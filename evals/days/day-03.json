@@ -1,0 +1,219 @@
+{
+ "synthetic": true,
+ "id": "day-03",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "zoe",
+   "name": "Zoe",
+   "dob": "2026-02-11",
+   "pickup": [
+    {
+     "name": "Dee Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "finn",
+   "name": "Finn",
+   "dob": "2025-09-11",
+   "pickup": [
+    {
+     "name": "Rita Lund",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2025-04-11",
+   "pickup": [
+    {
+     "name": "Malik Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "dob": "2024-12-11",
+   "pickup": [
+    {
+     "name": "Sam Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  },
+  {
+   "id": "a",
+   "name": "Bea"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:02",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:19",
+   "text": "Zoe here"
+  },
+  {
+   "id": "N3",
+   "t": "07:32",
+   "text": "Finn here"
+  },
+  {
+   "id": "N4",
+   "t": "07:38",
+   "text": "Kai arrived 7:38"
+  },
+  {
+   "id": "N5",
+   "t": "07:42",
+   "text": "Ezra arrived 7:42"
+  },
+  {
+   "id": "N6",
+   "t": "08:00",
+   "text": "Bea in"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Finn cleaned the plate, Kai ate half, Ezra ate half"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Zoe 5 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Zoe wet, Finn BM, Kai wet, Ezra wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "story time, Zoe and Finn loved it"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Finn ate most, Kai ate all, Ezra cleaned the plate"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Zoe, Finn, Kai, Ezra down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "sleep check 12:45 Zoe Finn Kai Ezra ok on backs"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "1:00 check: Zoe, Finn, Kai, Ezra sleeping"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "sleep check 1:15 Zoe Finn Kai Ezra ok on backs"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "1:30 check: Zoe, Finn, Kai, Ezra sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "sleep check 1:45 Zoe Finn Kai Ezra ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "2:00 check: Zoe, Finn, Kai, Ezra sleeping"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "2:15 check: Zoe, Finn, Kai, Ezra sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Zoe, Finn, Kai, Ezra up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate all of it"
+  },
+  {
+   "id": "N22",
+   "t": "15:10",
+   "text": "Bea out"
+  },
+  {
+   "id": "N23",
+   "t": "16:00",
+   "text": "Bea back"
+  },
+  {
+   "id": "N24",
+   "t": "16:19",
+   "text": "Zoe picked up by dad"
+  },
+  {
+   "id": "N25",
+   "t": "16:30",
+   "text": "Finn home w Rita"
+  },
+  {
+   "id": "N26",
+   "t": "16:49",
+   "text": "Kai picked up by dad"
+  },
+  {
+   "id": "N27",
+   "t": "17:04",
+   "text": "Ezra out 5:04, mom"
+  },
+  {
+   "id": "N28",
+   "t": "17:30",
+   "text": "Bea out"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "4 under 2 with one adult"
+  }
+ ]
+}

@@ -1,0 +1,205 @@
+{
+ "synthetic": true,
+ "id": "day-06",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "idris",
+   "name": "Idris",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Paolo Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah",
+   "dob": "2024-10-11",
+   "pickup": [
+    {
+     "name": "Ines Farah",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2024-01-11",
+   "pickup": [
+    {
+     "name": "Malik Hale",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "eli",
+   "name": "Eli",
+   "dob": "2022-11-11",
+   "pickup": [
+    {
+     "name": "Sam Greer",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:52",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:20",
+   "text": "Idris dropped off by mom"
+  },
+  {
+   "id": "N3",
+   "t": "07:32",
+   "text": "Jonah in w dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:38",
+   "text": "Leila in w mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:53",
+   "text": "Eli in w mom"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast waffles. Idris ate half, Jonah ate half, Leila ate most, Eli didn't touch it"
+  },
+  {
+   "id": "N7",
+   "t": "09:20",
+   "text": "Idris wet, Jonah wet, Leila wet diapers"
+  },
+  {
+   "id": "N8",
+   "t": "09:25",
+   "text": "Eli used the potty"
+  },
+  {
+   "id": "N9",
+   "t": "10:00",
+   "text": "sandbox outside, Idris and Jonah loved it"
+  },
+  {
+   "id": "N10",
+   "t": "10:45",
+   "text": "Leila has a goose egg on his forehead after the slide, ice pack"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch fish sticks and corn. Idris ate most, Jonah ate most, Leila ate half, Eli ate most"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Idris, Jonah, Leila, Eli down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "sleep check 12:45 Idris Jonah Leila Eli ok on backs"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "1:00 check: Idris, Jonah, Leila, Eli sleeping"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "checked Idris, Jonah, Leila, Eli 1:15"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "checked Idris, Jonah, Leila, Eli 1:30"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "sleep check 1:45 Idris Jonah Leila Eli ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "checked Idris, Jonah, Leila, Eli 2:00"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "sleep check 2:15 Idris Jonah Leila Eli ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Idris, Jonah, Leila, Eli up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack goldfish, everyone ate all of it"
+  },
+  {
+   "id": "N22",
+   "t": "16:14",
+   "text": "Idris out 4:14, mom"
+  },
+  {
+   "id": "N23",
+   "t": "16:28",
+   "text": "Jonah picked up by his uncle Dev"
+  },
+  {
+   "id": "N24",
+   "t": "16:43",
+   "text": "Leila home w Malik"
+  },
+  {
+   "id": "N25",
+   "t": "17:00",
+   "text": "Eli home w Sam"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "leila",
+   "what": "Leila has a goose egg on his forehead after the slide, ice pack"
+  },
+  {
+   "rule": "attendance",
+   "kid": "jonah",
+   "what": "picked up by his uncle Dev, not on list"
+  }
+ ]
+}

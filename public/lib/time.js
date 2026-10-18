@@ -33,14 +33,15 @@ export function dur(mins) {
   return h ? (m ? `${h} hr ${m} min` : `${h} hr`) : `${m} min`;
 }
 
-// Providers write "1:10" meaning 1:10 pm. A clock time from 1:00 to 6:59 with no am/pm
-// inside a daycare day (6 am – 7 pm) is read as pm. Anything else stays as written.
+// Providers write "1:10" meaning 1:10 pm. A clock time from 1:00 to 5:59 with no am/pm
+// and no leading zero is read as pm (a daycare day runs about 6 am – 7 pm). Anything else stays as written.
 export function dayTime(s) {
   if (s == null) return null;
   if (typeof s === "number") return s;
   const raw = String(s).trim().toLowerCase();
   const v = toMin(raw);
   if (v == null) return null;
-  if (!/[ap]\.?m/.test(raw) && v >= 60 && v < 7 * 60) return v + 12 * 60;
+  // "06:59" (leading zero) is a 24-hour clock time and stays as written.
+  if (!/[ap]\.?m/.test(raw) && !/^0\d/.test(raw) && v >= 60 && v < 6 * 60) return v + 12 * 60;
   return v;
 }

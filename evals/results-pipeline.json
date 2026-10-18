@@ -1,0 +1,246 @@
+{
+ "summary": {
+  "mode": "pipeline",
+  "model": "gemma-4-26b-a4b-it",
+  "ranAt": "2026-10-18T22:05:07.330Z",
+  "days": 12,
+  "planted": 21,
+  "caught": 21,
+  "missed": 0,
+  "fa": 2,
+  "ms": 401148,
+  "inT": 43565,
+  "outT": 39013,
+  "notes": 337,
+  "avgSecPerDay": 33.4
+ },
+ "results": [
+  {
+   "day": "day-01",
+   "notes": 27,
+   "planted": 0,
+   "caught": [],
+   "missed": [],
+   "falseAlarms": [
+    "med: Note mentions \"medicine\" but no medication was logged"
+   ],
+   "wallMs": 31119,
+   "inTokens": 3575,
+   "outTokens": 2983,
+   "calls": 3,
+   "retries": 0,
+   "questions": 3,
+   "unverified": 0,
+   "events": 35
+  },
+  {
+   "day": "day-02",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "incident:zoe",
+    "attendance:jonah"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 32634,
+   "inTokens": 3551,
+   "outTokens": 2873,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 36
+  },
+  {
+   "day": "day-03",
+   "notes": 28,
+   "planted": 1,
+   "caught": [
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 33450,
+   "inTokens": 3590,
+   "outTokens": 3080,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 2,
+   "events": 38
+  },
+  {
+   "day": "day-04",
+   "notes": 29,
+   "planted": 2,
+   "caught": [
+    "med:ivy",
+    "med:amara"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 32798,
+   "inTokens": 3665,
+   "outTokens": 3280,
+   "calls": 3,
+   "retries": 0,
+   "questions": 1,
+   "unverified": 0,
+   "events": 40
+  },
+  {
+   "day": "day-05",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "sleep:tomas",
+    "late:ivy"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 29707,
+   "inTokens": 3531,
+   "outTokens": 2691,
+   "calls": 3,
+   "retries": 0,
+   "questions": 2,
+   "unverified": 0,
+   "events": 33
+  },
+  {
+   "day": "day-06",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "incident:jonah",
+    "attendance:ezra"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 34059,
+   "inTokens": 3559,
+   "outTokens": 2950,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 36
+  },
+  {
+   "day": "day-07",
+   "notes": 28,
+   "planted": 4,
+   "caught": [
+    "incident:amara",
+    "incident:mateo",
+    "time:zoe",
+    "attendance:tomas"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 32579,
+   "inTokens": 3668,
+   "outTokens": 3376,
+   "calls": 3,
+   "retries": 0,
+   "questions": 2,
+   "unverified": 0,
+   "events": 39
+  },
+  {
+   "day": "day-08",
+   "notes": 35,
+   "planted": 2,
+   "caught": [
+    "med:eli",
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 41854,
+   "inTokens": 3854,
+   "outTokens": 4700,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 1,
+   "events": 54
+  },
+  {
+   "day": "day-09",
+   "notes": 26,
+   "planted": 2,
+   "caught": [
+    "med:ravi",
+    "sleep:otto"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 31196,
+   "inTokens": 3575,
+   "outTokens": 2906,
+   "calls": 3,
+   "retries": 0,
+   "questions": 6,
+   "unverified": 0,
+   "events": 30
+  },
+  {
+   "day": "day-10",
+   "notes": 29,
+   "planted": 0,
+   "caught": [],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 32353,
+   "inTokens": 3656,
+   "outTokens": 3203,
+   "calls": 3,
+   "retries": 0,
+   "questions": 4,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-11",
+   "notes": 27,
+   "planted": 3,
+   "caught": [
+    "incident:omar",
+    "attendance:hazel",
+    "late:eli"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 33662,
+   "inTokens": 3602,
+   "outTokens": 3142,
+   "calls": 3,
+   "retries": 0,
+   "questions": 1,
+   "unverified": 1,
+   "events": 37
+  },
+  {
+   "day": "day-12",
+   "notes": 33,
+   "planted": 1,
+   "caught": [
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "med:nora Note mentions \"diaper cream\" but no medication was logged"
+   ],
+   "wallMs": 35737,
+   "inTokens": 3739,
+   "outTokens": 3829,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 47
+  }
+ ]
+}

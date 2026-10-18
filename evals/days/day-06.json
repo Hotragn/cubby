@@ -1,0 +1,205 @@
+{
+ "synthetic": true,
+ "id": "day-06",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "amara",
+   "name": "Amara",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Dee Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "dob": "2024-10-11",
+   "pickup": [
+    {
+     "name": "Dee Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah",
+   "dob": "2024-01-11",
+   "pickup": [
+    {
+     "name": "Rita Ellis",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "idris",
+   "name": "Idris",
+   "dob": "2022-11-11",
+   "pickup": [
+    {
+     "name": "Paolo Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:52",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:18",
+   "text": "Amara dropped off by dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:22",
+   "text": "Ezra dropped off by mom"
+  },
+  {
+   "id": "N4",
+   "t": "07:27",
+   "text": "Jonah here"
+  },
+  {
+   "id": "N5",
+   "t": "07:40",
+   "text": "Idris here"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast waffles. Amara ate all, Ezra ate half, Jonah cleaned the plate, Idris ate half"
+  },
+  {
+   "id": "N7",
+   "t": "09:20",
+   "text": "Amara wet, Ezra wet, Jonah wet diapers"
+  },
+  {
+   "id": "N8",
+   "t": "09:25",
+   "text": "Idris used the potty"
+  },
+  {
+   "id": "N9",
+   "t": "10:00",
+   "text": "walk to the park, Amara and Ezra loved it"
+  },
+  {
+   "id": "N10",
+   "t": "10:45",
+   "text": "Jonah has a goose egg on his forehead after the slide, ice pack"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch bean soup. Amara ate half, Ezra didn't touch it, Jonah cleaned the plate, Idris ate all"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Amara, Ezra, Jonah, Idris down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "12:45 check: Amara, Ezra, Jonah, Idris sleeping"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "sleep check 1:00 Amara Ezra Jonah Idris ok on backs"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "checked Amara, Ezra, Jonah, Idris 1:15"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "1:30 check: Amara, Ezra, Jonah, Idris sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "sleep check 1:45 Amara Ezra Jonah Idris ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "sleep check 2:00 Amara Ezra Jonah Idris ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "sleep check 2:15 Amara Ezra Jonah Idris ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Amara, Ezra, Jonah, Idris up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate most"
+  },
+  {
+   "id": "N22",
+   "t": "16:21",
+   "text": "Amara home w Dee"
+  },
+  {
+   "id": "N23",
+   "t": "16:43",
+   "text": "Ezra picked up by his uncle Dev"
+  },
+  {
+   "id": "N24",
+   "t": "17:00",
+   "text": "Jonah picked up by mom"
+  },
+  {
+   "id": "N25",
+   "t": "17:16",
+   "text": "Idris picked up by dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "jonah",
+   "what": "Jonah has a goose egg on his forehead after the slide, ice pack"
+  },
+  {
+   "rule": "attendance",
+   "kid": "ezra",
+   "what": "picked up by his uncle Dev, not on list"
+  }
+ ]
+}

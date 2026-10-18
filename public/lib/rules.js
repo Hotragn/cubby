@@ -3,7 +3,7 @@
 
 import { fmt, dur, dayTime } from "./time.js";
 
-const INJURY = /\b(bump(ed|s)?|bit(?! (sleepy|tired|fussy|cranky|of|more|less|better|quiet|slow|late|early|warm|cold|teary|clingy|into))|bites?|bitten|biting|scratch(ed|es)?|fell(?! asleep)|fall(?! asleep)|tripped|bleed(ing)?|blood|bruis(e|ed)|cut|hit (his|her|their) head|pinched|scraped?|swollen|swelling|split lip|nosebleed|choked|choking|burn(ed|t)?|sting|stung|injur(y|ed)|ouch|ice pack|bandaid|band-aid|goose ?egg)\b/i;
+const INJURY = /\b(bump(ed|s)?|bit (him|her|them|me|his|her|a friend|another)|bitten|biting|bite mark|got bit|scratch(ed|es)?|fell(?! asleep)|fall(?! asleep)|tripped|bleed(ing)?|blood|bruis(e|ed)|cut|hit (his|her|their) head|pinched|scraped?|swollen|swelling|split lip|nosebleed|choked|choking|burn(ed|t)?|sting|stung|injur(y|ed)|ouch|ice pack|bandaid|band-aid|goose ?egg)\b/i;
 const MEDS = /\b(tylenol|motrin|advil|ibuprofen|acetaminophen|benadryl|zyrtec|claritin|amoxicillin|antibiotic|inhaler|albuterol|epipen|epi-pen|diaper cream|desitin|hydrocortisone|eye drops|ear drops|medicine|medication|meds|dose(d)?|\d+(\.\d+)?\s?(ml|mg|cc|puffs?))\b/i;
 
 const sev = { fix: 0, check: 1 };
@@ -107,8 +107,9 @@ export function checkDay(day, pack, opts = {}) {
   const reports = day.reports ?? [];
   const injuryHits = [];
   for (const e of day.events.filter((e) => e.type === "incident")) for (const k of e.kids ?? []) injuryHits.push({ k, t: e.start, ev: e });
+  const biteRe = new RegExp(`\\bbit (${day.roster.map((c) => c.name.split(" ")[0]).join("|")})\\b`, "i");
   for (const n of day.notes) {
-    const m = n.text.match(INJURY); if (!m) continue;
+    const m = n.text.match(INJURY) ?? n.text.match(biteRe); if (!m) continue;
     const named = day.roster.filter((c) => new RegExp(`\\b${c.name.split(" ")[0]}\\b`, "i").test(n.text)).map((c) => c.id);
     for (const k of named) if (!injuryHits.some((h) => h.k === k && (h.ev?.noteId ?? h.note?.id) === n.id)) injuryHits.push({ k, t: dayTime(n.t), note: n, word: m[0] });
   }

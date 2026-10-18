@@ -1,0 +1,243 @@
+{
+ "synthetic": true,
+ "id": "day-04",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "omar",
+   "name": "Omar",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Rita Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2025-03-11",
+   "pickup": [
+    {
+     "name": "Malik Brooks",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2024-07-11",
+   "pickup": [
+    {
+     "name": "Kim Greer",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "amara",
+   "name": "Amara",
+   "dob": "2023-11-11",
+   "pickup": [
+    {
+     "name": "Sam Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Zyrtec",
+     "dose": "2.5 ml",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "hazel",
+   "name": "Hazel",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Hugo Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:55",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:25",
+   "text": "Omar here"
+  },
+  {
+   "id": "N3",
+   "t": "07:29",
+   "text": "Ivy arrived 7:29"
+  },
+  {
+   "id": "N4",
+   "t": "07:37",
+   "text": "Wren dropped off by mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:47",
+   "text": "Amara arrived 7:47"
+  },
+  {
+   "id": "N6",
+   "t": "07:53",
+   "text": "Hazel arrived 7:53"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Ivy cleaned the plate, Wren had a few bites, Amara ate all, Hazel ate most"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Omar 4 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Omar BM, Ivy wet, Wren wet, Amara BM diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Hazel used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "bubbles in the yard, Omar and Ivy loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:30",
+   "text": "gave Ivy motrin 2.5 ml for teething"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Ivy ate most, Wren ate most, Amara had a few bites, Hazel ate half"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "Amara had her zyrtec"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "Omar, Ivy, Wren, Amara down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "sleep check 12:45 Omar Ivy Wren Amara ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "checked Omar, Ivy, Wren, Amara 1:00"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "sleep check 1:15 Omar Ivy Wren Amara ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "1:30 check: Omar, Ivy, Wren, Amara sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "1:45 check: Omar, Ivy, Wren, Amara sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "2:00 check: Omar, Ivy, Wren, Amara sleeping"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "2:15 check: Omar, Ivy, Wren, Amara sleeping"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "Omar, Ivy, Wren, Amara up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate some"
+  },
+  {
+   "id": "N25",
+   "t": "16:19",
+   "text": "Omar picked up by dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:35",
+   "text": "Ivy home w Malik"
+  },
+  {
+   "id": "N27",
+   "t": "16:55",
+   "text": "Wren picked up by mom"
+  },
+  {
+   "id": "N28",
+   "t": "17:13",
+   "text": "Amara out 5:13, mom"
+  },
+  {
+   "id": "N29",
+   "t": "17:25",
+   "text": "Hazel out 5:25, dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "ivy",
+   "what": "no consent"
+  },
+  {
+   "rule": "med",
+   "kid": "amara",
+   "what": "no dose, no time stated, no giver"
+  }
+ ]
+}

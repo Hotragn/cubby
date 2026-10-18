@@ -1,0 +1,274 @@
+{
+ "synthetic": true,
+ "id": "day-12",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "lucia",
+   "name": "Lucia",
+   "dob": "2026-04-11",
+   "pickup": [
+    {
+     "name": "Hugo Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Diaper cream",
+     "dose": "thin layer",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "ravi",
+   "name": "Ravi",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Rita Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "finn",
+   "name": "Finn",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Paolo Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "sofia",
+   "name": "Sofia",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Malik Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Paolo Greer",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Ada Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Bea"
+  },
+  {
+   "id": "a",
+   "name": "Joy"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:55",
+   "text": "Bea in"
+  },
+  {
+   "id": "N2",
+   "t": "07:14",
+   "text": "Lucia here"
+  },
+  {
+   "id": "N3",
+   "t": "07:19",
+   "text": "Ravi arrived 7:19"
+  },
+  {
+   "id": "N4",
+   "t": "07:32",
+   "text": "Finn dropped off by mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:44",
+   "text": "Sofia dropped off by dad"
+  },
+  {
+   "id": "N6",
+   "t": "08:00",
+   "text": "Joy in"
+  },
+  {
+   "id": "N7",
+   "t": "08:01",
+   "text": "Wren in w mom"
+  },
+  {
+   "id": "N8",
+   "t": "08:17",
+   "text": "Otto in w mom"
+  },
+  {
+   "id": "N9",
+   "t": "08:30",
+   "text": "breakfast cheerios and milk. Finn didn't touch it, Sofia ate all, Wren didn't touch it, Otto ate most"
+  },
+  {
+   "id": "N10",
+   "t": "08:35",
+   "text": "Lucia 5 oz bottle"
+  },
+  {
+   "id": "N11",
+   "t": "08:35",
+   "text": "Ravi 4 oz bottle"
+  },
+  {
+   "id": "N12",
+   "t": "09:20",
+   "text": "Lucia wet, Ravi BM, Finn BM, Sofia wet, Wren wet diapers"
+  },
+  {
+   "id": "N13",
+   "t": "09:25",
+   "text": "Otto used the potty"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "music and dancing, Lucia and Ravi loved it"
+  },
+  {
+   "id": "N15",
+   "t": "10:55",
+   "text": "Lucia diaper cream at the 10:55 change"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch fish sticks and corn. Finn didn't touch it, Sofia had a few bites, Wren ate all, Otto didn't touch it"
+  },
+  {
+   "id": "N17",
+   "t": "12:32",
+   "text": "Lucia, Ravi, Finn, Sofia, Wren, Otto down for nap 12:30"
+  },
+  {
+   "id": "N18",
+   "t": "12:45",
+   "text": "12:45 check: Lucia, Ravi, Finn, Sofia, Wren, Otto sleeping"
+  },
+  {
+   "id": "N19",
+   "t": "13:00",
+   "text": "1:00 check: Lucia, Ravi, Finn, Sofia, Wren, Otto sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:15",
+   "text": "checked Lucia, Ravi, Finn, Sofia, Wren, Otto 1:15"
+  },
+  {
+   "id": "N21",
+   "t": "13:30",
+   "text": "checked Lucia, Ravi, Finn, Sofia, Wren, Otto 1:30"
+  },
+  {
+   "id": "N22",
+   "t": "13:45",
+   "text": "1:45 check: Lucia, Ravi, Finn, Sofia, Wren, Otto sleeping"
+  },
+  {
+   "id": "N23",
+   "t": "14:00",
+   "text": "checked Lucia, Ravi, Finn, Sofia, Wren, Otto 2:00"
+  },
+  {
+   "id": "N24",
+   "t": "14:15",
+   "text": "sleep check 2:15 Lucia Ravi Finn Sofia Wren Otto ok on backs"
+  },
+  {
+   "id": "N25",
+   "t": "14:31",
+   "text": "Lucia, Ravi, Finn, Sofia, Wren, Otto up at 2:30"
+  },
+  {
+   "id": "N26",
+   "t": "15:00",
+   "text": "Joy out"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack pear and cheese, everyone ate all of it"
+  },
+  {
+   "id": "N28",
+   "t": "16:13",
+   "text": "Lucia home w Hugo"
+  },
+  {
+   "id": "N29",
+   "t": "16:21",
+   "text": "Ravi home w Rita"
+  },
+  {
+   "id": "N30",
+   "t": "16:42",
+   "text": "Finn picked up by mom"
+  },
+  {
+   "id": "N31",
+   "t": "17:03",
+   "text": "Sofia picked up by dad"
+  },
+  {
+   "id": "N32",
+   "t": "17:15",
+   "text": "Wren picked up by mom"
+  },
+  {
+   "id": "N33",
+   "t": "17:25",
+   "text": "Otto out 5:25, mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "after Joy leaves: 4 under 2 with one adult"
+  }
+ ]
+}

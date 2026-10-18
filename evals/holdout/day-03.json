@@ -1,0 +1,219 @@
+{
+ "synthetic": true,
+ "id": "day-03",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "ravi",
+   "name": "Ravi",
+   "dob": "2026-02-11",
+   "pickup": [
+    {
+     "name": "Dee Jansen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "hazel",
+   "name": "Hazel",
+   "dob": "2025-09-11",
+   "pickup": [
+    {
+     "name": "Tom Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2025-04-11",
+   "pickup": [
+    {
+     "name": "Ines Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "tomas",
+   "name": "Tomas",
+   "dob": "2024-12-11",
+   "pickup": [
+    {
+     "name": "Luis Khan",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  },
+  {
+   "id": "a",
+   "name": "Bea"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:03",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:25",
+   "text": "Ravi in w dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:41",
+   "text": "Hazel dropped off by dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:58",
+   "text": "Priya in w dad"
+  },
+  {
+   "id": "N5",
+   "t": "08:00",
+   "text": "Bea in"
+  },
+  {
+   "id": "N6",
+   "t": "08:03",
+   "text": "Tomas arrived 8:03"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast yogurt and banana. Hazel ate all, Priya had a few bites, Tomas ate all"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Ravi 6 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Ravi wet, Hazel BM, Priya wet, Tomas BM diapers"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "walk to the park, Ravi and Hazel loved it"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch bean soup. Hazel had a few bites, Priya didn't touch it, Tomas didn't touch it"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Ravi, Hazel, Priya, Tomas down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "checked Ravi, Hazel, Priya, Tomas 12:45"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "1:00 check: Ravi, Hazel, Priya, Tomas sleeping"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "sleep check 1:15 Ravi Hazel Priya Tomas ok on backs"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "1:30 check: Ravi, Hazel, Priya, Tomas sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "checked Ravi, Hazel, Priya, Tomas 1:45"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "sleep check 2:00 Ravi Hazel Priya Tomas ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "checked Ravi, Hazel, Priya, Tomas 2:15"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Ravi, Hazel, Priya, Tomas up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack crackers and cheese, everyone ate some"
+  },
+  {
+   "id": "N22",
+   "t": "15:10",
+   "text": "Bea out"
+  },
+  {
+   "id": "N23",
+   "t": "16:00",
+   "text": "Bea back"
+  },
+  {
+   "id": "N24",
+   "t": "16:10",
+   "text": "Ravi home w Dee"
+  },
+  {
+   "id": "N25",
+   "t": "16:26",
+   "text": "Hazel out 4:26, dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:34",
+   "text": "Priya home w Ines"
+  },
+  {
+   "id": "N27",
+   "t": "16:49",
+   "text": "Tomas out 4:49, mom"
+  },
+  {
+   "id": "N28",
+   "t": "17:30",
+   "text": "Bea out"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "4 under 2 with one adult"
+  }
+ ]
+}

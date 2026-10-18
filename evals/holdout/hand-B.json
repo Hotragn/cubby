@@ -1,0 +1,194 @@
+{
+ "synthetic": true,
+ "handwritten": true,
+ "id": "hand-B",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "greta",
+   "name": "Greta",
+   "dob": "2026-05-09",
+   "pickup": [
+    {
+     "name": "Lena Fischer",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "hugo",
+   "name": "Hugo",
+   "dob": "2025-08-01",
+   "pickup": [
+    {
+     "name": "Raul Pena",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ines",
+   "name": "Ines",
+   "dob": "2024-04-20",
+   "pickup": [
+    {
+     "name": "Maya Costa",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Pauline"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:30",
+   "text": "Greta in, mom dropped"
+  },
+  {
+   "id": "N2",
+   "t": "07:45",
+   "text": "Hugo here"
+  },
+  {
+   "id": "N3",
+   "t": "07:50",
+   "text": "Ines here w mom"
+  },
+  {
+   "id": "N4",
+   "t": "08:15",
+   "text": "Pauline signing in, forgot earlier"
+  },
+  {
+   "id": "N5",
+   "t": "08:30",
+   "text": "Greta 4 oz bottle 8:20. Hugo and Ines oatmeal, Hugo ate all, Ines most"
+  },
+  {
+   "id": "N6",
+   "t": "09:00",
+   "text": "gave Greta some gripe water for gas at 9, Pauline"
+  },
+  {
+   "id": "N7",
+   "t": "09:40",
+   "text": "Hugo scratched Ines on the cheek over the blue truck, little red line, washed it"
+  },
+  {
+   "id": "N8",
+   "t": "10:30",
+   "text": "diapers all three, Greta wet, Hugo BM, Ines wet"
+  },
+  {
+   "id": "N9",
+   "t": "11:45",
+   "text": "lunch pasta with peas, Hugo most, Ines all, Greta 4 oz bottle"
+  },
+  {
+   "id": "N10",
+   "t": "13:00",
+   "text": "Greta down for nap 1:00, Hugo and Ines down 1:05"
+  },
+  {
+   "id": "N11",
+   "t": "13:20",
+   "text": "checked all three 1:20"
+  },
+  {
+   "id": "N12",
+   "t": "13:40",
+   "text": "1:40 check"
+  },
+  {
+   "id": "N13",
+   "t": "14:00",
+   "text": "2:00 checked everyone sleeping"
+  },
+  {
+   "id": "N14",
+   "t": "14:20",
+   "text": "2:20 check"
+  },
+  {
+   "id": "N15",
+   "t": "14:31",
+   "text": "Greta up 2:30, Hugo and Ines up 2:35"
+  },
+  {
+   "id": "N16",
+   "t": "15:00",
+   "text": "snack bananas"
+  },
+  {
+   "id": "N17",
+   "t": "16:15",
+   "text": "Hugo home with dad"
+  },
+  {
+   "id": "N18",
+   "t": "16:40",
+   "text": "Ines went home with neighbor Carol, mom texted"
+  },
+  {
+   "id": "N19",
+   "t": "17:05",
+   "text": "Greta picked up by mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "children present 7:30-8:15 with no adult signed in"
+  },
+  {
+   "rule": "med",
+   "kid": "greta",
+   "what": "gripe water, no consent"
+  },
+  {
+   "rule": "incident",
+   "kid": "ines",
+   "what": "scratched on cheek"
+  },
+  {
+   "rule": "incident",
+   "kid": "hugo",
+   "what": "scratched another child (behavior incident)"
+  },
+  {
+   "rule": "sleep",
+   "kid": "greta",
+   "what": "checks every 20 min"
+  },
+  {
+   "rule": "sleep",
+   "kid": "hugo",
+   "what": "checks every 20 min"
+  },
+  {
+   "rule": "sleep",
+   "kid": "ines",
+   "what": "checks every 20 min"
+  },
+  {
+   "rule": "attendance",
+   "kid": "ines",
+   "what": "picked up by neighbor Carol, not on list"
+  }
+ ]
+}

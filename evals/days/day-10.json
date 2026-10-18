@@ -1,0 +1,226 @@
+{
+ "synthetic": true,
+ "id": "day-10",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "eli",
+   "name": "Eli",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Kim Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2025-01-11",
+   "pickup": [
+    {
+     "name": "Dee Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2024-03-11",
+   "pickup": [
+    {
+     "name": "Ines Jansen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "amara",
+   "name": "Amara",
+   "dob": "2023-04-11",
+   "pickup": [
+    {
+     "name": "Dee Ito",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Dee Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:02",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:22",
+   "text": "Eli in w dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:37",
+   "text": "Priya here"
+  },
+  {
+   "id": "N4",
+   "t": "07:42",
+   "text": "Otto arrived 7:42"
+  },
+  {
+   "id": "N5",
+   "t": "07:56",
+   "text": "Amara in w dad"
+  },
+  {
+   "id": "N6",
+   "t": "08:05",
+   "text": "Kai here"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Priya ate half, Otto ate most, Amara had a few bites, Kai ate all"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Eli 5 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Eli wet, Priya wet, Otto wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Amara used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "sandbox outside, Eli and Priya loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:15",
+   "text": "Felix bit into his apple and said it was the best ever"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch chicken and rice. Priya ate all, Otto ate most, Amara ate most, Kai cleaned the plate"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "talked about the doctor visit Maya had last week, she showed us her bandaid sticker book"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "Eli, Priya, Otto, Amara down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "12:45 check: Eli, Priya, Otto, Amara sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "checked Eli, Priya, Otto, Amara 1:00"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "checked Eli, Priya, Otto, Amara 1:15"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "checked Eli, Priya, Otto, Amara 1:30"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "checked Eli, Priya, Otto, Amara 1:45"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "2:00 check: Eli, Priya, Otto, Amara sleeping"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "checked Eli, Priya, Otto, Amara 2:15"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "Eli, Priya, Otto, Amara up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate all of it"
+  },
+  {
+   "id": "N25",
+   "t": "16:10",
+   "text": "Eli home w Kim"
+  },
+  {
+   "id": "N26",
+   "t": "16:31",
+   "text": "Priya out 4:31, dad"
+  },
+  {
+   "id": "N27",
+   "t": "16:49",
+   "text": "Otto out 4:49, dad"
+  },
+  {
+   "id": "N28",
+   "t": "17:08",
+   "text": "Amara home w Dee"
+  },
+  {
+   "id": "N29",
+   "t": "17:25",
+   "text": "Kai home w Dee"
+  }
+ ],
+ "planted": []
+}

@@ -1,0 +1,243 @@
+{
+ "synthetic": true,
+ "id": "day-04",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Paolo Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ravi",
+   "name": "Ravi",
+   "dob": "2025-03-11",
+   "pickup": [
+    {
+     "name": "Tom Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2024-07-11",
+   "pickup": [
+    {
+     "name": "Tom Dube",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "dob": "2023-11-11",
+   "pickup": [
+    {
+     "name": "Ines Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Zyrtec",
+     "dose": "2.5 ml",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "mateo",
+   "name": "Mateo",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Dee Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Bea"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:53",
+   "text": "Bea in"
+  },
+  {
+   "id": "N2",
+   "t": "07:27",
+   "text": "Nora dropped off by mom"
+  },
+  {
+   "id": "N3",
+   "t": "07:44",
+   "text": "Ravi dropped off by mom"
+  },
+  {
+   "id": "N4",
+   "t": "07:51",
+   "text": "Priya here"
+  },
+  {
+   "id": "N5",
+   "t": "07:57",
+   "text": "Ezra arrived 7:57"
+  },
+  {
+   "id": "N6",
+   "t": "08:02",
+   "text": "Mateo here"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast cheerios and milk. Ravi ate most, Priya didn't touch it, Ezra ate all, Mateo had a few bites"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Nora 4 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Nora BM, Ravi wet, Priya wet, Ezra wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Mateo used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "story time, Nora and Ravi loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:30",
+   "text": "gave Ravi motrin 2.5 ml for teething"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch pasta with peas. Ravi had a few bites, Priya cleaned the plate, Ezra had a few bites, Mateo had a few bites"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "Ezra had her zyrtec"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "Nora, Ravi, Priya, Ezra down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "sleep check 12:45 Nora Ravi Priya Ezra ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "1:00 check: Nora, Ravi, Priya, Ezra sleeping"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "1:15 check: Nora, Ravi, Priya, Ezra sleeping"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "sleep check 1:30 Nora Ravi Priya Ezra ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "checked Nora, Ravi, Priya, Ezra 1:45"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "checked Nora, Ravi, Priya, Ezra 2:00"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "sleep check 2:15 Nora Ravi Priya Ezra ok on backs"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "Nora, Ravi, Priya, Ezra up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate some"
+  },
+  {
+   "id": "N25",
+   "t": "16:17",
+   "text": "Nora home w Paolo"
+  },
+  {
+   "id": "N26",
+   "t": "16:27",
+   "text": "Ravi picked up by mom"
+  },
+  {
+   "id": "N27",
+   "t": "16:40",
+   "text": "Priya picked up by mom"
+  },
+  {
+   "id": "N28",
+   "t": "16:53",
+   "text": "Ezra out 4:53, mom"
+  },
+  {
+   "id": "N29",
+   "t": "17:06",
+   "text": "Mateo picked up by dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "ravi",
+   "what": "no consent"
+  },
+  {
+   "rule": "med",
+   "kid": "ezra",
+   "what": "no dose, no time stated, no giver"
+  }
+ ]
+}

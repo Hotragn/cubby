@@ -1,0 +1,272 @@
+{
+ "synthetic": true,
+ "handwritten": true,
+ "id": "hand-A",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "bodhi",
+   "name": "Bodhi",
+   "dob": "2026-02-08",
+   "pickup": [
+    {
+     "name": "Ruth Okoye",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "clara",
+   "name": "Clara",
+   "dob": "2025-03-02",
+   "pickup": [
+    {
+     "name": "Dan Weiss",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Children's Motrin",
+     "dose": "4 ml",
+     "until": "2026-10-20"
+    }
+   ]
+  },
+  {
+   "id": "desmond",
+   "name": "Desmond",
+   "dob": "2024-08-01",
+   "pickup": [
+    {
+     "name": "Alma Ruiz",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "elsie",
+   "name": "Elsie",
+   "dob": "2023-12-05",
+   "pickup": [
+    {
+     "name": "Pete Moss",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "faisal",
+   "name": "Faisal",
+   "dob": "2022-12-01",
+   "pickup": [
+    {
+     "name": "Huda Saleh",
+     "rel": "mom"
+    },
+    {
+     "name": "Omar Saleh",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "m",
+   "name": "Marisol"
+  },
+  {
+   "id": "k",
+   "name": "Kenji"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:02",
+   "text": "ok Marisol here opening up"
+  },
+  {
+   "id": "N2",
+   "t": "07:20",
+   "text": "Faisal and Elsie both here, Faisal's mom and Elsie's dad dropped them"
+  },
+  {
+   "id": "N3",
+   "t": "07:41",
+   "text": "bodhi in, mom said he was up a lot last night"
+  },
+  {
+   "id": "N4",
+   "t": "07:58",
+   "text": "Clara here with dad. Desmond here too his mom was right behind"
+  },
+  {
+   "id": "N5",
+   "t": "08:01",
+   "text": "Kenji in"
+  },
+  {
+   "id": "N6",
+   "t": "08:35",
+   "text": "so breakfast was um pancakes, Elsie and Faisal ate everything, Desmond like half, Clara just picked. Bodhi had a 5 oz bottle around 8:30"
+  },
+  {
+   "id": "N7",
+   "t": "09:10",
+   "text": "diapers, Bodhi wet, Clara wet, Desmond poop. Elsie went potty by herself"
+  },
+  {
+   "id": "N8",
+   "t": "09:50",
+   "text": "outside on the swings, Faisal got his finger pinched in the gate latch, cried a bit, ran it under cold water, Kenji was right there"
+  },
+  {
+   "id": "N9",
+   "t": "10:17",
+   "text": "um Clara had her Motrin three ml at like 10:15 I gave it, she's been tugging her ear"
+  },
+  {
+   "id": "N10",
+   "t": "11:40",
+   "text": "lunch turkey and cheese roll ups and grapes cut in quarters. everyone ate pretty good, Clara most, Desmond all"
+  },
+  {
+   "id": "N11",
+   "t": "12:42",
+   "text": "Bodhi down 12:40 in the crib on his back"
+  },
+  {
+   "id": "N12",
+   "t": "12:47",
+   "text": "Clara Desmond and Elsie down for nap, Faisal doing quiet time with books"
+  },
+  {
+   "id": "N13",
+   "t": "12:55",
+   "text": "checked Bodhi Clara Desmond Elsie 12:55"
+  },
+  {
+   "id": "N14",
+   "t": "13:10",
+   "text": "1:10 check all good"
+  },
+  {
+   "id": "N15",
+   "t": "13:41",
+   "text": "checked the nappers 1:40 sorry got busy"
+  },
+  {
+   "id": "N16",
+   "t": "13:55",
+   "text": "1:55 checked everyone"
+  },
+  {
+   "id": "N17",
+   "t": "14:11",
+   "text": "Bodhi up 2:10 happy"
+  },
+  {
+   "id": "N18",
+   "t": "14:12",
+   "text": "2:10 checked Clara Desmond Elsie"
+  },
+  {
+   "id": "N19",
+   "t": "14:25",
+   "text": "2:25 check"
+  },
+  {
+   "id": "N20",
+   "t": "14:40",
+   "text": "Clara Desmond Elsie up 2:40"
+  },
+  {
+   "id": "N21",
+   "t": "15:00",
+   "text": "Kenji headed out for the day"
+  },
+  {
+   "id": "N22",
+   "t": "15:10",
+   "text": "snack applesauce and graham crackers"
+  },
+  {
+   "id": "N23",
+   "t": "15:55",
+   "text": "Faisal picked up by his dad Omar"
+  },
+  {
+   "id": "N24",
+   "t": "16:30",
+   "text": "Bodhi's mom here"
+  },
+  {
+   "id": "N25",
+   "t": "16:48",
+   "text": "Clara out with dad"
+  },
+  {
+   "id": "N26",
+   "t": "17:45",
+   "text": "Elsie picked up 5:45 dad"
+  },
+  {
+   "id": "N27",
+   "t": "17:47",
+   "text": "closing up, Marisol out"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "faisal",
+   "what": "finger pinched in gate latch"
+  },
+  {
+   "rule": "med",
+   "kid": "clara",
+   "what": "3 ml given, consent says 4 ml"
+  },
+  {
+   "rule": "sleep",
+   "kid": "bodhi",
+   "what": "1:10 to 1:40 gap"
+  },
+  {
+   "rule": "sleep",
+   "kid": "clara",
+   "what": "1:10 to 1:40 gap"
+  },
+  {
+   "rule": "sleep",
+   "kid": "desmond",
+   "what": "1:10 to 1:40 gap"
+  },
+  {
+   "rule": "sleep",
+   "kid": "elsie",
+   "what": "1:10 to 1:40 gap"
+  },
+  {
+   "rule": "attendance",
+   "kid": "desmond",
+   "what": "no sign-out"
+  },
+  {
+   "rule": "late",
+   "kid": "elsie",
+   "what": "5:45 pickup"
+  }
+ ]
+}

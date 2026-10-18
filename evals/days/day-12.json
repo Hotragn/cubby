@@ -1,0 +1,274 @@
+{
+ "synthetic": true,
+ "id": "day-12",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2026-04-11",
+   "pickup": [
+    {
+     "name": "Luis Jansen",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Diaper cream",
+     "dose": "thin layer",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "lucia",
+   "name": "Lucia",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Sam Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "felix",
+   "name": "Felix",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Jen Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Kim Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Malik Dube",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "hazel",
+   "name": "Hazel",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Dee Greer",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Bea"
+  },
+  {
+   "id": "a",
+   "name": "Joy"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:55",
+   "text": "Bea in"
+  },
+  {
+   "id": "N2",
+   "t": "07:20",
+   "text": "Nora dropped off by dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:25",
+   "text": "Lucia here"
+  },
+  {
+   "id": "N4",
+   "t": "07:31",
+   "text": "Felix here"
+  },
+  {
+   "id": "N5",
+   "t": "07:40",
+   "text": "Kai in w dad"
+  },
+  {
+   "id": "N6",
+   "t": "07:55",
+   "text": "Leila here"
+  },
+  {
+   "id": "N7",
+   "t": "08:00",
+   "text": "Joy in"
+  },
+  {
+   "id": "N8",
+   "t": "08:03",
+   "text": "Hazel dropped off by mom"
+  },
+  {
+   "id": "N9",
+   "t": "08:30",
+   "text": "breakfast waffles. Felix ate half, Kai ate most, Leila ate half, Hazel ate half"
+  },
+  {
+   "id": "N10",
+   "t": "08:35",
+   "text": "Nora 6 oz bottle"
+  },
+  {
+   "id": "N11",
+   "t": "08:35",
+   "text": "Lucia 6 oz bottle"
+  },
+  {
+   "id": "N12",
+   "t": "09:20",
+   "text": "Nora wet, Lucia wet, Felix wet, Kai wet, Leila BM diapers"
+  },
+  {
+   "id": "N13",
+   "t": "09:25",
+   "text": "Hazel used the potty"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "music and dancing, Nora and Lucia loved it"
+  },
+  {
+   "id": "N15",
+   "t": "10:55",
+   "text": "Nora diaper cream at the 10:55 change"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Felix ate most, Kai cleaned the plate, Leila ate half, Hazel didn't touch it"
+  },
+  {
+   "id": "N17",
+   "t": "12:32",
+   "text": "Nora, Lucia, Felix, Kai, Leila, Hazel down for nap 12:30"
+  },
+  {
+   "id": "N18",
+   "t": "12:45",
+   "text": "12:45 check: Nora, Lucia, Felix, Kai, Leila, Hazel sleeping"
+  },
+  {
+   "id": "N19",
+   "t": "13:00",
+   "text": "checked Nora, Lucia, Felix, Kai, Leila, Hazel 1:00"
+  },
+  {
+   "id": "N20",
+   "t": "13:15",
+   "text": "1:15 check: Nora, Lucia, Felix, Kai, Leila, Hazel sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "13:30",
+   "text": "sleep check 1:30 Nora Lucia Felix Kai Leila Hazel ok on backs"
+  },
+  {
+   "id": "N22",
+   "t": "13:45",
+   "text": "1:45 check: Nora, Lucia, Felix, Kai, Leila, Hazel sleeping"
+  },
+  {
+   "id": "N23",
+   "t": "14:00",
+   "text": "sleep check 2:00 Nora Lucia Felix Kai Leila Hazel ok on backs"
+  },
+  {
+   "id": "N24",
+   "t": "14:15",
+   "text": "sleep check 2:15 Nora Lucia Felix Kai Leila Hazel ok on backs"
+  },
+  {
+   "id": "N25",
+   "t": "14:31",
+   "text": "Nora, Lucia, Felix, Kai, Leila, Hazel up at 2:30"
+  },
+  {
+   "id": "N26",
+   "t": "15:00",
+   "text": "Joy out"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate some"
+  },
+  {
+   "id": "N28",
+   "t": "16:08",
+   "text": "Nora picked up by dad"
+  },
+  {
+   "id": "N29",
+   "t": "16:28",
+   "text": "Lucia picked up by mom"
+  },
+  {
+   "id": "N30",
+   "t": "16:49",
+   "text": "Felix picked up by dad"
+  },
+  {
+   "id": "N31",
+   "t": "17:05",
+   "text": "Kai home w Kim"
+  },
+  {
+   "id": "N32",
+   "t": "17:14",
+   "text": "Leila home w Malik"
+  },
+  {
+   "id": "N33",
+   "t": "17:25",
+   "text": "Hazel picked up by mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "after Joy leaves: 4 under 2 with one adult"
+  }
+ ]
+}

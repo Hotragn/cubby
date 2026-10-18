@@ -1,0 +1,242 @@
+{
+ "synthetic": true,
+ "id": "day-07",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "felix",
+   "name": "Felix",
+   "dob": "2025-12-11",
+   "pickup": [
+    {
+     "name": "Jen Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2025-05-11",
+   "pickup": [
+    {
+     "name": "Hugo Farah",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "finn",
+   "name": "Finn",
+   "dob": "2024-09-11",
+   "pickup": [
+    {
+     "name": "Tom Lund",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2023-10-11",
+   "pickup": [
+    {
+     "name": "Ines Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Hugo Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:58",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:27",
+   "text": "Felix in w dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:37",
+   "text": "Wren here"
+  },
+  {
+   "id": "N4",
+   "t": "07:41",
+   "text": "Finn dropped off by mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:54",
+   "text": "Otto here"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast yogurt and banana. Wren ate all, Finn cleaned the plate, Otto ate half, Leila didn't touch it"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Felix 4 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Felix BM, Wren wet, Finn wet diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Otto used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "story time, Felix and Wren loved it"
+  },
+  {
+   "id": "N11",
+   "t": "11:00",
+   "text": "Wren bit Finn on the hand, left a mark, talked about gentle hands"
+  },
+  {
+   "id": "N12",
+   "t": "11:30",
+   "text": "lunch bean soup. Wren ate all, Finn ate most, Otto ate half, Leila ate half"
+  },
+  {
+   "id": "N13",
+   "t": "12:32",
+   "text": "Felix, Wren, Finn, Otto, Leila down for nap 12:30"
+  },
+  {
+   "id": "N14",
+   "t": "12:45",
+   "text": "12:45 check: Felix, Wren, Finn, Otto, Leila sleeping"
+  },
+  {
+   "id": "N15",
+   "t": "13:00",
+   "text": "1:00 check: Felix, Wren, Finn, Otto, Leila sleeping"
+  },
+  {
+   "id": "N16",
+   "t": "13:15",
+   "text": "checked Felix, Wren, Finn, Otto, Leila 1:15"
+  },
+  {
+   "id": "N17",
+   "t": "13:30",
+   "text": "sleep check 1:30 Felix Wren Finn Otto Leila ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "13:45",
+   "text": "sleep check 1:45 Felix Wren Finn Otto Leila ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:00",
+   "text": "checked Felix, Wren, Finn, Otto, Leila 2:00"
+  },
+  {
+   "id": "N20",
+   "t": "14:15",
+   "text": "checked Felix, Wren, Finn, Otto, Leila 2:15"
+  },
+  {
+   "id": "N21",
+   "t": "14:31",
+   "text": "Felix, Wren, Finn, Otto, Leila up at 2:30"
+  },
+  {
+   "id": "N22",
+   "t": "14:40",
+   "text": "Felix napped 2:30 to 1:10"
+  },
+  {
+   "id": "N23",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate all of it"
+  },
+  {
+   "id": "N24",
+   "t": "16:21",
+   "text": "Felix home w Jen"
+  },
+  {
+   "id": "N25",
+   "t": "16:34",
+   "text": "Wren picked up by dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:46",
+   "text": "Finn picked up by mom"
+  },
+  {
+   "id": "N27",
+   "t": "17:06",
+   "text": "Otto picked up by mom"
+  },
+  {
+   "id": "N28",
+   "t": "17:19",
+   "text": "Leila picked up by dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "finn",
+   "what": "bitten"
+  },
+  {
+   "rule": "incident",
+   "kid": "wren",
+   "what": "biter: behavior incident record (7.11(5)(f))"
+  },
+  {
+   "rule": "time",
+   "kid": "felix",
+   "what": "nap ends before it starts"
+  },
+  {
+   "rule": "attendance",
+   "kid": "leila",
+   "what": "no sign-in"
+  }
+ ]
+}

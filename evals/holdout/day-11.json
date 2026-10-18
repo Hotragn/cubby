@@ -1,0 +1,232 @@
+{
+ "synthetic": true,
+ "id": "day-11",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "mateo",
+   "name": "Mateo",
+   "dob": "2026-02-11",
+   "pickup": [
+    {
+     "name": "Tom Brooks",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "hazel",
+   "name": "Hazel",
+   "dob": "2025-04-11",
+   "pickup": [
+    {
+     "name": "Ada Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "idris",
+   "name": "Idris",
+   "dob": "2024-06-11",
+   "pickup": [
+    {
+     "name": "Kim Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2023-09-11",
+   "pickup": [
+    {
+     "name": "Malik Khan",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "lucia",
+   "name": "Lucia",
+   "dob": "2022-09-11",
+   "pickup": [
+    {
+     "name": "Ines Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:58",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:25",
+   "text": "Mateo here"
+  },
+  {
+   "id": "N3",
+   "t": "07:30",
+   "text": "Hazel arrived 7:30"
+  },
+  {
+   "id": "N4",
+   "t": "07:38",
+   "text": "Idris in w dad"
+  },
+  {
+   "id": "N5",
+   "t": "07:43",
+   "text": "Otto in w mom"
+  },
+  {
+   "id": "N6",
+   "t": "07:48",
+   "text": "Lucia here"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Hazel ate most, Idris didn't touch it, Otto ate half, Lucia ate half"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Mateo 6 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Mateo wet, Hazel wet, Idris BM diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Otto used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "bubbles in the yard, Mateo and Hazel loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:10",
+   "text": "Otto fell off the little chair, bumped his chin, cold cloth, Gloria saw"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch fish sticks and corn. Hazel didn't touch it, Idris cleaned the plate, Otto ate most, Lucia cleaned the plate"
+  },
+  {
+   "id": "N14",
+   "t": "12:32",
+   "text": "Mateo, Hazel, Idris, Otto down for nap 12:30"
+  },
+  {
+   "id": "N15",
+   "t": "12:45",
+   "text": "checked Mateo, Hazel, Idris, Otto 12:45"
+  },
+  {
+   "id": "N16",
+   "t": "13:00",
+   "text": "1:00 check: Mateo, Hazel, Idris, Otto sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:15",
+   "text": "sleep check 1:15 Mateo Hazel Idris Otto ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "13:30",
+   "text": "sleep check 1:30 Mateo Hazel Idris Otto ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:45",
+   "text": "1:45 check: Mateo, Hazel, Idris, Otto sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "14:00",
+   "text": "2:00 check: Mateo, Hazel, Idris, Otto sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "14:15",
+   "text": "sleep check 2:15 Mateo Hazel Idris Otto ok on backs"
+  },
+  {
+   "id": "N22",
+   "t": "14:31",
+   "text": "Mateo, Hazel, Idris, Otto up at 2:30"
+  },
+  {
+   "id": "N23",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate all of it"
+  },
+  {
+   "id": "N24",
+   "t": "16:20",
+   "text": "Mateo picked up by dad"
+  },
+  {
+   "id": "N25",
+   "t": "17:01",
+   "text": "Idris home w Kim"
+  },
+  {
+   "id": "N26",
+   "t": "17:17",
+   "text": "Otto out 5:17, mom"
+  },
+  {
+   "id": "N27",
+   "t": "17:55",
+   "text": "Lucia picked up 5:52 by dad, traffic"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "otto",
+   "what": "Otto fell off the little chair, bumped his chin, cold cloth, Gloria saw"
+  },
+  {
+   "rule": "attendance",
+   "kid": "hazel",
+   "what": "no sign-out"
+  },
+  {
+   "rule": "late",
+   "kid": "lucia",
+   "what": "picked up 5:52"
+  }
+ ]
+}

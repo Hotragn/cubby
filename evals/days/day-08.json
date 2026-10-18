@@ -1,0 +1,301 @@
+{
+ "synthetic": true,
+ "id": "day-08",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "amara",
+   "name": "Amara",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Kim Ito",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "omar",
+   "name": "Omar",
+   "dob": "2025-02-11",
+   "pickup": [
+    {
+     "name": "Rita Brooks",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "june",
+   "name": "June",
+   "dob": "2024-08-11",
+   "pickup": [
+    {
+     "name": "Luis Chen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Rita Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "eli",
+   "name": "Eli",
+   "dob": "2023-08-11",
+   "pickup": [
+    {
+     "name": "Malik Dube",
+     "rel": "mom"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Tylenol",
+     "dose": "5 ml",
+     "until": "2026-10-07"
+    }
+   ]
+  },
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2022-12-11",
+   "pickup": [
+    {
+     "name": "Ines Chen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "tomas",
+   "name": "Tomas",
+   "dob": "2022-03-11",
+   "pickup": [
+    {
+     "name": "Jen Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  },
+  {
+   "id": "a",
+   "name": "Tia"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:59",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:18",
+   "text": "Amara here"
+  },
+  {
+   "id": "N3",
+   "t": "07:34",
+   "text": "Omar here"
+  },
+  {
+   "id": "N4",
+   "t": "07:47",
+   "text": "June here"
+  },
+  {
+   "id": "N5",
+   "t": "08:00",
+   "text": "Tia in"
+  },
+  {
+   "id": "N6",
+   "t": "08:03",
+   "text": "Wren dropped off by dad"
+  },
+  {
+   "id": "N7",
+   "t": "08:13",
+   "text": "Eli here"
+  },
+  {
+   "id": "N8",
+   "t": "08:21",
+   "text": "Ivy arrived 8:21"
+  },
+  {
+   "id": "N9",
+   "t": "08:30",
+   "text": "Tomas arrived 8:30"
+  },
+  {
+   "id": "N10",
+   "t": "08:30",
+   "text": "breakfast oatmeal and berries. Amara didn't touch it, Omar ate most, June ate most, Wren cleaned the plate, Eli ate all, Ivy ate most, Tomas didn't touch it"
+  },
+  {
+   "id": "N11",
+   "t": "09:20",
+   "text": "Amara wet, Omar BM, June wet, Wren wet diapers"
+  },
+  {
+   "id": "N12",
+   "t": "09:25",
+   "text": "Eli used the potty"
+  },
+  {
+   "id": "N13",
+   "t": "10:00",
+   "text": "blocks and trains, Amara and Omar loved it"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "Tia out"
+  },
+  {
+   "id": "N15",
+   "t": "10:50",
+   "text": "Tia back"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch bean soup. Amara ate most, Omar didn't touch it, June ate half, Wren ate all, Eli cleaned the plate, Ivy cleaned the plate, Tomas ate most"
+  },
+  {
+   "id": "N17",
+   "t": "12:00",
+   "text": "gave Eli tylenol 5 ml at 12, fever 100.2, Gloria"
+  },
+  {
+   "id": "N18",
+   "t": "12:32",
+   "text": "Amara, Omar, June, Wren, Eli, Ivy down for nap 12:30"
+  },
+  {
+   "id": "N19",
+   "t": "12:45",
+   "text": "sleep check 12:45 Amara Omar June Wren Eli Ivy ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "13:00",
+   "text": "checked Amara, Omar, June, Wren, Eli, Ivy 1:00"
+  },
+  {
+   "id": "N21",
+   "t": "13:15",
+   "text": "checked Amara, Omar, June, Wren, Eli, Ivy 1:15"
+  },
+  {
+   "id": "N22",
+   "t": "13:30",
+   "text": "1:30 check: Amara, Omar, June, Wren, Eli, Ivy sleeping"
+  },
+  {
+   "id": "N23",
+   "t": "13:45",
+   "text": "1:45 check: Amara, Omar, June, Wren, Eli, Ivy sleeping"
+  },
+  {
+   "id": "N24",
+   "t": "14:00",
+   "text": "sleep check 2:00 Amara Omar June Wren Eli Ivy ok on backs"
+  },
+  {
+   "id": "N25",
+   "t": "14:15",
+   "text": "2:15 check: Amara, Omar, June, Wren, Eli, Ivy sleeping"
+  },
+  {
+   "id": "N26",
+   "t": "14:31",
+   "text": "Amara, Omar, June, Wren, Eli, Ivy up at 2:30"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack crackers and cheese, everyone ate all of it"
+  },
+  {
+   "id": "N28",
+   "t": "16:22",
+   "text": "Amara home w Kim"
+  },
+  {
+   "id": "N29",
+   "t": "16:41",
+   "text": "Omar home w Rita"
+  },
+  {
+   "id": "N30",
+   "t": "16:58",
+   "text": "June out 4:58, dad"
+  },
+  {
+   "id": "N31",
+   "t": "17:14",
+   "text": "Wren out 5:14, dad"
+  },
+  {
+   "id": "N32",
+   "t": "17:25",
+   "text": "Eli out 5:25, mom"
+  },
+  {
+   "id": "N33",
+   "t": "17:25",
+   "text": "Ivy picked up by dad"
+  },
+  {
+   "id": "N34",
+   "t": "17:25",
+   "text": "Tomas home w Jen"
+  },
+  {
+   "id": "N35",
+   "t": "17:30",
+   "text": "Tia out"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "eli",
+   "what": "consent expired"
+  },
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "7 children with one adult"
+  }
+ ]
+}
