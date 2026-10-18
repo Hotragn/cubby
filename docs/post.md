@@ -59,7 +59,7 @@ None of those pricing pages mention medication consent or incident-report checks
 
 ![Local mode: Gemma 4 E4B read "Theo down for nap now" on the laptop, and a Temporal timer raised the sleep-check reminder (demo speed)](https://cubby-daycare.onrender.com/shots/timers.jpg)
 
-Try typing a note in the bottom bar (made-up names only, please), for example "Theo scraped his elbow on the fence at 4:30, bandaid, Rosa". Within a few seconds it shows up as an incident, and the To fix list grows by one, with a pre-filled report.
+Try typing a note in the bottom bar (made-up names only, please), for example "Theo scraped his elbow on the fence at 4:30, bandaid, Rosa". Within a few seconds it shows up as an incident, and the Fix list grows by one, with a pre-filled report.
 
 ## Code
 
@@ -97,7 +97,7 @@ The full report is in `docs/REPORT.md`.
 
 **Speed and cost per day of notes** (about 27 notes):
 
-- **Cloud** (Gemma 4 26B A4B): 34 s and about 6.7k tokens. That's [free on AI Studio's free tier](https://ai.google.dev/gemini-api/docs/pricing), or about $0.001 at [OpenRouter's price](https://openrouter.ai/google/gemma-4-26b-a4b-it).
+- **Cloud** (Gemma 4 26B A4B): 34–39 s and about 6.7k tokens. That's [free on AI Studio's free tier](https://ai.google.dev/gemini-api/docs/pricing), or about $0.001 at [OpenRouter's price](https://openrouter.ai/google/gemma-4-26b-a4b-it).
 - **Local** (Gemma 4 E4B on Ollama, M4 Mac, in the real app): the demo day's 39 notes took 162 s, with all 9 planted problems flagged. On the held-out set it caught 37 of 37 with 18 false alarms: the small model misses more wake-ups and sign-outs, and code then flags them as missing.
 - **Fine-tuned 4B reader** (Qwen3.5-4B + LoRA trained on [Tinker](https://thinkingmachines.ai/tinker/) from Gemma's labels on 1,291 separate synthetic notes): 37 of 37 with 10 false alarms, at 3.5 s per day.
 
