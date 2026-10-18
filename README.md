@@ -69,4 +69,4 @@ DAYS=evals/holdout node evals/run.ts pipeline   # held-out set
 - Photos added to a sheet stay on the phone.
 - Sentry gets errors and timings only: no note text, no names.
 
-UI pieces adapted from [React Bits](https://github.com/DavidHDev/react-bits) (MIT + Commons Clause): VoicePill, CountUp, BlurText, StatusMark, SpringCheck, ClickSpark.
+UI pieces adapted from [React Bits](https://github.com/DavidHDev/react-bits) (MIT + Commons Clause): VoicePill, CountUp, StatusMark, SpringCheck, ClickSpark.

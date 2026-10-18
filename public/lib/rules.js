@@ -3,7 +3,7 @@
 
 import { fmt, dur, dayTime } from "./time.js";
 
-const INJURY = /\b(bump(ed|s)?|bit (him|her|them|me|his|her|a friend|another)|bitten|biting|bite mark|got bit|scratch(ed|es)?|fell(?! asleep)|fall(?! asleep)|tripped|bleed(ing)?|blood|bruis(e|ed)|cut|hit (his|her|their) head|pinched|scraped?|swollen|swelling|split lip|nosebleed|choked|choking|burn(ed|t)?|sting|stung|injur(y|ed)|ouch|ice pack|bandaid|band-aid|goose ?egg)\b/i;
+const INJURY = /\b(bump(ed|s)?|bit (him|her|them|me|his|her|a friend|another)|bitten|biting|bite mark|got bit|scratch(ed|es)?|fell(?! asleep)|fall(?! asleep)|tripped|bleed(ing)?|blood|bruis(e|ed)|(got|a|has a|small) cut|cut (his|her|their|him|herself|himself)|hit (his|her|their) head|pinched|scraped?|swollen|swelling|split lip|nosebleed|choked|choking|burn(ed|t)?|sting|stung|injur(y|ed)|ouch|ice pack|bandaid|band-aid|goose ?egg)\b/i;
 const MEDS = /\b(tylenol|motrin|advil|ibuprofen|acetaminophen|benadryl|zyrtec|claritin|amoxicillin|antibiotic|inhaler|albuterol|epipen|epi-pen|diaper cream|desitin|hydrocortisone|eye drops|ear drops|medicine|medication|meds|dose(d)?|\d+(\.\d+)?\s?(ml|mg|cc|puffs?))\b/i;
 
 const sev = { fix: 0, check: 1 };

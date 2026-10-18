@@ -8,7 +8,6 @@ import { SAMPLE_NOTES, sampleRoster, SAMPLE_STAFF } from "../public/lib/sample.j
 import SAMPLE_X from "../public/lib/sample-extract.json";
 import VoicePill from "./bits/VoicePill.jsx";
 import CountUp from "./bits/CountUp.jsx";
-import BlurText from "./bits/BlurText.jsx";
 import StatusMark from "./bits/StatusMark.jsx";
 import SpringCheck from "./bits/SpringCheck.jsx";
 import ClickSpark from "./bits/ClickSpark.jsx";
@@ -116,7 +115,7 @@ function Header({ day, d, pack, fixes }) {
         <b>Cubby</b>
         {day.sample && <span className="pill demo">Demo · fictional kids</span>}
       </div>
-      <BlurText text={`${dateStr} at Rosa's`} className="h1" delay={60} animateBy="words" trigger="load" />
+      <h1 className="h1" aria-label={`${dateStr} at Rosa's`}>{`${dateStr} at Rosa's`.split(" ").map((w, i) => <span key={i} aria-hidden="true" style={{ animationDelay: `${i * 70}ms` }}>{w}&nbsp;</span>)}</h1>
       <p className="sub">Talk through the day. Gemma turns your notes into a log. Code checks it against <a href={pack.cites.ratio.url} target="_blank" rel="noreferrer">{pack.short}</a> and writes each parent's sheet.</p>
       <div className="stats">
         <div><CountUp to={day.notes.length} duration={0.9} trigger="load" className="num" /><span>quick notes</span></div>
@@ -406,7 +405,7 @@ function Capture({ onSend, busy, roster, setToast }) {
   const [text, setText] = useState("");
   const [rec, setRec] = useState(null);
   const [stt, setStt] = useState(null);
-  const ex = useMemo(() => [`${roster[2]?.name} and ${roster[3]?.name} napped 1:10 to 2:40`, `${roster[1]?.name} ate most of his lunch`, `Checked ${roster[0]?.name} 1:25, on her back`], [roster]);
+  const ex = useMemo(() => [`${roster[2]?.name} napped 1:10 to 2:40`, `${roster[1]?.name} ate most of his lunch`, `Checked ${roster[0]?.name} 1:25, on her back`], [roster]);
   async function onStart() {
     warmUpWhisper((s) => setStt(s));
     try { setRec(await recordAudio()); } catch { setToast({ kind: "err", text: "The microphone isn't available here. Type the note instead." }); }
