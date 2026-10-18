@@ -3,6 +3,9 @@
 export function toMin(s) {
   if (s == null || s === "") return null;
   if (typeof s === "number") return s;
+  // Speech-to-text writes "1:10" as "110" and "12:45" as "1245".
+  const bare = String(s).trim().toLowerCase().match(/^(\d{1,2})(\d{2})\s*(a\.?m\.?|p\.?m\.?)?$/);
+  if (bare && +bare[2] < 60) s = `${bare[1]}:${bare[2]}${bare[3] ? " " + bare[3] : ""}`;
   const m = String(s).trim().toLowerCase().match(/^(\d{1,2})(?::(\d{2}))?\s*(a\.?m\.?|p\.?m\.?)?$/);
   if (!m) return null;
   let h = +m[1];

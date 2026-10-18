@@ -1,1 +1,6 @@
 day-01 caught 0/0 fa 1 31.4s  FA med: Note mentions "medicine" but no medication was logged
+day-02 caught 2/2 fa 0 30.9s  
+day-03 caught 1/1 fa 0 33.1s  
+day-04 caught 2/2 fa 0 32.8s  
+day-05 caught 2/2 fa 0 32.8s  
+day-06 caught 2/2 fa 1 34.2s  FA attendance:leila Leila: who picked up at 4:43 pm?

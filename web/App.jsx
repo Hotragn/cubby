@@ -136,7 +136,12 @@ function statusOf(d, c, at) {
   if (w.in == null) return { s: "away", label: "Not in yet" };
   if (w.out != null && w.out <= at) return { s: "gone", label: `Home ${fmt(w.out)}` };
   const nap = d.events.find((e) => e.type === "nap" && e.kids?.includes(c.id) && e.start <= at && (e.end == null || e.end > at));
-  if (nap) return { s: "nap", label: `Napping since ${fmt(nap.start)}` };
+  if (nap) {
+    // The next sleep check is due 15 minutes after the last one (606 CMR 7.10(7)(d)).
+    const checks = d.events.filter((e) => e.type === "sleep_check" && e.kids?.includes(c.id) && e.start >= nap.start && e.start <= at).map((e) => e.start);
+    const due = Math.max(nap.start, ...checks) + 15;
+    return { s: "nap", label: `Napping since ${fmt(nap.start)}`, due, late: at > due };
+  }
   return { s: "here", label: `Here since ${fmt(w.in)}` };
 }
 
@@ -159,7 +164,7 @@ function Today({ d, flags, go }) {
           {d.roster.map((c) => { const st = statusOf(d, c, at); const n = byKid(c.id); return (
             <li key={c.id} className={`kid ${st.s}`}>
               <Avatar c={c} />
-              <div className="grow"><b>{c.name}</b> <span className="muted">{ageLabel(ageMonths(c, d.date))}</span><div className="state"><i className={`dot ${st.s}`} />{st.label}</div></div>
+              <div className="grow"><b>{c.name}</b> <span className="muted">{ageLabel(ageMonths(c, d.date))}</span><div className="state"><i className={`dot ${st.s}`} />{st.label}</div>{st.due != null && <div className={`due ${st.late ? "late" : ""}`}>{st.late ? `Sleep check overdue since ${fmt(st.due)}` : `Next sleep check by ${fmt(st.due)}`}</div>}</div>
               {n ? <button className="chip hot" onClick={() => go("fix")}>{n} to fix</button> : <span className="chip cool">OK</span>}
             </li>); })}
         </ul>

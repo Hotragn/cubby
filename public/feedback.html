@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cubby · 2-minute feedback</title>
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .app { padding-bottom: 40px; } fieldset { border: 0; padding: 0; margin: 18px 0 0; } legend { font-weight: 600; margin-bottom: 8px; }
+  .opts { display: flex; flex-wrap: wrap; gap: 8px; } .opts label { margin: 0; display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 99px; padding: 8px 14px; font-weight: 500; cursor: pointer; }
+  .opts input { width: auto; min-height: 0; margin: 0; } .opts label:has(input:checked) { border-color: var(--ink); box-shadow: 0 0 0 2px var(--ink) inset; }
+  textarea { min-height: 90px; } .ok { background: var(--cool-bg); color: var(--cool); padding: 14px; border-radius: 14px; margin-top: 16px; display: none; }
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="hero"><div class="brand"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span><b>Cubby</b></div>
+    <h1 class="h1" style="font-size:34px">Two minutes of feedback</h1>
+    <p class="sub">Thanks for trying the demo. No names and no child details, please. Answers are stored anonymously.</p></header>
+  <form id="f" class="card">
+    <fieldset><legend>You are a…</legend><div class="opts">
+      <label><input type="radio" name="role" value="home provider" required> Home daycare provider</label><label><input type="radio" name="role" value="center staff"> Center staff</label>
+      <label><input type="radio" name="role" value="nanny"> Nanny</label><label><input type="radio" name="role" value="parent"> Parent</label><label><input type="radio" name="role" value="other"> Other</label></div></fieldset>
+    <label>State (optional)<input name="state" maxlength="30" placeholder="e.g. MA"></label>
+    <fieldset><legend>Within a minute, did you get what Cubby does?</legend><div class="opts">
+      <label><input type="radio" name="understood" value="yes" required> Yes</label><label><input type="radio" name="understood" value="mostly"> Mostly</label><label><input type="radio" name="understood" value="no"> No</label></div></fieldset>
+    <fieldset><legend>How useful would the “To fix” list be before an inspection? (1–5)</legend><div class="opts">
+      <label><input type="radio" name="flagsHelp" value="1" required> 1</label><label><input type="radio" name="flagsHelp" value="2"> 2</label><label><input type="radio" name="flagsHelp" value="3"> 3</label><label><input type="radio" name="flagsHelp" value="4"> 4</label><label><input type="radio" name="flagsHelp" value="5"> 5</label></div></fieldset>
+    <fieldset><legend>Would a parent want the daily sheet as written?</legend><div class="opts">
+      <label><input type="radio" name="sheetTone" value="yes as is"> Yes, as is</label><label><input type="radio" name="sheetTone" value="needs edits"> With edits</label><label><input type="radio" name="sheetTone" value="no"> No</label></div></fieldset>
+    <fieldset><legend>What would you pay per month for this?</legend><div class="opts">
+      <label><input type="radio" name="wouldPay" value="0"> Nothing</label><label><input type="radio" name="wouldPay" value="under 10"> Under $10</label><label><input type="radio" name="wouldPay" value="10-20"> $10–20</label><label><input type="radio" name="wouldPay" value="20+"> $20+</label></div></fieldset>
+    <label>What's wrong, confusing or missing?<textarea name="missing" maxlength="1200"></textarea></label>
+    <button class="btn primary wide">Send feedback</button>
+    <p class="ok" id="ok">Thank you. That really helps.</p>
+  </form>
+</main>
+<script>
+document.getElementById("f").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  const b = e.target.querySelector("button"); b.disabled = true; b.textContent = "Sending…";
+  try { const r = await fetch("/api/feedback", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(data) }); if (!r.ok) throw 0; document.getElementById("ok").style.display = "block"; b.textContent = "Sent"; }
+  catch { b.disabled = false; b.textContent = "Couldn't send. Try again"; }
+});
+</script>
+</body>
+</html>

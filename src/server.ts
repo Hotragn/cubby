@@ -34,6 +34,17 @@ const send = (res: any, code: number, obj: unknown) => { res.writeHead(code, { "
 
 const ttsCache = new Map<string, Buffer>();
 
+// MongoDB holds one thing: anonymous tester feedback from /feedback.html. Never child data.
+let feedbackCol: any = null;
+async function feedback() {
+  if (feedbackCol || !process.env.MONGODB_URI) return feedbackCol;
+  const { MongoClient } = await import("mongodb");
+  const client = new MongoClient(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 8000 });
+  await client.connect();
+  feedbackCol = client.db("cubby").collection("feedback");
+  return feedbackCol;
+}
+
 const server = createServer(async (req, res) => {
   const url = new URL(req.url ?? "/", "http://x");
   const ip = String(req.headers["x-forwarded-for"] ?? req.socket.remoteAddress ?? "").split(",")[0].trim();
@@ -59,6 +70,17 @@ const server = createServer(async (req, res) => {
       const usage = newUsage();
       const text = await warmSheet(String(b.child ?? "your child").slice(0, 40), facts, lang, usage);
       return send(res, 200, { text, usage });
+    }
+
+    if (url.pathname === "/api/feedback" && req.method === "POST") {
+      if (!allow(ip, 5)) return send(res, 429, { error: "Too many requests. Wait a minute." });
+      const b = await body(req, 6_000);
+      const pickS = (v: any, n = 400) => String(v ?? "").slice(0, n);
+      const doc = { at: new Date(), role: pickS(b.role, 40), state: pickS(b.state, 30), understood: pickS(b.understood, 40), flagsHelp: Math.max(0, Math.min(5, +b.flagsHelp || 0)), wouldPay: pickS(b.wouldPay, 40), sheetTone: pickS(b.sheetTone, 40), missing: pickS(b.missing, 1200), build: BOOT };
+      const col = await feedback().catch(() => null);
+      if (!col) return send(res, 503, { error: "Feedback storage is off right now." });
+      await col.insertOne(doc);
+      return send(res, 200, { ok: true });
     }
 
     // ElevenLabs reads the finished, checked sheet aloud for a parent.

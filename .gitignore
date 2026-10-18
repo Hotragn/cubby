@@ -5,3 +5,4 @@ node_modules/
 evals/out/raw/
 *.log
 public/build/
+public/_test-voice.wav
