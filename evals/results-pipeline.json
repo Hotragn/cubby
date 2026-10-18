@@ -2,13 +2,13 @@
  "summary": {
   "mode": "pipeline",
   "model": "gemma-4-26b-a4b-it",
-  "ranAt": "2026-10-18T23:07:23.558Z",
+  "ranAt": "2026-10-18T23:39:11.032Z",
   "days": 12,
   "planted": 21,
   "caught": 21,
   "missed": 0,
   "fa": 2,
-  "ms": 396993,
+  "ms": 397752,
   "inT": 43565,
   "outT": 39013,
   "notes": 337,
@@ -233,7 +233,7 @@
    "falseAlarms": [
     "med:nora Note mentions \"diaper cream\" but no medication was logged"
    ],
-   "wallMs": 35181,
+   "wallMs": 35940,
    "inTokens": 3739,
    "outTokens": 3829,
    "calls": 3,

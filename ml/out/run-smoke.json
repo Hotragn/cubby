@@ -1,0 +1,15 @@
+{
+ "base": "Qwen/Qwen3.5-4B",
+ "rank": 32,
+ "lr": 0.0003,
+ "batch": 32,
+ "epochs": 2,
+ "n_train": 32,
+ "losses": [
+  0.3002,
+  0.173
+ ],
+ "tokens": 20122,
+ "sampler_path": "tinker://8002a81d-5ee6-569d-8408-83fd569aeb1c:train:0/sampler_weights/cubby-reader-lora-smoke",
+ "train_seconds": 17
+}

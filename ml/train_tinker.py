@@ -44,7 +44,8 @@ def main():
         toks = p + c; w = [0.0] * len(p) + [1.0] * len(c)
         return types.Datum(model_input=types.ModelInput.from_ints(toks[:-1]), loss_fn_inputs={"target_tokens": toks[1:], "weights": w[1:]})
 
-    train = [json.loads(l) for l in open("evals/train/labels.jsonl") if l.strip()]
+    train = [json.loads(l) for l in open(os.environ.get("LABELS", "evals/train/labels.jsonl")) if l.strip()]
+    if os.environ.get("SMOKE"): train = train[:BATCH]
     rnd = random.Random(7)
     log = {"base": BASE, "rank": RANK, "lr": LR, "batch": BATCH, "epochs": EPOCHS, "n_train": len(train), "losses": [], "tokens": 0}
     t0 = time.time(); step = 0; total = EPOCHS * ((len(train) + BATCH - 1) // BATCH)
@@ -63,13 +64,16 @@ def main():
                 tot += -sum(a * b for a, b in zip(lp, ws)); wsum += sum(ws)
             log["losses"].append(round(tot / max(wsum, 1), 4)); step += 1
             if step % 5 == 1: print(f"step {step}/{total} loss {log['losses'][-1]:.4f} ({time.time() - t0:.0f}s)", flush=True)
-    saved = tc.save_weights_for_sampler(name="cubby-reader-lora-v1").result()
+    saved = tc.save_weights_for_sampler(name="cubby-reader-lora-smoke" if os.environ.get("SMOKE") else "cubby-reader-lora-v1").result()
     log["sampler_path"] = saved.path; log["train_seconds"] = round(time.time() - t0)
-    os.makedirs("ml/out", exist_ok=True); json.dump(log, open("ml/out/run.json", "w"), indent=1)
+    os.makedirs("ml/out", exist_ok=True); json.dump(log, open("ml/out/run-smoke.json" if os.environ.get("SMOKE") else "ml/out/run.json", "w"), indent=1)
     print("trained", log["train_seconds"], "s on", len(train), "notes", flush=True)
 
     sampler = sc.create_sampling_client(model_path=saved.path)
     params = types.SamplingParams(max_tokens=700, temperature=0.0, stop=[tok.eos_token])
+    if os.environ.get("SMOKE"):
+        e = train[0]; r = sampler.sample(types.ModelInput.from_ints(enc(msgs(e["roster"], e["staff"], e["note"]))), 1, params).result()
+        print("smoke ok", log["losses"], "| sample:", tok.decode(r.sequences[0].tokens, skip_special_tokens=True)[:300]); return
     for dset in ["holdout", "days"]:
         outdir = f"evals/raw/{TAG}/{dset}"; os.makedirs(outdir, exist_ok=True)
         for f in sorted(glob.glob(f"evals/{dset}/*.json")):

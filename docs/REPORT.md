@@ -1,5 +1,32 @@
 # Cubby eval report (all test data is SYNTHETIC)
 
+## Final numbers (Oct 18, current code; all scored by the same rule code)
+
+| Reader | Dev set (21 planted, 12 days) | Held-out (37 planted, 14 days) | Held-out, 2 hand-written days only (16 planted) | Seconds per day of notes |
+|---|---|---|---|---|
+| **Gemma 4 26B A4B, cloud** (AI Studio) + code | 21 caught, 2 false alarms | **37 caught, 4 false alarms** | 16 caught, 1 false alarm | 34–39 (3 batches in parallel) |
+| Gemma 4 26B A4B **alone** (asked to find the problems) | 16 caught, 67 false alarms | 30 caught, 72 false alarms | 12 caught, 6 false alarms | 12–32 (one call) |
+| **Gemma 4 E4B, local** (Ollama, M4 Mac 24 GB) + code | not run | 37 caught, 18 false alarms | 16 caught, 2 false alarms | 161 average (Ollama shared with app tests during the run; 109 when run alone on the 2 hand days) |
+| **Qwen3.5-4B + LoRA trained on Tinker** + code | 21 caught, 9 false alarms | 37 caught, 10 false alarms | 16 caught, 1 false alarm | 3.5 (one Tinker sampling call per note, in parallel) |
+
+**Reading the table:**
+- Every reader paired with Cubby's code caught every planted problem. They differ in false alarms and speed.
+- The cloud model makes the fewest false alarms.
+- The local E4B model makes the most: it misses wake-up times and sign-outs, and code then flags those as missing.
+- The Tinker student is about 10 times faster than the cloud model.
+  - 8 of its 10 held-out false alarms come from one day, where it logged a pretend doctor kit's "medicine" as real doses.
+  - On the hand-written days, the only ones outside the generator's templates, it ties the cloud model.
+  - It was trained on Gemma 26B's own labels, so matching Gemma is the most it could be expected to do.
+  - **It doesn't beat Gemma**, so Cubby keeps Gemma as the default reader.
+
+**Local mode in the running app:** with `GEMMA_LOCAL=1`, the server read the whole fictional demo day (39 notes) in 162 s with no cache. All 9 planted problems were flagged (`evals/local-sample-day.json`).
+
+**Tinker training:**
+- 1,291 notes from 48 SYNTHETIC training days (generator seeds 9101–9404, never the held-out seed 4242).
+- Labels came from Gemma 4 26B A4B, keeping only notes whose events passed Cubby's checks; 57 notes were dropped.
+- Qwen/Qwen3.5-4B with a rank-32 LoRA: 2 epochs, 82 steps, 233 s of training, loss 0.205 → 0.031 (`ml/out/run.json`). The first plan was to label with Gemma 31B; it took 37 s to answer "Say ok" that night, so I used 26B.
+
+
 Every child, adult and note in `evals/` was invented for testing. Problems were planted on purpose, and the answer key was written by the same script before any model saw a note.
 
 ## Protocol
@@ -11,7 +38,22 @@ Every child, adult and note in `evals/` was invented for testing. Problems were 
 - **Scoring:** a planted problem is "caught" if a flag has the same rule and child. A "false alarm" is any flag that matches no planted item. Questions the model asks (rather than guesses) are not scored.
 - **Baseline:** the same Gemma model gets the roster (ages, consents, pickup lists), a plain-English version of the same rules and all of the day's notes, and is asked to list every problem as JSON. Same scorer.
 
-## Results (gemma-4-26b-a4b-it on Google AI Studio, thinking "minimal")
+## Run history on the held-out set (each run re-reads every note)
+| Run | Code | Caught | False alarms |
+|---|---|---|---|
+| 1 (Oct 18, first and only run before any held-out-driven change) | a2bde45 | 37/37 | 6 |
+| 2 (after the "cut" fix; evals/log-holdout-pipeline-run2.txt) | before setup work | 37/37 | 4 |
+| 3 (after setup/aliases/question changes; raw outputs saved in evals/raw/) | current | 37/37 | 4 |
+
+Run 3's 4 false alarms:
+- "pretend doctor kit … 'medicine'" (day-01)
+- "who picked up at 4:43?" (day-06)
+- diaper cream logged without a dose (day-12; the key didn't count it as a problem)
+- "Bodhi's mom here" not read as a sign-out (hand-A)
+
+A re-score bug is worth recording: the dev and held-out sets share file names, so for one re-score the cached held-out outputs had been overwritten by dev outputs, and it scored 28/37. The cache is now keyed by set, and run 3 re-read everything.
+
+## Results (gemma-4-26b-a4b-it on Google AI Studio, thinking "minimal"): run 1 detail
 
 | Set | Cubby (Gemma reads, code checks) | Gemma alone |
 |---|---|---|
@@ -47,3 +89,9 @@ Held-out, by rule (Cubby / Gemma alone): sleep checks 9/9 vs 6/9 · ratio 4/4 vs
 - I wrote both the rules and the test days. The generated held-out days share templates with the dev set; only the 2 hand-written days are truly new phrasing.
 - Not modeled: Massachusetts 7.10(4)(e) (7–8 children with school-agers) and the "one of them walking" detail of 7.10(4)(d).
 - Regulation text comes from the Cornell LII mirror of 606 CMR 7.00. This is not legal advice.
+
+## Durable timers (Temporal, local dev server)
+`node scripts/temporal-restart-test.ts`: a 20 s sleep-check timer, worker killed at 5.0 s and restarted at 12.0 s. The reminder fired at 20.1 s (108 ms late). Raw result: `evals/temporal-restart.json`. End to end in the app (local mode, TIMER_SCALE=60): a live note "Theo down for nap now" was read by Gemma 4 E4B on this Mac, and "Sleep check due for Theo" appeared in the app when the scaled 15-minute timer ran out.
+
+## Phone checks done from the laptop
+375×812 (Android Chrome user agent), 320×568 and a narrow pane: no horizontal scroll, and the note bar is 60 px tall. `?micdenied=1` and `?novoice=1` exercise the fallbacks; typed notes work in both. Real WhatsApp and Brave in-app browsers, iOS Safari and a real mic are left to docs/PHONE-TEST.md.

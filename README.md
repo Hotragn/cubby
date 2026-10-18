@@ -79,7 +79,13 @@ The test days in `evals/` are synthetic: every child, adult and note was invente
 node evals/run.ts pipeline                      # Gemma reads, code checks
 node evals/run.ts baseline                      # Gemma alone, asked to find the problems
 DAYS=evals/holdout node evals/run.ts pipeline   # held-out set
+GEMMA_LOCAL=1 DAYS=evals/holdout node evals/run.ts pipeline   # same, on Ollama
+RESCORE=1 ...                                   # re-score saved model output (evals/raw/) after a rule change
 ```
+
+## Fine-tuned small reader (Tinker, experimental)
+
+`ml/train_tinker.py` trains a LoRA on Qwen3.5-4B to read notes into events, using labels from Gemma 4 26B on synthetic training days kept separate from the held-out set. It catches the same planted problems as Gemma on the held-out set and is about 10 times faster, but raises more false alarms (10 vs 4), so Gemma stays the default reader. See docs/REPORT.md.
 
 ## Privacy
 

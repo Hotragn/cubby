@@ -1,0 +1,318 @@
+{
+ "summary": {
+  "mode": "pipeline-local-holdout",
+  "model": "gemma4:e4b-it-q4_K_M",
+  "ranAt": "2026-10-18T23:38:22.796Z",
+  "days": 14,
+  "planted": 37,
+  "caught": 37,
+  "missed": 0,
+  "fa": 18,
+  "ms": 2253414,
+  "inT": 49979,
+  "outT": 46097,
+  "notes": 383,
+  "avgSecPerDay": 161
+ },
+ "results": [
+  {
+   "day": "day-01",
+   "notes": 27,
+   "planted": 0,
+   "caught": [],
+   "missed": [],
+   "falseAlarms": [
+    "incident:hazel Hazel: injury mentioned, no incident report",
+    "incident:amara Amara: injury mentioned, no incident report",
+    "incident:nora Nora: injury mentioned, no incident report",
+    "incident:mateo Mateo: injury mentioned, no incident report",
+    "med: Note mentions \"medicine\" but no medication was logged"
+   ],
+   "wallMs": 99593,
+   "inTokens": 3638,
+   "outTokens": 2853,
+   "calls": 3,
+   "retries": 0,
+   "questions": 3,
+   "unverified": 0,
+   "events": 32
+  },
+  {
+   "day": "day-02",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "incident:ivy",
+    "attendance:maya"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 105404,
+   "inTokens": 3593,
+   "outTokens": 2880,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 33
+  },
+  {
+   "day": "day-03",
+   "notes": 28,
+   "planted": 1,
+   "caught": [
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:priya Priya: no sign-out time"
+   ],
+   "wallMs": 136997,
+   "inTokens": 3624,
+   "outTokens": 2972,
+   "calls": 3,
+   "retries": 0,
+   "questions": 1,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-04",
+   "notes": 29,
+   "planted": 2,
+   "caught": [
+    "med:ravi",
+    "med:ezra"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 154567,
+   "inTokens": 3664,
+   "outTokens": 3318,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-05",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "sleep:jonah",
+    "late:omar"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 134567,
+   "inTokens": 3557,
+   "outTokens": 2801,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 31
+  },
+  {
+   "day": "day-06",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "incident:leila",
+    "attendance:jonah"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 161789,
+   "inTokens": 3567,
+   "outTokens": 3261,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-07",
+   "notes": 28,
+   "planted": 4,
+   "caught": [
+    "incident:finn",
+    "incident:wren",
+    "time:felix",
+    "attendance:leila"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 172558,
+   "inTokens": 3653,
+   "outTokens": 3394,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 39
+  },
+  {
+   "day": "day-08",
+   "notes": 35,
+   "planted": 2,
+   "caught": [
+    "med:eli",
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:eli Eli: no sign-out time"
+   ],
+   "wallMs": 261773,
+   "inTokens": 3856,
+   "outTokens": 4785,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 54
+  },
+  {
+   "day": "day-09",
+   "notes": 26,
+   "planted": 2,
+   "caught": [
+    "med:wren",
+    "sleep:zoe"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 166411,
+   "inTokens": 3607,
+   "outTokens": 3184,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 34
+  },
+  {
+   "day": "day-10",
+   "notes": 29,
+   "planted": 0,
+   "caught": [],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:omar Omar: no sign-out time"
+   ],
+   "wallMs": 182727,
+   "inTokens": 3675,
+   "outTokens": 3450,
+   "calls": 3,
+   "retries": 0,
+   "questions": 4,
+   "unverified": 0,
+   "events": 36
+  },
+  {
+   "day": "day-11",
+   "notes": 27,
+   "planted": 3,
+   "caught": [
+    "incident:otto",
+    "attendance:hazel",
+    "late:lucia"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:idris Idris: no sign-out time"
+   ],
+   "wallMs": 174534,
+   "inTokens": 3632,
+   "outTokens": 3378,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-12",
+   "notes": 33,
+   "planted": 1,
+   "caught": [
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "sleep:lucia Lucia: nap started 12:32 pm has no wake-up time",
+    "sleep:ravi Ravi: nap started 12:32 pm has no wake-up time",
+    "sleep:finn Finn: nap started 12:32 pm has no wake-up time",
+    "sleep:sofia Sofia: nap started 12:32 pm has no wake-up time",
+    "sleep:wren Wren: nap started 12:32 pm has no wake-up time",
+    "sleep:otto Otto: nap started 12:32 pm has no wake-up time",
+    "med:lucia Note mentions \"diaper cream\" but no medication was logged"
+   ],
+   "wallMs": 212459,
+   "inTokens": 3794,
+   "outTokens": 4284,
+   "calls": 3,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 43
+  },
+  {
+   "day": "hand-A",
+   "notes": 27,
+   "planted": 8,
+   "caught": [
+    "incident:faisal",
+    "med:clara",
+    "sleep:bodhi",
+    "sleep:clara",
+    "sleep:desmond",
+    "sleep:elsie",
+    "attendance:desmond",
+    "late:elsie"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:bodhi Bodhi: no sign-out time"
+   ],
+   "wallMs": 154980,
+   "inTokens": 3692,
+   "outTokens": 2981,
+   "calls": 3,
+   "retries": 0,
+   "questions": 3,
+   "unverified": 0,
+   "events": 33
+  },
+  {
+   "day": "hand-B",
+   "notes": 19,
+   "planted": 8,
+   "caught": [
+    "ratio:-",
+    "med:greta",
+    "incident:ines",
+    "incident:hugo",
+    "sleep:greta",
+    "sleep:hugo",
+    "sleep:ines",
+    "attendance:ines"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:greta Greta: no sign-out time"
+   ],
+   "wallMs": 135055,
+   "inTokens": 2427,
+   "outTokens": 2556,
+   "calls": 2,
+   "retries": 0,
+   "questions": 2,
+   "unverified": 0,
+   "events": 24
+  }
+ ]
+}

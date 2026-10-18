@@ -1,0 +1,17 @@
+6/48 days, kept 156, dropped 3
+12/48 days, kept 331, dropped 6
+18/48 days, kept 487, dropped 9
+24/48 days, kept 663, dropped 11
+30/48 days, kept 796, dropped 37
+36/48 days, kept 970, dropped 41
+42/48 days, kept 1127, dropped 43
+48/48 days, kept 1291, dropped 57
+teacher usage {
+  calls: 141,
+  inTokens: 170315,
+  outTokens: 150850,
+  ms: 3884130,
+  cached: 0,
+  retries: 72,
+  model: 'gemma-4-26b-a4b-it'
+}

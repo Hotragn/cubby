@@ -45,18 +45,10 @@ None of those pricing pages mention medication consent or incident-report checks
 4. **Send.** Each parent gets a short sheet built from the checked events. Gemma can make it warmer or write it in Spanish, Portuguese, Haitian Creole, Arabic and more. Before anyone sees it, code checks every time, number, food and health word against the log. If Gemma added anything, the plain version is used. Injuries and medicine are **never re-worded**: they stay in the provider's exact words. And one parent's sheet never names another child ("Another child bit Leo on the arm…"). (A [public App Store review](https://apps.apple.com/us/app/id428376881) of another daycare app describes a Spanish machine translation that turned a child being "out" sick into a child who had "died".)
 5. **Inspector log.** One tap exports the day, or the whole week, as PDF or CSV. Each entry keeps the note it came from.
 
-**It's set up for a real program, not just the demo.** Under "My program", a provider adds their own children:
-- date of birth or age group
-- allergies, which are checked against every logged food
-- medication consents with an expiry date
-- photo consent (no consent, no photo slot)
-- the authorized pickup list
-
-They also add their staff and the program's rules: sleep-check interval and ratio limits, which start at the state's numbers and warn if set looser. It all lives on the device, with export and import as a file.
-
-**Questions get answered once.** When Gemma asks "Which child is 'the baby'?", the provider taps Mila. The bottle moves to Mila's sheet, every rule re-runs, and "the baby" means Mila for the rest of the day, so the next "the baby napped 3:30 to 4" lands on her without asking again.
-
-**A week view** shows each day's attendance, flags opened and resolved, incidents and medicine.
+**For a real program, not just the demo:**
+- **My program:** each child's date of birth, allergies (checked against every logged food), medication consents with expiry dates, photo consent and pickup list, plus staff and the program's rules. The rules start at the state's numbers and warn if set looser. Everything stays on the device, with export and import as a file.
+- **Questions get answered once:** tap Mila for "Which child is 'the baby'?", and the bottle moves to her sheet, every rule re-runs, and the next "the baby napped 3:30 to 4" lands on Mila without asking again.
+- **Week view:** attendance, flags opened and resolved, incidents and medicine for each day.
 
 ## Demo
 
@@ -100,11 +92,13 @@ After fixing those, I committed a **held-out set** of 14 days, answer key includ
 | **Cubby** (Gemma reads, code checks) | **37** | **4** |
 | **Gemma alone** (same model, same rules in plain English, same notes) | 30 | 72 |
 
-Gemma alone missed 3 of the 4 ratio problems; it doesn't count heads minute by minute. It also missed every 20-minute sleep-check gap on the hand-written day. Most of its false alarms were confused complaints about times. **Where Gemma alone wins:** it uses about a quarter of the tokens, and it caught every incident too. Two of the first run's 6 false alarms came from "grapes cut in quarters" tripping my injury-word backstop. I fixed that after seeing it, which is why the latest run has 4. The remaining 4 are real weaknesses:
-- A pretend doctor kit raised a "check" item.
-- "Bodhi's mom here" wasn't read as a sign-out.
-- A diaper-cream application was logged without a dose, which the answer key didn't count as a problem.
-- One pickup note named no person.
+Gemma alone missed 3 of the 4 ratio problems, because it doesn't count heads minute by minute. It also missed every 20-minute sleep-check gap on the hand-written day, and most of its false alarms were confused complaints about times. **Where Gemma alone wins:** it uses about a quarter of the tokens, and it caught every incident too.
+
+Two of Cubby's first-run false alarms were "grapes cut in quarters" tripping my injury-word backstop, which I fixed after seeing it. The other 4 are real weaknesses:
+- a pretend doctor kit
+- "Bodhi's mom here" not read as a sign-out
+- diaper cream logged without a dose
+- a pickup note that named no one
 
 The full report is in `docs/REPORT.md`.
 
@@ -123,7 +117,7 @@ With an open-weight model, the whole pipeline runs on the provider's own laptop.
 
 It also keeps the business viable. Home providers complain in public reviews about per-child pricing they only found after a trial. Daily Connect's 6-kid plan is $12.99/month. With an open model, a day of reading costs a tenth of a cent hosted, or nothing locally. So I'd charge a **flat $9 a month for up to 12 children**, and the open-source version stays free to self-host.
 
-Finally, openness is what lets you check the work. Every rule cites its regulation, every flag shows its evidence, and the code that decides is readable. A provider doesn't have to trust me. They can read the line that flagged them.
+And openness lets anyone check the work. Every rule cites its regulation, every flag shows its evidence, and a provider can read the exact line of code that flagged them.
 
 ## Prize Categories
 

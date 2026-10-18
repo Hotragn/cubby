@@ -2,7 +2,7 @@
  "summary": {
   "mode": "pipeline-holdout",
   "model": "gemma-4-26b-a4b-it",
-  "ranAt": "2026-10-18T23:16:30.241Z",
+  "ranAt": "2026-10-18T23:38:13.610Z",
   "days": 14,
   "planted": 37,
   "caught": 37,

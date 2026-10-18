@@ -1,0 +1,684 @@
+{
+ "via": "running app server (fresh, no cache), GEMMA_LOCAL=1, POST /api/extract, Apple M4 24 GB",
+ "model": "gemma4:e4b-it-q4_K_M",
+ "wallMs": 162401,
+ "usage": {
+  "calls": 4,
+  "inTokens": 4905,
+  "outTokens": 4208,
+  "ms": 320790,
+  "cached": 0,
+  "retries": 0,
+  "model": "gemma4:e4b-it-q4_K_M",
+  "wallMs": 162367
+ },
+ "notes": {
+  "N37": {
+   "id": "N37",
+   "events": [
+    {
+     "type": "depart",
+     "kids": [
+      "Leo"
+     ],
+     "quote": "Leo picked up by Sami",
+     "time": "now",
+     "by": "Sami"
+    }
+   ],
+   "questions": []
+  },
+  "N38": {
+   "id": "N38",
+   "events": [
+    {
+     "type": "depart",
+     "kids": [
+      "Theo"
+     ],
+     "quote": "Theo went home with his grandma Ingrid",
+     "time": "now",
+     "by": "his grandma Ingrid"
+    }
+   ],
+   "questions": []
+  },
+  "N39": {
+   "id": "N39",
+   "events": [
+    {
+     "type": "depart",
+     "kids": [
+      "Ava"
+     ],
+     "quote": "Ava picked up 5:50 by mom, she was stuck in traffic",
+     "time": "5:50",
+     "by": "mom"
+    }
+   ],
+   "questions": []
+  },
+  "N25": {
+   "id": "N25",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "all"
+     ],
+     "quote": "check 1:55 all asleep",
+     "time": "1:55"
+    }
+   ],
+   "questions": []
+  },
+  "N26": {
+   "id": "N26",
+   "events": [
+    {
+     "type": "nap",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila awake 2:05",
+     "start": null,
+     "end": "2:05"
+    },
+    {
+     "type": "diaper",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "wet diaper",
+     "time": "2:05",
+     "kind": "wet"
+    }
+   ],
+   "questions": []
+  },
+  "N27": {
+   "id": "N27",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "Theo",
+      "Ava",
+      "Leo"
+     ],
+     "quote": "checked Theo Ava Leo 2:10",
+     "time": "2:10"
+    }
+   ],
+   "questions": []
+  },
+  "N28": {
+   "id": "N28",
+   "events": [
+    {
+     "type": "nap",
+     "kids": [
+      "Theo"
+     ],
+     "quote": "Theo up at 2:20",
+     "start": null,
+     "end": "2:20"
+    }
+   ],
+   "questions": []
+  },
+  "N29": {
+   "id": "N29",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "Ava",
+      "Leo"
+     ],
+     "quote": "checked Ava and Leo 2:25",
+     "time": "2:25"
+    }
+   ],
+   "questions": []
+  },
+  "N30": {
+   "id": "N30",
+   "events": [
+    {
+     "type": "nap",
+     "kids": [
+      "Ava",
+      "Leo"
+     ],
+     "quote": "Ava and Leo napped 1:10 to 2:40",
+     "start": "1:10",
+     "end": "2:40"
+    }
+   ],
+   "questions": []
+  },
+  "N31": {
+   "id": "N31",
+   "events": [
+    {
+     "type": "staff_out",
+     "staff": "Dana",
+     "quote": "Dana out for school run",
+     "time": "15:00"
+    }
+   ],
+   "questions": []
+  },
+  "N32": {
+   "id": "N32",
+   "events": [
+    {
+     "type": "meal",
+     "kids": [
+      "all"
+     ],
+     "quote": "snack apple slices and crackers, all kids ate most",
+     "time": "15:00",
+     "food": "apple slices and crackers",
+     "meal": "snack",
+     "amount": "most"
+    }
+   ],
+   "questions": []
+  },
+  "N33": {
+   "id": "N33",
+   "events": [
+    {
+     "type": "depart",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila picked up by Hana",
+     "time": "15:15",
+     "by": "Hana"
+    }
+   ],
+   "questions": []
+  },
+  "N34": {
+   "id": "N34",
+   "events": [
+    {
+     "type": "staff_in",
+     "staff": "Dana",
+     "quote": "Dana back",
+     "time": "15:30"
+    }
+   ],
+   "questions": []
+  },
+  "N35": {
+   "id": "N35",
+   "events": [
+    {
+     "type": "incident",
+     "kids": [
+      "Ava",
+      "Leo"
+     ],
+     "quote": "Ava bit Leo on the arm over a truck, no mark, talked to both",
+     "time": "16:00",
+     "what": "bit",
+     "body": "arm",
+     "action": "talked to both",
+     "by": null
+    }
+   ],
+   "questions": []
+  },
+  "N36": {
+   "id": "N36",
+   "events": [
+    {
+     "type": "mood",
+     "kids": [
+      "Leo"
+     ],
+     "quote": "Leo in a great mood today, so chatty",
+     "time": "16:20",
+     "mood": "great mood"
+    }
+   ],
+   "questions": []
+  },
+  "N1": {
+   "id": "N1",
+   "events": [
+    {
+     "type": "staff_in",
+     "staff": "Rosa",
+     "quote": "Rosa in."
+    }
+   ],
+   "questions": []
+  },
+  "N2": {
+   "id": "N2",
+   "events": [
+    {
+     "type": "arrive",
+     "kids": [
+      "Ava"
+     ],
+     "quote": "Ava here, mom dropped her off.",
+     "by": "mom"
+    },
+    {
+     "type": "mood",
+     "kids": [
+      "Ava"
+     ],
+     "quote": "Bit sleepy"
+    }
+   ],
+   "questions": []
+  },
+  "N3": {
+   "id": "N3",
+   "events": [
+    {
+     "type": "arrive",
+     "kids": [
+      "Leo"
+     ],
+     "quote": "Leo in with his dad",
+     "by": "his dad"
+    }
+   ],
+   "questions": []
+  },
+  "N4": {
+   "id": "N4",
+   "events": [
+    {
+     "type": "arrive",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila arrived, Hana dropped off",
+     "by": "Hana"
+    }
+   ],
+   "questions": []
+  },
+  "N5": {
+   "id": "N5",
+   "events": [
+    {
+     "type": "staff_in",
+     "staff": "Dana",
+     "quote": "Dana in"
+    }
+   ],
+   "questions": []
+  },
+  "N6": {
+   "id": "N6",
+   "events": [
+    {
+     "type": "arrive",
+     "kids": [
+      "Theo"
+     ],
+     "quote": "Theo here w dad",
+     "by": "dad"
+    }
+   ],
+   "questions": []
+  },
+  "N7": {
+   "id": "N7",
+   "events": [
+    {
+     "type": "meal",
+     "kids": [
+      "Leo",
+      "Ava",
+      "Theo"
+     ],
+     "quote": "breakfast oatmeal and bananas. Leo ate all of it, Ava half, Theo most.",
+     "food": "oatmeal and bananas",
+     "meal": "breakfast",
+     "amount": "all"
+    },
+    {
+     "type": "meal",
+     "kids": [
+      "Ava"
+     ],
+     "quote": "breakfast oatmeal and bananas. Leo ate all of it, Ava half, Theo most.",
+     "food": "oatmeal and bananas",
+     "meal": "breakfast",
+     "amount": "half"
+    },
+    {
+     "type": "meal",
+     "kids": [
+      "Theo"
+     ],
+     "quote": "breakfast oatmeal and bananas. Leo ate all of it, Ava half, Theo most.",
+     "food": "oatmeal and bananas",
+     "meal": "breakfast",
+     "amount": "most"
+    },
+    {
+     "type": "bottle",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila 5 oz bottle",
+     "oz": "5",
+     "food": null
+    }
+   ],
+   "questions": []
+  },
+  "N8": {
+   "id": "N8",
+   "events": [
+    {
+     "type": "diaper",
+     "kids": [
+      "Mila",
+      "Theo"
+     ],
+     "quote": "Mila and Theo wet diapers.",
+     "kind": "wet"
+    },
+    {
+     "type": "diaper",
+     "kids": [
+      "Leo"
+     ],
+     "quote": "Leo tried the potty, pee!",
+     "kind": "wet",
+     "toilet": true
+    }
+   ],
+   "questions": []
+  },
+  "N9": {
+   "id": "N9",
+   "events": [
+    {
+     "type": "diaper",
+     "kids": [
+      "Ava"
+     ],
+     "quote": "Ava pooped, changed",
+     "kind": "bm",
+     "toilet": true
+    }
+   ],
+   "questions": []
+  },
+  "N10": {
+   "id": "N10",
+   "events": [
+    {
+     "type": "nap",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila down for morning nap 9:45",
+     "start": "9:45"
+    }
+   ],
+   "questions": []
+  },
+  "N11": {
+   "id": "N11",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "checked Mila 10:00 on her back",
+     "time": "10:00",
+     "position": "back",
+     "by": null
+    }
+   ],
+   "questions": []
+  },
+  "N12": {
+   "id": "N12",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "checked Mila, on back sleeping",
+     "time": "10:15",
+     "position": "back",
+     "by": null
+    }
+   ],
+   "questions": []
+  },
+  "N13": {
+   "id": "N13",
+   "events": [
+    {
+     "type": "incident",
+     "kids": [
+      "Theo"
+     ],
+     "quote": "Theo bumped his forehead on the train table, small red mark, ice pack 5 min. Dana saw it",
+     "what": "bumped his forehead on the train table, small red mark",
+     "body": "forehead",
+     "action": "ice pack 5 min",
+     "by": "Dana"
+    }
+   ],
+   "questions": []
+  },
+  "N14": {
+   "id": "N14",
+   "events": [
+    {
+     "type": "nap",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila up 10:25 happy",
+     "start": null,
+     "end": "10:25"
+    }
+   ],
+   "questions": []
+  },
+  "N15": {
+   "id": "N15",
+   "events": [
+    {
+     "type": "activity",
+     "kids": [
+      "Ava",
+      "Leo"
+     ],
+     "quote": "Playdough at the table, Ava and Leo loved it",
+     "what": "Playdough at the table"
+    },
+    {
+     "type": "activity",
+     "kids": [
+      "Theo"
+     ],
+     "quote": "Theo walked laps around the couch",
+     "what": "walked laps around the couch"
+    }
+   ],
+   "questions": []
+  },
+  "N16": {
+   "id": "N16",
+   "events": [
+    {
+     "type": "bottle",
+     "kids": [
+      "all"
+     ],
+     "quote": "the baby had a 4 oz bottle",
+     "oz": 4
+    }
+   ],
+   "questions": [
+    {
+     "quote": "the baby had a 4 oz bottle",
+     "ask": "Which child is 'the baby'?"
+    }
+   ]
+  },
+  "N17": {
+   "id": "N17",
+   "events": [
+    {
+     "type": "med",
+     "kids": [
+      "Leo"
+     ],
+     "quote": "Gave Leo 2.5 ml Tylenol for teething at 11:30 - Rosa",
+     "med": "Tylenol",
+     "dose": "2.5 ml",
+     "by": "Rosa"
+    }
+   ],
+   "questions": []
+  },
+  "N18": {
+   "id": "N18",
+   "events": [
+    {
+     "type": "meal",
+     "kids": [
+      "Ava",
+      "Leo"
+     ],
+     "quote": "Lunch mac and cheese and peas. Ava and Leo ate all, Theo picked at it, Mila carrot puree half",
+     "food": "mac and cheese and peas",
+     "meal": "lunch",
+     "amount": "all"
+    },
+    {
+     "type": "meal",
+     "kids": [
+      "Theo"
+     ],
+     "quote": "Lunch mac and cheese and peas. Ava and Leo ate all, Theo picked at it, Mila carrot puree half",
+     "food": "mac and cheese and peas",
+     "meal": "lunch",
+     "amount": "little"
+    },
+    {
+     "type": "meal",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Lunch mac and cheese and peas. Ava and Leo ate all, Theo picked at it, Mila carrot puree half",
+     "food": "carrot puree",
+     "meal": "lunch",
+     "amount": "half"
+    }
+   ],
+   "questions": []
+  },
+  "N19": {
+   "id": "N19",
+   "events": [
+    {
+     "type": "nap",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila down for nap 12:20",
+     "start": "12:20",
+     "end": null
+    }
+   ],
+   "questions": []
+  },
+  "N20": {
+   "id": "N20",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila check 12:35, back",
+     "time": "12:35",
+     "position": "back"
+    }
+   ],
+   "questions": []
+  },
+  "N21": {
+   "id": "N21",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "Mila"
+     ],
+     "quote": "Mila check ok 12:50",
+     "time": "12:50"
+    }
+   ],
+   "questions": []
+  },
+  "N22": {
+   "id": "N22",
+   "events": [
+    {
+     "type": "nap",
+     "kids": [
+      "Theo"
+     ],
+     "quote": "Theo down for nap 12:55",
+     "start": "12:55",
+     "end": null
+    }
+   ],
+   "questions": []
+  },
+  "N23": {
+   "id": "N23",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "all"
+     ],
+     "quote": "sleep check all kids 1:25, everyone on their backs",
+     "time": "1:25",
+     "position": "back"
+    }
+   ],
+   "questions": []
+  },
+  "N24": {
+   "id": "N24",
+   "events": [
+    {
+     "type": "sleep_check",
+     "kids": [
+      "all"
+     ],
+     "quote": "checked all 1:40",
+     "time": "1:40"
+    }
+   ],
+   "questions": []
+  }
+ }
+}

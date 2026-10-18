@@ -7,3 +7,23 @@ day-06 caught 2/2 fa 0 161.8s
 day-07 caught 4/4 fa 0 172.6s  
 day-08 caught 2/2 fa 1 261.8s  FA attendance:eli Eli: no sign-out time
 day-09 caught 2/2 fa 0 166.4s  
+day-10 caught 0/0 fa 1 182.7s  FA attendance:omar Omar: no sign-out time
+day-11 caught 3/3 fa 1 174.5s  FA attendance:idris Idris: no sign-out time
+day-12 caught 1/1 fa 7 212.5s  FA sleep:lucia Lucia: nap started 12:32 pm has no wake-up time | sleep:ravi Ravi: nap started 12:32 pm has no wake-up time | sleep:finn Finn: nap started 12:32 pm has no wake-up time | sleep:sofia Sofia: nap started 12:32 pm has no wake-up time | sleep:wren Wren: nap started 12:32 pm has no wake-up time | sleep:otto Otto: nap started 12:32 pm has no wake-up time | med:lucia Note mentions "diaper cream" but no medication was logged
+hand-A caught 8/8 fa 1 155.0s  FA attendance:bodhi Bodhi: no sign-out time
+hand-B caught 8/8 fa 1 135.1s  FA attendance:greta Greta: no sign-out time
+{
+  mode: 'pipeline-local-holdout',
+  model: 'gemma4:e4b-it-q4_K_M',
+  ranAt: '2026-10-18T23:30:20.285Z',
+  days: 14,
+  planted: 37,
+  caught: 37,
+  missed: 0,
+  fa: 18,
+  ms: 2253414,
+  inT: 49979,
+  outT: 46097,
+  notes: 383,
+  avgSecPerDay: 161
+}

@@ -1,0 +1,305 @@
+{
+ "summary": {
+  "mode": "pipeline-tinker-holdout",
+  "model": "gemma-4-26b-a4b-it",
+  "ranAt": "2026-10-18T23:37:57.616Z",
+  "days": 14,
+  "planted": 37,
+  "caught": 37,
+  "missed": 0,
+  "fa": 10,
+  "ms": 49634,
+  "inT": 0,
+  "outT": 19550,
+  "notes": 383,
+  "avgSecPerDay": 3.5
+ },
+ "results": [
+  {
+   "day": "day-01",
+   "notes": 27,
+   "planted": 0,
+   "caught": [],
+   "missed": [],
+   "falseAlarms": [
+    "med:hazel Hazel: medicine given with no parent consent on file",
+    "med:hazel Hazel: medication log is missing dose",
+    "med:amara Amara: medicine given with no parent consent on file",
+    "med:amara Amara: medication log is missing dose",
+    "med:nora Nora: medicine given with no parent consent on file",
+    "med:nora Nora: medication log is missing dose",
+    "med:mateo Mateo: medicine given with no parent consent on file",
+    "med:mateo Mateo: medication log is missing dose"
+   ],
+   "wallMs": 7346,
+   "inTokens": 0,
+   "outTokens": 1367,
+   "calls": 27,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 34
+  },
+  {
+   "day": "day-02",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "incident:ivy",
+    "attendance:maya"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 1774,
+   "inTokens": 0,
+   "outTokens": 1288,
+   "calls": 25,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 33
+  },
+  {
+   "day": "day-03",
+   "notes": 28,
+   "planted": 1,
+   "caught": [
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 1784,
+   "inTokens": 0,
+   "outTokens": 1291,
+   "calls": 28,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-04",
+   "notes": 29,
+   "planted": 2,
+   "caught": [
+    "med:ravi",
+    "med:ezra"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 2005,
+   "inTokens": 0,
+   "outTokens": 1435,
+   "calls": 29,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 40
+  },
+  {
+   "day": "day-05",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "sleep:jonah",
+    "late:omar"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 6908,
+   "inTokens": 0,
+   "outTokens": 1205,
+   "calls": 25,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 33
+  },
+  {
+   "day": "day-06",
+   "notes": 25,
+   "planted": 2,
+   "caught": [
+    "incident:leila",
+    "attendance:jonah"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 7008,
+   "inTokens": 0,
+   "outTokens": 1324,
+   "calls": 25,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-07",
+   "notes": 28,
+   "planted": 4,
+   "caught": [
+    "incident:finn",
+    "incident:wren",
+    "time:felix",
+    "attendance:leila"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 1733,
+   "inTokens": 0,
+   "outTokens": 1447,
+   "calls": 28,
+   "retries": 0,
+   "questions": 1,
+   "unverified": 0,
+   "events": 39
+  },
+  {
+   "day": "day-08",
+   "notes": 35,
+   "planted": 2,
+   "caught": [
+    "med:eli",
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 3023,
+   "inTokens": 0,
+   "outTokens": 2077,
+   "calls": 35,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 54
+  },
+  {
+   "day": "day-09",
+   "notes": 26,
+   "planted": 2,
+   "caught": [
+    "med:wren",
+    "sleep:zoe"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 2700,
+   "inTokens": 0,
+   "outTokens": 1263,
+   "calls": 26,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 34
+  },
+  {
+   "day": "day-10",
+   "notes": 29,
+   "planted": 0,
+   "caught": [],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 1771,
+   "inTokens": 0,
+   "outTokens": 1420,
+   "calls": 29,
+   "retries": 0,
+   "questions": 3,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-11",
+   "notes": 27,
+   "planted": 3,
+   "caught": [
+    "incident:otto",
+    "attendance:hazel",
+    "late:lucia"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 1761,
+   "inTokens": 0,
+   "outTokens": 1365,
+   "calls": 27,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 37
+  },
+  {
+   "day": "day-12",
+   "notes": 33,
+   "planted": 1,
+   "caught": [
+    "ratio:-"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "med:lucia Note mentions \"diaper cream\" but no medication was logged"
+   ],
+   "wallMs": 7199,
+   "inTokens": 0,
+   "outTokens": 1644,
+   "calls": 33,
+   "retries": 0,
+   "questions": 0,
+   "unverified": 0,
+   "events": 47
+  },
+  {
+   "day": "hand-A",
+   "notes": 27,
+   "planted": 8,
+   "caught": [
+    "incident:faisal",
+    "med:clara",
+    "sleep:bodhi",
+    "sleep:clara",
+    "sleep:desmond",
+    "sleep:elsie",
+    "attendance:desmond",
+    "late:elsie"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:bodhi Bodhi: no sign-out time"
+   ],
+   "wallMs": 2873,
+   "inTokens": 0,
+   "outTokens": 1408,
+   "calls": 27,
+   "retries": 0,
+   "questions": 3,
+   "unverified": 0,
+   "events": 34
+  },
+  {
+   "day": "hand-B",
+   "notes": 19,
+   "planted": 8,
+   "caught": [
+    "ratio:-",
+    "med:greta",
+    "incident:ines",
+    "incident:hugo",
+    "sleep:greta",
+    "sleep:hugo",
+    "sleep:ines",
+    "attendance:ines"
+   ],
+   "missed": [],
+   "falseAlarms": [],
+   "wallMs": 1749,
+   "inTokens": 0,
+   "outTokens": 1016,
+   "calls": 19,
+   "retries": 0,
+   "questions": 1,
+   "unverified": 0,
+   "events": 26
+  }
+ ]
+}
