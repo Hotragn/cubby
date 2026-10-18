@@ -58,8 +58,16 @@ export async function transcribe(blob, status) {
 
 // What this browser can do. In-app browsers (WhatsApp, Instagram, some Brave
 // setups) may hide the mic or block module workers; then the app is text-only.
+// Test switches for the phone checklist: ?novoice=1 behaves like a browser with no
+// microphone API; ?micdenied=1 behaves like a user who said "Don't allow".
+const q = typeof location !== "undefined" ? new URLSearchParams(location.search) : new URLSearchParams();
+if (q.get("micdenied") === "1" && typeof navigator !== "undefined" && navigator.mediaDevices) {
+  navigator.mediaDevices.getUserMedia = () => Promise.reject(Object.assign(new Error("Permission denied"), { name: "NotAllowedError" }));
+}
+
 export function voiceSupport() {
   if (typeof window === "undefined") return { ok: false, why: "No browser." };
+  if (q.get("novoice") === "1") return { ok: false, why: "This browser doesn't give apps the microphone (common in in-app browsers). Type the note, or open the page in Safari or Chrome." };
   if (!window.isSecureContext) return { ok: false, why: "Voice needs a secure (https) page. Type the note instead." };
   if (!navigator.mediaDevices?.getUserMedia) return { ok: false, why: "This browser doesn't give apps the microphone (common in in-app browsers). Type the note, or open the page in Safari or Chrome." };
   if (!window.MediaRecorder) return { ok: false, why: "This browser can't record audio. Type the note, or open the page in Safari or Chrome." };
