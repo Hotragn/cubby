@@ -1,0 +1,75 @@
+{
+ "summary": {
+  "mode": "pipeline-local-holdout",
+  "model": "gemma4:e4b-it-q4_K_M",
+  "ranAt": "2026-10-18T22:30:26.039Z",
+  "days": 2,
+  "planted": 16,
+  "caught": 16,
+  "missed": 0,
+  "fa": 4,
+  "ms": 217187,
+  "inT": 6119,
+  "outT": 5537,
+  "notes": 46,
+  "avgSecPerDay": 108.6
+ },
+ "results": [
+  {
+   "day": "hand-A",
+   "notes": 27,
+   "planted": 8,
+   "caught": [
+    "incident:faisal",
+    "med:clara",
+    "sleep:bodhi",
+    "sleep:clara",
+    "sleep:desmond",
+    "sleep:elsie",
+    "attendance:desmond",
+    "late:elsie"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "incident:clara Clara: injury mentioned, no incident report",
+    "incident:desmond Desmond: injury mentioned, no incident report",
+    "attendance:bodhi Bodhi: no sign-out time"
+   ],
+   "wallMs": 109329,
+   "inTokens": 3692,
+   "outTokens": 2981,
+   "calls": 3,
+   "retries": 0,
+   "questions": 3,
+   "unverified": 0,
+   "events": 33
+  },
+  {
+   "day": "hand-B",
+   "notes": 19,
+   "planted": 8,
+   "caught": [
+    "ratio:-",
+    "med:greta",
+    "incident:ines",
+    "incident:hugo",
+    "sleep:greta",
+    "sleep:hugo",
+    "sleep:ines",
+    "attendance:ines"
+   ],
+   "missed": [],
+   "falseAlarms": [
+    "attendance:greta Greta: no sign-out time"
+   ],
+   "wallMs": 107858,
+   "inTokens": 2427,
+   "outTokens": 2556,
+   "calls": 2,
+   "retries": 0,
+   "questions": 2,
+   "unverified": 0,
+   "events": 24
+  }
+ ]
+}

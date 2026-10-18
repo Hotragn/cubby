@@ -1,1 +1,17 @@
 hand-A caught 8/8 fa 3 109.3s  FA incident:clara Clara: injury mentioned, no incident report | incident:desmond Desmond: injury mentioned, no incident report | attendance:bodhi Bodhi: no sign-out time
+hand-B caught 8/8 fa 1 107.9s  FA attendance:greta Greta: no sign-out time
+{
+  mode: 'pipeline-local-holdout',
+  model: 'gemma4:e4b-it-q4_K_M',
+  ranAt: '2026-10-18T22:30:26.039Z',
+  days: 2,
+  planted: 16,
+  caught: 16,
+  missed: 0,
+  fa: 4,
+  ms: 217187,
+  inT: 6119,
+  outT: 5537,
+  notes: 46,
+  avgSecPerDay: 108.6
+}

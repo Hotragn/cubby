@@ -98,7 +98,7 @@ export function checkDay(day, pack, opts = {}) {
     for (let i = 1; i < pts.length; i++) if (pts[i] - pts[i - 1] > every) gaps.push([pts[i - 1], pts[i]]);
     if (gaps.length) {
       const worst = gaps.reduce((a, b) => (b[1] - b[0] > a[1] - a[0] ? b : a));
-      add({ rule: "sleep", level: "fix", kids: [k], title: `${child.name}: ${gaps.length} sleep-check gap${gaps.length > 1 ? "s" : ""} longer than ${every} min`, detail: `Longest: ${fmt(worst[0])} → ${fmt(worst[1])} (${dur(worst[1] - worst[0])}). Checks logged: ${checks.length ? checks.map(fmt).join(", ") : "none"}. Nap ${fmt(n.start)}–${fmt(n.end)}.`, evidence: [ev2evidence(day, n), ...day.events.filter((e) => e.type === "sleep_check" && e.kids?.includes(k) && e.start >= n.start && e.start <= n.end).map((e) => ev2evidence(day, e))], cite: cite("sleep") });
+      add({ rule: "sleep", level: "fix", kids: [k], title: `${child.name}: ${dur(worst[1] - worst[0])} without a sleep check (${fmt(worst[0])} → ${fmt(worst[1])})`, detail: `${gaps.length > 1 ? `${gaps.length} gaps over ${every} min this nap. ` : ""}Checks logged: ${checks.length ? checks.map(fmt).join(", ") : "none"}. Nap ${fmt(n.start)}–${fmt(n.end)}.`, evidence: [ev2evidence(day, n), ...day.events.filter((e) => e.type === "sleep_check" && e.kids?.includes(k) && e.start >= n.start && e.start <= n.end).map((e) => ev2evidence(day, e))], cite: cite("sleep") });
     }
   }
 
@@ -192,7 +192,8 @@ export function checkDay(day, pack, opts = {}) {
   // 7. Questions the reader raised instead of guessing.
   for (const q of day.questions ?? []) if (!q.answered) add({ rule: "question", level: "check", kids: [], title: q.ask, evidence: [{ noteId: q.noteId, t: noteById(day, q.noteId)?.t, quote: q.quote || noteById(day, q.noteId)?.text, verified: true }] });
 
-  flags.sort((a, b) => sev[a.level] - sev[b.level]);
+  const ORDER = { ratio: 0, incident: 1, med: 2, sleep: 3, attendance: 4, time: 5, late: 6, evidence: 7, question: 8 };
+  flags.sort((a, b) => sev[a.level] - sev[b.level] || (ORDER[a.rule] ?? 9) - (ORDER[b.rule] ?? 9));
   return flags;
 }
 
