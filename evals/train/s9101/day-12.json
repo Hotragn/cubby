@@ -1,0 +1,274 @@
+{
+ "synthetic": true,
+ "id": "day-12",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2026-04-11",
+   "pickup": [
+    {
+     "name": "Rita Brooks",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Diaper cream",
+     "dose": "thin layer",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "felix",
+   "name": "Felix",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Luis Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "sofia",
+   "name": "Sofia",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Kim Ito",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "omar",
+   "name": "Omar",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Malik Ellis",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Tom Jansen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Rita Chen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  },
+  {
+   "id": "a",
+   "name": "Joy"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:50",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:14",
+   "text": "Wren here"
+  },
+  {
+   "id": "N3",
+   "t": "07:20",
+   "text": "Felix in w mom"
+  },
+  {
+   "id": "N4",
+   "t": "07:37",
+   "text": "Sofia dropped off by dad"
+  },
+  {
+   "id": "N5",
+   "t": "07:41",
+   "text": "Omar here"
+  },
+  {
+   "id": "N6",
+   "t": "07:47",
+   "text": "Jonah arrived 7:47"
+  },
+  {
+   "id": "N7",
+   "t": "07:57",
+   "text": "Kai arrived 7:57"
+  },
+  {
+   "id": "N8",
+   "t": "08:00",
+   "text": "Joy in"
+  },
+  {
+   "id": "N9",
+   "t": "08:30",
+   "text": "breakfast yogurt and banana. Sofia had a few bites, Omar ate all, Jonah had a few bites, Kai ate all"
+  },
+  {
+   "id": "N10",
+   "t": "08:35",
+   "text": "Wren 5 oz bottle"
+  },
+  {
+   "id": "N11",
+   "t": "08:35",
+   "text": "Felix 4 oz bottle"
+  },
+  {
+   "id": "N12",
+   "t": "09:20",
+   "text": "Wren wet, Felix BM, Sofia wet, Omar wet, Jonah wet diapers"
+  },
+  {
+   "id": "N13",
+   "t": "09:25",
+   "text": "Kai used the potty"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "blocks and trains, Wren and Felix loved it"
+  },
+  {
+   "id": "N15",
+   "t": "10:55",
+   "text": "Wren diaper cream at the 10:55 change"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Sofia ate all, Omar had a few bites, Jonah ate half, Kai had a few bites"
+  },
+  {
+   "id": "N17",
+   "t": "12:32",
+   "text": "Wren, Felix, Sofia, Omar, Jonah, Kai down for nap 12:30"
+  },
+  {
+   "id": "N18",
+   "t": "12:45",
+   "text": "12:45 check: Wren, Felix, Sofia, Omar, Jonah, Kai sleeping"
+  },
+  {
+   "id": "N19",
+   "t": "13:00",
+   "text": "checked Wren, Felix, Sofia, Omar, Jonah, Kai 1:00"
+  },
+  {
+   "id": "N20",
+   "t": "13:15",
+   "text": "checked Wren, Felix, Sofia, Omar, Jonah, Kai 1:15"
+  },
+  {
+   "id": "N21",
+   "t": "13:30",
+   "text": "sleep check 1:30 Wren Felix Sofia Omar Jonah Kai ok on backs"
+  },
+  {
+   "id": "N22",
+   "t": "13:45",
+   "text": "checked Wren, Felix, Sofia, Omar, Jonah, Kai 1:45"
+  },
+  {
+   "id": "N23",
+   "t": "14:00",
+   "text": "checked Wren, Felix, Sofia, Omar, Jonah, Kai 2:00"
+  },
+  {
+   "id": "N24",
+   "t": "14:15",
+   "text": "checked Wren, Felix, Sofia, Omar, Jonah, Kai 2:15"
+  },
+  {
+   "id": "N25",
+   "t": "14:31",
+   "text": "Wren, Felix, Sofia, Omar, Jonah, Kai up at 2:30"
+  },
+  {
+   "id": "N26",
+   "t": "15:00",
+   "text": "Joy out"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack pear and cheese, everyone ate all of it"
+  },
+  {
+   "id": "N28",
+   "t": "16:22",
+   "text": "Wren picked up by dad"
+  },
+  {
+   "id": "N29",
+   "t": "16:38",
+   "text": "Felix home w Luis"
+  },
+  {
+   "id": "N30",
+   "t": "16:50",
+   "text": "Sofia out 4:50, dad"
+  },
+  {
+   "id": "N31",
+   "t": "17:10",
+   "text": "Omar home w Malik"
+  },
+  {
+   "id": "N32",
+   "t": "17:25",
+   "text": "Jonah home w Tom"
+  },
+  {
+   "id": "N33",
+   "t": "17:25",
+   "text": "Kai home w Rita"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "after Joy leaves: 4 under 2 with one adult"
+  }
+ ]
+}

@@ -1,0 +1,301 @@
+{
+ "synthetic": true,
+ "id": "day-08",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "maya",
+   "name": "Maya",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Dee Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2025-02-11",
+   "pickup": [
+    {
+     "name": "Luis Khan",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ravi",
+   "name": "Ravi",
+   "dob": "2024-08-11",
+   "pickup": [
+    {
+     "name": "Sam Alvarez",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "omar",
+   "name": "Omar",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Luis Ellis",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "amara",
+   "name": "Amara",
+   "dob": "2023-08-11",
+   "pickup": [
+    {
+     "name": "Jen Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Tylenol",
+     "dose": "5 ml",
+     "until": "2026-10-07"
+    }
+   ]
+  },
+  {
+   "id": "mateo",
+   "name": "Mateo",
+   "dob": "2022-12-11",
+   "pickup": [
+    {
+     "name": "Kim Ellis",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2022-03-11",
+   "pickup": [
+    {
+     "name": "Sam Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  },
+  {
+   "id": "a",
+   "name": "Tia"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:52",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:21",
+   "text": "Maya arrived 7:21"
+  },
+  {
+   "id": "N3",
+   "t": "07:26",
+   "text": "Ivy here"
+  },
+  {
+   "id": "N4",
+   "t": "07:32",
+   "text": "Ravi in w dad"
+  },
+  {
+   "id": "N5",
+   "t": "07:37",
+   "text": "Omar dropped off by mom"
+  },
+  {
+   "id": "N6",
+   "t": "07:44",
+   "text": "Amara here"
+  },
+  {
+   "id": "N7",
+   "t": "07:57",
+   "text": "Mateo dropped off by mom"
+  },
+  {
+   "id": "N8",
+   "t": "08:00",
+   "text": "Tia in"
+  },
+  {
+   "id": "N9",
+   "t": "08:07",
+   "text": "Otto in w dad"
+  },
+  {
+   "id": "N10",
+   "t": "08:30",
+   "text": "breakfast cheerios and milk. Maya didn't touch it, Ivy ate most, Ravi cleaned the plate, Omar ate all, Amara cleaned the plate, Mateo ate all, Otto didn't touch it"
+  },
+  {
+   "id": "N11",
+   "t": "09:20",
+   "text": "Maya wet, Ivy wet, Ravi BM, Omar wet diapers"
+  },
+  {
+   "id": "N12",
+   "t": "09:25",
+   "text": "Amara used the potty"
+  },
+  {
+   "id": "N13",
+   "t": "10:00",
+   "text": "sandbox outside, Maya and Ivy loved it"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "Tia out"
+  },
+  {
+   "id": "N15",
+   "t": "10:50",
+   "text": "Tia back"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch chicken and rice. Maya didn't touch it, Ivy didn't touch it, Ravi ate all, Omar didn't touch it, Amara ate most, Mateo cleaned the plate, Otto cleaned the plate"
+  },
+  {
+   "id": "N17",
+   "t": "12:00",
+   "text": "gave Amara tylenol 5 ml at 12, fever 100.2, Gloria"
+  },
+  {
+   "id": "N18",
+   "t": "12:32",
+   "text": "Maya, Ivy, Ravi, Omar, Amara, Mateo down for nap 12:30"
+  },
+  {
+   "id": "N19",
+   "t": "12:45",
+   "text": "sleep check 12:45 Maya Ivy Ravi Omar Amara Mateo ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "13:00",
+   "text": "sleep check 1:00 Maya Ivy Ravi Omar Amara Mateo ok on backs"
+  },
+  {
+   "id": "N21",
+   "t": "13:15",
+   "text": "checked Maya, Ivy, Ravi, Omar, Amara, Mateo 1:15"
+  },
+  {
+   "id": "N22",
+   "t": "13:30",
+   "text": "sleep check 1:30 Maya Ivy Ravi Omar Amara Mateo ok on backs"
+  },
+  {
+   "id": "N23",
+   "t": "13:45",
+   "text": "checked Maya, Ivy, Ravi, Omar, Amara, Mateo 1:45"
+  },
+  {
+   "id": "N24",
+   "t": "14:00",
+   "text": "sleep check 2:00 Maya Ivy Ravi Omar Amara Mateo ok on backs"
+  },
+  {
+   "id": "N25",
+   "t": "14:15",
+   "text": "2:15 check: Maya, Ivy, Ravi, Omar, Amara, Mateo sleeping"
+  },
+  {
+   "id": "N26",
+   "t": "14:31",
+   "text": "Maya, Ivy, Ravi, Omar, Amara, Mateo up at 2:30"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack crackers and cheese, everyone ate some"
+  },
+  {
+   "id": "N28",
+   "t": "16:11",
+   "text": "Maya home w Dee"
+  },
+  {
+   "id": "N29",
+   "t": "16:26",
+   "text": "Ivy home w Luis"
+  },
+  {
+   "id": "N30",
+   "t": "16:45",
+   "text": "Ravi out 4:45, dad"
+  },
+  {
+   "id": "N31",
+   "t": "17:00",
+   "text": "Omar picked up by mom"
+  },
+  {
+   "id": "N32",
+   "t": "17:20",
+   "text": "Amara picked up by dad"
+  },
+  {
+   "id": "N33",
+   "t": "17:25",
+   "text": "Mateo picked up by mom"
+  },
+  {
+   "id": "N34",
+   "t": "17:25",
+   "text": "Otto home w Sam"
+  },
+  {
+   "id": "N35",
+   "t": "17:30",
+   "text": "Tia out"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "amara",
+   "what": "consent expired"
+  },
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "7 children with one adult"
+  }
+ ]
+}

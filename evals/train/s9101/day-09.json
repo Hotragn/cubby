@@ -1,0 +1,216 @@
+{
+ "synthetic": true,
+ "id": "day-09",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Luis Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2025-07-11",
+   "pickup": [
+    {
+     "name": "Ines Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "zoe",
+   "name": "Zoe",
+   "dob": "2024-05-11",
+   "pickup": [
+    {
+     "name": "Luis Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Amoxicillin",
+     "dose": "5 ml",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2023-05-11",
+   "pickup": [
+    {
+     "name": "Dee Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:02",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:21",
+   "text": "Ivy dropped off by dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:25",
+   "text": "Priya in w mom"
+  },
+  {
+   "id": "N4",
+   "t": "07:41",
+   "text": "Zoe dropped off by mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:51",
+   "text": "Kai in w mom"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast yogurt and banana. Priya didn't touch it, Zoe cleaned the plate, Kai didn't touch it"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Ivy 5 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Ivy wet, Priya wet, Zoe wet diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Kai used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "blocks and trains, Ivy and Priya loved it"
+  },
+  {
+   "id": "N11",
+   "t": "10:40",
+   "text": "Zoe got 7.5 ml amoxicillin at 10:40, Gloria gave it"
+  },
+  {
+   "id": "N12",
+   "t": "11:30",
+   "text": "lunch pasta with peas. Priya ate half, Zoe had a few bites, Kai ate all"
+  },
+  {
+   "id": "N13",
+   "t": "12:32",
+   "text": "Ivy, Priya, Zoe, Kai down for nap 12:30"
+  },
+  {
+   "id": "N14",
+   "t": "12:45",
+   "text": "sleep check 12:45 Ivy Priya Zoe Kai ok on backs"
+  },
+  {
+   "id": "N15",
+   "t": "13:00",
+   "text": "sleep check 1:00 Ivy Priya Zoe Kai ok on backs"
+  },
+  {
+   "id": "N16",
+   "t": "13:15",
+   "text": "sleep check 1:15 Ivy Zoe Kai ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:30",
+   "text": "checked Ivy, Zoe, Kai 1:30"
+  },
+  {
+   "id": "N18",
+   "t": "13:45",
+   "text": "checked Ivy, Zoe, Kai 1:45"
+  },
+  {
+   "id": "N19",
+   "t": "14:00",
+   "text": "checked Ivy, Zoe, Kai 2:00"
+  },
+  {
+   "id": "N20",
+   "t": "14:15",
+   "text": "checked Ivy, Priya, Zoe, Kai 2:15"
+  },
+  {
+   "id": "N21",
+   "t": "14:31",
+   "text": "Ivy, Priya, Zoe, Kai up at 2:30"
+  },
+  {
+   "id": "N22",
+   "t": "15:05",
+   "text": "snack pear and cheese, everyone ate most"
+  },
+  {
+   "id": "N23",
+   "t": "16:14",
+   "text": "Ivy home w Luis"
+  },
+  {
+   "id": "N24",
+   "t": "16:24",
+   "text": "Priya home w Ines"
+  },
+  {
+   "id": "N25",
+   "t": "16:34",
+   "text": "Zoe out 4:34, mom"
+  },
+  {
+   "id": "N26",
+   "t": "16:43",
+   "text": "Kai home w Dee"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "zoe",
+   "what": "dose differs from consent"
+  },
+  {
+   "rule": "sleep",
+   "kid": "priya",
+   "what": "no checks on Priya 1:05-2:05"
+  }
+ ]
+}

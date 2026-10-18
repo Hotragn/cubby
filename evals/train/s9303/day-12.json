@@ -1,0 +1,274 @@
+{
+ "synthetic": true,
+ "id": "day-12",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "maya",
+   "name": "Maya",
+   "dob": "2026-04-11",
+   "pickup": [
+    {
+     "name": "Kim Greer",
+     "rel": "mom"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Diaper cream",
+     "dose": "thin layer",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "sofia",
+   "name": "Sofia",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Tom Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Luis Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Tom Chen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Luis Farah",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Ada Brooks",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  },
+  {
+   "id": "a",
+   "name": "Joy"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:02",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:18",
+   "text": "Maya in w mom"
+  },
+  {
+   "id": "N3",
+   "t": "07:25",
+   "text": "Sofia arrived 7:25"
+  },
+  {
+   "id": "N4",
+   "t": "07:36",
+   "text": "Priya arrived 7:36"
+  },
+  {
+   "id": "N5",
+   "t": "07:44",
+   "text": "Nora dropped off by dad"
+  },
+  {
+   "id": "N6",
+   "t": "07:58",
+   "text": "Jonah arrived 7:58"
+  },
+  {
+   "id": "N7",
+   "t": "08:00",
+   "text": "Joy in"
+  },
+  {
+   "id": "N8",
+   "t": "08:10",
+   "text": "Leila in w mom"
+  },
+  {
+   "id": "N9",
+   "t": "08:30",
+   "text": "breakfast oatmeal and berries. Priya ate all, Nora ate most, Jonah ate half, Leila had a few bites"
+  },
+  {
+   "id": "N10",
+   "t": "08:35",
+   "text": "Maya 4 oz bottle"
+  },
+  {
+   "id": "N11",
+   "t": "08:35",
+   "text": "Sofia 4 oz bottle"
+  },
+  {
+   "id": "N12",
+   "t": "09:20",
+   "text": "Maya BM, Sofia wet, Priya wet, Nora BM, Jonah wet diapers"
+  },
+  {
+   "id": "N13",
+   "t": "09:25",
+   "text": "Leila used the potty"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "bubbles in the yard, Maya and Sofia loved it"
+  },
+  {
+   "id": "N15",
+   "t": "10:55",
+   "text": "Maya diaper cream at the 10:55 change"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Priya ate all, Nora didn't touch it, Jonah ate most, Leila ate most"
+  },
+  {
+   "id": "N17",
+   "t": "12:32",
+   "text": "Maya, Sofia, Priya, Nora, Jonah, Leila down for nap 12:30"
+  },
+  {
+   "id": "N18",
+   "t": "12:45",
+   "text": "sleep check 12:45 Maya Sofia Priya Nora Jonah Leila ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:00",
+   "text": "checked Maya, Sofia, Priya, Nora, Jonah, Leila 1:00"
+  },
+  {
+   "id": "N20",
+   "t": "13:15",
+   "text": "sleep check 1:15 Maya Sofia Priya Nora Jonah Leila ok on backs"
+  },
+  {
+   "id": "N21",
+   "t": "13:30",
+   "text": "sleep check 1:30 Maya Sofia Priya Nora Jonah Leila ok on backs"
+  },
+  {
+   "id": "N22",
+   "t": "13:45",
+   "text": "1:45 check: Maya, Sofia, Priya, Nora, Jonah, Leila sleeping"
+  },
+  {
+   "id": "N23",
+   "t": "14:00",
+   "text": "2:00 check: Maya, Sofia, Priya, Nora, Jonah, Leila sleeping"
+  },
+  {
+   "id": "N24",
+   "t": "14:15",
+   "text": "2:15 check: Maya, Sofia, Priya, Nora, Jonah, Leila sleeping"
+  },
+  {
+   "id": "N25",
+   "t": "14:31",
+   "text": "Maya, Sofia, Priya, Nora, Jonah, Leila up at 2:30"
+  },
+  {
+   "id": "N26",
+   "t": "15:00",
+   "text": "Joy out"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack goldfish, everyone ate most"
+  },
+  {
+   "id": "N28",
+   "t": "16:08",
+   "text": "Maya picked up by mom"
+  },
+  {
+   "id": "N29",
+   "t": "16:27",
+   "text": "Sofia picked up by dad"
+  },
+  {
+   "id": "N30",
+   "t": "16:42",
+   "text": "Priya picked up by mom"
+  },
+  {
+   "id": "N31",
+   "t": "16:56",
+   "text": "Nora home w Tom"
+  },
+  {
+   "id": "N32",
+   "t": "17:11",
+   "text": "Jonah picked up by dad"
+  },
+  {
+   "id": "N33",
+   "t": "17:23",
+   "text": "Leila picked up by mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "after Joy leaves: 4 under 2 with one adult"
+  }
+ ]
+}

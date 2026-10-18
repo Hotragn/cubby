@@ -6,7 +6,7 @@ A home daycare provider talks or types quick notes all day ("Ava and Leo napped 
 
 **The model never makes a safety judgment.** Code decides whether a nap went unchecked for too long, whether medicine had consent, and whether the ratio was over. The model only reads.
 
-The demo opens on a fictional day for 4 fictional children, with 9 planted problems.
+The demo opens on a fictional week for 4 fictional children, with 9 planted problems on the latest day. **My program** is the real thing: add your own children (date of birth or age group, allergies, medication consents, photo consent, pickup list), staff and rules. Everything is saved on the device, and you can export or import it as a file.
 
 ## What it checks (Massachusetts, 606 CMR 7.00)
 
@@ -20,6 +20,15 @@ The demo opens on a fictional day for 4 fictional children, with 9 planted probl
 | Times that can't be right (a nap that ends before it starts, overlaps, events after sign-out); late pickups | records / provider policy | |
 
 Rule packs live in `public/lib/states.js`. Adding a state means adding a pack with its numbers and citations.
+
+## Features
+
+- **Setup:** children, staff and program rules (state pack, sleep-check interval, ratio limits). Settings looser than the state's rule show a warning with the citation.
+- **Today:** who's here at any time of day, who's napping and when their next sleep check is due, an over-ratio banner, and every note with the events read from it.
+- **Fix:** every flag with its evidence and rule. Pre-filled incident reports. Questions Gemma asked instead of guessing. Answering "which child is 'the baby'?" attaches the event, re-runs every rule and remembers "the baby" for the rest of the day.
+- **Parents:** a sheet per child, a photo slot (only with photo consent), warm or translated text checked against the log, and read-aloud.
+- **Week:** attendance, flags opened and resolved, incidents and medicine per day, plus a weekly inspector log (PDF/CSV) in the daily format.
+- **Timers (local, optional):** sleep-check and late-pickup reminders as Temporal workflows that survive restarts.
 
 ## How it works
 
@@ -42,6 +51,16 @@ npm test                                   # rule tests on the demo day
 ```
 
 `.env` needs `GEMINI_API_KEY` (Google AI Studio, model `gemma-4-26b-a4b-it`). `ELEVENLABS` (read-aloud) and `SENTRY_DSN` are optional.
+
+### Durable reminders with Temporal (local)
+
+```bash
+temporal server start-dev                      # local dev server, no account
+CUBBY_URL=http://localhost:8787 node src/temporal/worker.ts
+TEMPORAL_ADDRESS=localhost:7233 npm start      # TIMER_SCALE=60 makes a minute a second, for demos
+```
+
+Each live note that starts a nap starts a `napWatch` workflow, which waits for the next sleep check and reminds when it's overdue. Each arrival starts a `pickupWatch` workflow that fires at closing time. `node scripts/temporal-restart-test.ts` kills the worker in the middle of a timer and measures when the reminder fires (`evals/temporal-restart.json`). The hosted demo doesn't run Temporal.
 
 ### Local mode (nothing leaves the machine)
 

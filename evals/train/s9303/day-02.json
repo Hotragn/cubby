@@ -1,0 +1,205 @@
+{
+ "synthetic": true,
+ "id": "day-02",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "amara",
+   "name": "Amara",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Kim Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "maya",
+   "name": "Maya",
+   "dob": "2024-12-11",
+   "pickup": [
+    {
+     "name": "Dee Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2023-12-11",
+   "pickup": [
+    {
+     "name": "Hugo Brooks",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "mateo",
+   "name": "Mateo",
+   "dob": "2023-01-11",
+   "pickup": [
+    {
+     "name": "Rita Ito",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:59",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:27",
+   "text": "Amara here"
+  },
+  {
+   "id": "N3",
+   "t": "07:38",
+   "text": "Maya arrived 7:38"
+  },
+  {
+   "id": "N4",
+   "t": "07:43",
+   "text": "Otto here"
+  },
+  {
+   "id": "N5",
+   "t": "07:53",
+   "text": "Mateo dropped off by dad"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast cheerios and milk. Maya didn't touch it, Otto had a few bites, Mateo ate half"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Amara 6 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Amara BM, Maya wet, Otto wet diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Mateo used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "bubbles in the yard, Amara and Maya loved it"
+  },
+  {
+   "id": "N11",
+   "t": "10:20",
+   "text": "Amara tripped on the rug and scraped her knee, washed it, bandaid"
+  },
+  {
+   "id": "N12",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Maya had a few bites, Otto cleaned the plate, Mateo ate most"
+  },
+  {
+   "id": "N13",
+   "t": "12:32",
+   "text": "Amara, Maya, Otto, Mateo down for nap 12:30"
+  },
+  {
+   "id": "N14",
+   "t": "12:45",
+   "text": "12:45 check: Amara, Maya, Otto, Mateo sleeping"
+  },
+  {
+   "id": "N15",
+   "t": "13:00",
+   "text": "checked Amara, Maya, Otto, Mateo 1:00"
+  },
+  {
+   "id": "N16",
+   "t": "13:15",
+   "text": "sleep check 1:15 Amara Maya Otto Mateo ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:30",
+   "text": "checked Amara, Maya, Otto, Mateo 1:30"
+  },
+  {
+   "id": "N18",
+   "t": "13:45",
+   "text": "checked Amara, Maya, Otto, Mateo 1:45"
+  },
+  {
+   "id": "N19",
+   "t": "14:00",
+   "text": "checked Amara, Maya, Otto, Mateo 2:00"
+  },
+  {
+   "id": "N20",
+   "t": "14:15",
+   "text": "2:15 check: Amara, Maya, Otto, Mateo sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "14:31",
+   "text": "Amara, Maya, Otto, Mateo up at 2:30"
+  },
+  {
+   "id": "N22",
+   "t": "15:05",
+   "text": "snack pear and cheese, everyone ate some"
+  },
+  {
+   "id": "N23",
+   "t": "16:17",
+   "text": "Amara picked up by mom"
+  },
+  {
+   "id": "N24",
+   "t": "16:33",
+   "text": "Maya picked up by mom"
+  },
+  {
+   "id": "N25",
+   "t": "17:03",
+   "text": "Mateo picked up by dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "amara",
+   "what": "Amara tripped on the rug and scraped her knee, washed it, bandaid"
+  },
+  {
+   "rule": "attendance",
+   "kid": "otto",
+   "what": "no sign-out"
+  }
+ ]
+}

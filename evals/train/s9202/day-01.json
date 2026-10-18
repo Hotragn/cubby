@@ -1,0 +1,204 @@
+{
+ "synthetic": true,
+ "id": "day-01",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2025-12-11",
+   "pickup": [
+    {
+     "name": "Dee Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2025-02-11",
+   "pickup": [
+    {
+     "name": "Hugo Khan",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "maya",
+   "name": "Maya",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Malik Ellis",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "dob": "2023-06-11",
+   "pickup": [
+    {
+     "name": "Luis Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:56",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:27",
+   "text": "Nora in w mom"
+  },
+  {
+   "id": "N3",
+   "t": "07:44",
+   "text": "Ivy here"
+  },
+  {
+   "id": "N4",
+   "t": "07:51",
+   "text": "Maya dropped off by mom"
+  },
+  {
+   "id": "N5",
+   "t": "08:07",
+   "text": "Ezra dropped off by dad"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast yogurt and banana. Ivy ate all, Maya ate half, Ezra had a few bites"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Nora 5 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Nora wet, Ivy wet, Maya wet diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Ezra used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "bubbles in the yard, Nora and Ivy loved it"
+  },
+  {
+   "id": "N11",
+   "t": "10:20",
+   "text": "Eli fell asleep in the reading nook for a minute, woke right up"
+  },
+  {
+   "id": "N12",
+   "t": "10:40",
+   "text": "pretend doctor kit, Zoe gave everyone 'medicine'"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch mac and cheese. Ivy ate most, Maya ate most, Ezra had a few bites"
+  },
+  {
+   "id": "N14",
+   "t": "12:32",
+   "text": "Nora, Ivy, Maya, Ezra down for nap 12:30"
+  },
+  {
+   "id": "N15",
+   "t": "12:45",
+   "text": "sleep check 12:45 Nora Ivy Maya Ezra ok on backs"
+  },
+  {
+   "id": "N16",
+   "t": "13:00",
+   "text": "sleep check 1:00 Nora Ivy Maya Ezra ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:15",
+   "text": "1:15 check: Nora, Ivy, Maya, Ezra sleeping"
+  },
+  {
+   "id": "N18",
+   "t": "13:30",
+   "text": "sleep check 1:30 Nora Ivy Maya Ezra ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:45",
+   "text": "sleep check 1:45 Nora Ivy Maya Ezra ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "14:00",
+   "text": "2:00 check: Nora, Ivy, Maya, Ezra sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "14:15",
+   "text": "checked Nora, Ivy, Maya, Ezra 2:15"
+  },
+  {
+   "id": "N22",
+   "t": "14:31",
+   "text": "Nora, Ivy, Maya, Ezra up at 2:30"
+  },
+  {
+   "id": "N23",
+   "t": "15:05",
+   "text": "snack goldfish, everyone ate all of it"
+  },
+  {
+   "id": "N24",
+   "t": "16:14",
+   "text": "Nora home w Dee"
+  },
+  {
+   "id": "N25",
+   "t": "16:32",
+   "text": "Ivy picked up by mom"
+  },
+  {
+   "id": "N26",
+   "t": "16:41",
+   "text": "Maya out 4:41, mom"
+  },
+  {
+   "id": "N27",
+   "t": "17:00",
+   "text": "Ezra out 5:00, dad"
+  }
+ ],
+ "planted": []
+}

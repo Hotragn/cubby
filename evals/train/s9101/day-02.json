@@ -1,0 +1,205 @@
+{
+ "synthetic": true,
+ "id": "day-02",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "finn",
+   "name": "Finn",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Kim Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "hazel",
+   "name": "Hazel",
+   "dob": "2024-12-11",
+   "pickup": [
+    {
+     "name": "Rita Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2023-12-11",
+   "pickup": [
+    {
+     "name": "Paolo Hale",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2023-01-11",
+   "pickup": [
+    {
+     "name": "Kim Hale",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:03",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:14",
+   "text": "Finn here"
+  },
+  {
+   "id": "N3",
+   "t": "07:26",
+   "text": "Hazel here"
+  },
+  {
+   "id": "N4",
+   "t": "07:32",
+   "text": "Ivy arrived 7:32"
+  },
+  {
+   "id": "N5",
+   "t": "07:41",
+   "text": "Otto here"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast waffles. Hazel had a few bites, Ivy cleaned the plate, Otto cleaned the plate"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Finn 4 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Finn wet, Hazel wet, Ivy wet diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Otto used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "walk to the park, Finn and Hazel loved it"
+  },
+  {
+   "id": "N11",
+   "t": "10:20",
+   "text": "Finn tripped on the rug and scraped her knee, washed it, bandaid"
+  },
+  {
+   "id": "N12",
+   "t": "11:30",
+   "text": "lunch chicken and rice. Hazel ate most, Ivy ate all, Otto had a few bites"
+  },
+  {
+   "id": "N13",
+   "t": "12:32",
+   "text": "Finn, Hazel, Ivy, Otto down for nap 12:30"
+  },
+  {
+   "id": "N14",
+   "t": "12:45",
+   "text": "checked Finn, Hazel, Ivy, Otto 12:45"
+  },
+  {
+   "id": "N15",
+   "t": "13:00",
+   "text": "sleep check 1:00 Finn Hazel Ivy Otto ok on backs"
+  },
+  {
+   "id": "N16",
+   "t": "13:15",
+   "text": "sleep check 1:15 Finn Hazel Ivy Otto ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:30",
+   "text": "checked Finn, Hazel, Ivy, Otto 1:30"
+  },
+  {
+   "id": "N18",
+   "t": "13:45",
+   "text": "sleep check 1:45 Finn Hazel Ivy Otto ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:00",
+   "text": "checked Finn, Hazel, Ivy, Otto 2:00"
+  },
+  {
+   "id": "N20",
+   "t": "14:15",
+   "text": "checked Finn, Hazel, Ivy, Otto 2:15"
+  },
+  {
+   "id": "N21",
+   "t": "14:31",
+   "text": "Finn, Hazel, Ivy, Otto up at 2:30"
+  },
+  {
+   "id": "N22",
+   "t": "15:05",
+   "text": "snack pear and cheese, everyone ate some"
+  },
+  {
+   "id": "N23",
+   "t": "16:17",
+   "text": "Finn out 4:17, mom"
+  },
+  {
+   "id": "N24",
+   "t": "16:30",
+   "text": "Hazel home w Rita"
+  },
+  {
+   "id": "N25",
+   "t": "16:56",
+   "text": "Otto out 4:56, mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "finn",
+   "what": "Finn tripped on the rug and scraped her knee, washed it, bandaid"
+  },
+  {
+   "rule": "attendance",
+   "kid": "ivy",
+   "what": "no sign-out"
+  }
+ ]
+}

@@ -1,0 +1,243 @@
+{
+ "synthetic": true,
+ "id": "day-04",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Ada Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "zoe",
+   "name": "Zoe",
+   "dob": "2025-03-11",
+   "pickup": [
+    {
+     "name": "Malik Farah",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "mateo",
+   "name": "Mateo",
+   "dob": "2024-07-11",
+   "pickup": [
+    {
+     "name": "Ines Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "eli",
+   "name": "Eli",
+   "dob": "2023-11-11",
+   "pickup": [
+    {
+     "name": "Kim Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Zyrtec",
+     "dose": "2.5 ml",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "idris",
+   "name": "Idris",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Jen Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Bea"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:04",
+   "text": "Bea in"
+  },
+  {
+   "id": "N2",
+   "t": "07:26",
+   "text": "Wren dropped off by dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:41",
+   "text": "Zoe here"
+  },
+  {
+   "id": "N4",
+   "t": "07:52",
+   "text": "Mateo arrived 7:52"
+  },
+  {
+   "id": "N5",
+   "t": "07:58",
+   "text": "Eli in w mom"
+  },
+  {
+   "id": "N6",
+   "t": "08:12",
+   "text": "Idris here"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast cheerios and milk. Zoe had a few bites, Mateo had a few bites, Eli ate most, Idris didn't touch it"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Wren 4 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Wren wet, Zoe BM, Mateo wet, Eli wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Idris used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "blocks and trains, Wren and Zoe loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:30",
+   "text": "gave Zoe motrin 2.5 ml for teething"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch bean soup. Zoe had a few bites, Mateo had a few bites, Eli ate all, Idris cleaned the plate"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "Eli had her zyrtec"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "Wren, Zoe, Mateo, Eli down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "12:45 check: Wren, Zoe, Mateo, Eli sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "checked Wren, Zoe, Mateo, Eli 1:00"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "sleep check 1:15 Wren Zoe Mateo Eli ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "1:30 check: Wren, Zoe, Mateo, Eli sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "checked Wren, Zoe, Mateo, Eli 1:45"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "sleep check 2:00 Wren Zoe Mateo Eli ok on backs"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "checked Wren, Zoe, Mateo, Eli 2:15"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "Wren, Zoe, Mateo, Eli up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack goldfish, everyone ate most"
+  },
+  {
+   "id": "N25",
+   "t": "16:11",
+   "text": "Wren out 4:11, dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:33",
+   "text": "Zoe out 4:33, dad"
+  },
+  {
+   "id": "N27",
+   "t": "16:54",
+   "text": "Mateo out 4:54, dad"
+  },
+  {
+   "id": "N28",
+   "t": "17:15",
+   "text": "Eli home w Kim"
+  },
+  {
+   "id": "N29",
+   "t": "17:25",
+   "text": "Idris out 5:25, dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "zoe",
+   "what": "no consent"
+  },
+  {
+   "rule": "med",
+   "kid": "eli",
+   "what": "no dose, no time stated, no giver"
+  }
+ ]
+}

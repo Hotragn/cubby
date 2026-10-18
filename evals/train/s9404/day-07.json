@@ -1,0 +1,242 @@
+{
+ "synthetic": true,
+ "id": "day-07",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2025-12-11",
+   "pickup": [
+    {
+     "name": "Ines Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "felix",
+   "name": "Felix",
+   "dob": "2025-05-11",
+   "pickup": [
+    {
+     "name": "Hugo Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "june",
+   "name": "June",
+   "dob": "2024-09-11",
+   "pickup": [
+    {
+     "name": "Ada Hale",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2023-10-11",
+   "pickup": [
+    {
+     "name": "Ines Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "eli",
+   "name": "Eli",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Jen Brooks",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:04",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:18",
+   "text": "Nora arrived 7:18"
+  },
+  {
+   "id": "N3",
+   "t": "07:28",
+   "text": "Felix here"
+  },
+  {
+   "id": "N4",
+   "t": "07:39",
+   "text": "June in w mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:45",
+   "text": "Leila arrived 7:45"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast cheerios and milk. Felix had a few bites, June cleaned the plate, Leila cleaned the plate, Eli cleaned the plate"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Nora 5 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Nora BM, Felix BM, June BM diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Leila used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "bubbles in the yard, Nora and Felix loved it"
+  },
+  {
+   "id": "N11",
+   "t": "11:00",
+   "text": "Felix bit June on the hand, left a mark, talked about gentle hands"
+  },
+  {
+   "id": "N12",
+   "t": "11:30",
+   "text": "lunch mac and cheese. Felix ate most, June ate most, Leila ate half, Eli cleaned the plate"
+  },
+  {
+   "id": "N13",
+   "t": "12:32",
+   "text": "Nora, Felix, June, Leila, Eli down for nap 12:30"
+  },
+  {
+   "id": "N14",
+   "t": "12:45",
+   "text": "checked Nora, Felix, June, Leila, Eli 12:45"
+  },
+  {
+   "id": "N15",
+   "t": "13:00",
+   "text": "1:00 check: Nora, Felix, June, Leila, Eli sleeping"
+  },
+  {
+   "id": "N16",
+   "t": "13:15",
+   "text": "1:15 check: Nora, Felix, June, Leila, Eli sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:30",
+   "text": "checked Nora, Felix, June, Leila, Eli 1:30"
+  },
+  {
+   "id": "N18",
+   "t": "13:45",
+   "text": "sleep check 1:45 Nora Felix June Leila Eli ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:00",
+   "text": "sleep check 2:00 Nora Felix June Leila Eli ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "14:15",
+   "text": "checked Nora, Felix, June, Leila, Eli 2:15"
+  },
+  {
+   "id": "N21",
+   "t": "14:31",
+   "text": "Nora, Felix, June, Leila, Eli up at 2:30"
+  },
+  {
+   "id": "N22",
+   "t": "14:40",
+   "text": "Nora napped 2:30 to 1:10"
+  },
+  {
+   "id": "N23",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate most"
+  },
+  {
+   "id": "N24",
+   "t": "16:13",
+   "text": "Nora home w Ines"
+  },
+  {
+   "id": "N25",
+   "t": "16:31",
+   "text": "Felix out 4:31, dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:52",
+   "text": "June picked up by mom"
+  },
+  {
+   "id": "N27",
+   "t": "17:08",
+   "text": "Leila out 5:08, dad"
+  },
+  {
+   "id": "N28",
+   "t": "17:25",
+   "text": "Eli out 5:25, mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "june",
+   "what": "bitten"
+  },
+  {
+   "rule": "incident",
+   "kid": "felix",
+   "what": "biter: behavior incident record (7.11(5)(f))"
+  },
+  {
+   "rule": "time",
+   "kid": "nora",
+   "what": "nap ends before it starts"
+  },
+  {
+   "rule": "attendance",
+   "kid": "eli",
+   "what": "no sign-in"
+  }
+ ]
+}

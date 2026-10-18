@@ -1,0 +1,274 @@
+{
+ "synthetic": true,
+ "id": "day-12",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2026-04-11",
+   "pickup": [
+    {
+     "name": "Dee Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Diaper cream",
+     "dose": "thin layer",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Ada Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Ines Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "june",
+   "name": "June",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Paolo Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "tomas",
+   "name": "Tomas",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Malik Greer",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "eli",
+   "name": "Eli",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Jen Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  },
+  {
+   "id": "a",
+   "name": "Joy"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:50",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:19",
+   "text": "Priya in w dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:31",
+   "text": "Otto dropped off by dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:46",
+   "text": "Kai arrived 7:46"
+  },
+  {
+   "id": "N5",
+   "t": "08:00",
+   "text": "Joy in"
+  },
+  {
+   "id": "N6",
+   "t": "08:02",
+   "text": "June arrived 8:02"
+  },
+  {
+   "id": "N7",
+   "t": "08:17",
+   "text": "Tomas here"
+  },
+  {
+   "id": "N8",
+   "t": "08:30",
+   "text": "breakfast waffles. Kai didn't touch it, June ate all, Tomas had a few bites, Eli didn't touch it"
+  },
+  {
+   "id": "N9",
+   "t": "08:32",
+   "text": "Eli in w mom"
+  },
+  {
+   "id": "N10",
+   "t": "08:35",
+   "text": "Priya 6 oz bottle"
+  },
+  {
+   "id": "N11",
+   "t": "08:35",
+   "text": "Otto 4 oz bottle"
+  },
+  {
+   "id": "N12",
+   "t": "09:20",
+   "text": "Priya BM, Otto wet, Kai BM, June BM, Tomas wet diapers"
+  },
+  {
+   "id": "N13",
+   "t": "09:25",
+   "text": "Eli used the potty"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "painting at the easel, Priya and Otto loved it"
+  },
+  {
+   "id": "N15",
+   "t": "10:55",
+   "text": "Priya diaper cream at the 10:55 change"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch bean soup. Kai had a few bites, June ate half, Tomas ate all, Eli cleaned the plate"
+  },
+  {
+   "id": "N17",
+   "t": "12:32",
+   "text": "Priya, Otto, Kai, June, Tomas, Eli down for nap 12:30"
+  },
+  {
+   "id": "N18",
+   "t": "12:45",
+   "text": "checked Priya, Otto, Kai, June, Tomas, Eli 12:45"
+  },
+  {
+   "id": "N19",
+   "t": "13:00",
+   "text": "checked Priya, Otto, Kai, June, Tomas, Eli 1:00"
+  },
+  {
+   "id": "N20",
+   "t": "13:15",
+   "text": "sleep check 1:15 Priya Otto Kai June Tomas Eli ok on backs"
+  },
+  {
+   "id": "N21",
+   "t": "13:30",
+   "text": "1:30 check: Priya, Otto, Kai, June, Tomas, Eli sleeping"
+  },
+  {
+   "id": "N22",
+   "t": "13:45",
+   "text": "checked Priya, Otto, Kai, June, Tomas, Eli 1:45"
+  },
+  {
+   "id": "N23",
+   "t": "14:00",
+   "text": "sleep check 2:00 Priya Otto Kai June Tomas Eli ok on backs"
+  },
+  {
+   "id": "N24",
+   "t": "14:15",
+   "text": "sleep check 2:15 Priya Otto Kai June Tomas Eli ok on backs"
+  },
+  {
+   "id": "N25",
+   "t": "14:31",
+   "text": "Priya, Otto, Kai, June, Tomas, Eli up at 2:30"
+  },
+  {
+   "id": "N26",
+   "t": "15:00",
+   "text": "Joy out"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate all of it"
+  },
+  {
+   "id": "N28",
+   "t": "16:11",
+   "text": "Priya home w Dee"
+  },
+  {
+   "id": "N29",
+   "t": "16:27",
+   "text": "Otto out 4:27, dad"
+  },
+  {
+   "id": "N30",
+   "t": "16:39",
+   "text": "Kai home w Ines"
+  },
+  {
+   "id": "N31",
+   "t": "16:59",
+   "text": "June picked up by dad"
+  },
+  {
+   "id": "N32",
+   "t": "17:09",
+   "text": "Tomas home w Malik"
+  },
+  {
+   "id": "N33",
+   "t": "17:25",
+   "text": "Eli home w Jen"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "after Joy leaves: 4 under 2 with one adult"
+  }
+ ]
+}

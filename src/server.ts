@@ -34,6 +34,18 @@ const send = (res: any, code: number, obj: unknown) => { res.writeHead(code, { "
 
 const ttsCache = new Map<string, Buffer>();
 
+// Temporal (optional, local): durable sleep-check and late-pickup timers. Off unless TEMPORAL_ADDRESS is set.
+// TIMER_SCALE speeds timers up for a demo (60 = a minute becomes a second); 1 in real use.
+const SCALE = Math.max(1, +(process.env.TIMER_SCALE ?? 1));
+let temporal: any = null;
+async function tclient() {
+  if (temporal || !process.env.TEMPORAL_ADDRESS) return temporal;
+  const { Client, Connection } = await import("@temporalio/client");
+  temporal = new Client({ connection: await Connection.connect({ address: process.env.TEMPORAL_ADDRESS }), namespace: "default" });
+  return temporal;
+}
+const reminders: any[] = [];
+
 // MongoDB holds one thing: anonymous tester feedback from /feedback.html. Never child data.
 let feedbackCol: any = null;
 async function feedback() {
@@ -49,7 +61,7 @@ const server = createServer(async (req, res) => {
   const url = new URL(req.url ?? "/", "http://x");
   const ip = String(req.headers["x-forwarded-for"] ?? req.socket.remoteAddress ?? "").split(",")[0].trim();
   try {
-    if (url.pathname === "/api/health") return send(res, 200, { ok: true, model: MODEL, local: LOCAL, tracing, voice: !!process.env.ELEVENLABS });
+    if (url.pathname === "/api/health") return send(res, 200, { ok: true, model: MODEL, local: LOCAL, tracing, voice: !!process.env.ELEVENLABS, timers: !!process.env.TEMPORAL_ADDRESS, timerScale: SCALE });
 
     if (url.pathname === "/api/extract" && req.method === "POST") {
       if (!allow(ip)) return send(res, 429, { error: "Too many requests. Wait a minute." });
@@ -73,6 +85,32 @@ const server = createServer(async (req, res) => {
       const text = await warmSheet(String(b.child ?? "your child").slice(0, 40), facts, lang, usage);
       return send(res, 200, { text, usage });
     }
+
+    if (url.pathname === "/api/timers" && req.method === "POST") {
+      const c = await tclient().catch(() => null);
+      if (!c) return send(res, 503, { error: "Timers are off on this server." });
+      const b = await body(req, 20_000);
+      const now = Date.now(), day = String(b.day).slice(0, 10), out: string[] = [];
+      // Wall-clock times from the app, compressed toward "now" when TIMER_SCALE > 1 (demo only).
+      const scaled = (ms: number) => now + (ms - now) / SCALE;
+      for (const t of (b.timers ?? []).slice(0, 40)) {
+        const kid = String(t.kid).slice(0, 40), name = String(t.name ?? "").slice(0, 40);
+        try {
+          if (t.kind === "nap") { const id = `nap-${day}-${kid}-${t.startMs}`; await c.workflow.start("napWatch", { taskQueue: "cubby-timers", workflowId: id, args: [{ day, kid, name, startMs: scaled(+t.startMs), everyMs: (+t.everyMin * 60000) / SCALE }] }); out.push(id); }
+          if (t.kind === "check") { await c.workflow.getHandle(`nap-${day}-${kid}-${t.napStartMs}`).signal("checked", scaled(+t.atMs)); out.push("check"); }
+          if (t.kind === "wake") { await c.workflow.getHandle(`nap-${day}-${kid}-${t.napStartMs}`).signal("woke"); out.push("wake"); }
+          if (t.kind === "arrive") { const id = `pickup-${day}-${kid}`; await c.workflow.start("pickupWatch", { taskQueue: "cubby-timers", workflowId: id, args: [{ day, kid, name, closeMs: scaled(+t.closeMs) }] }); out.push(id); }
+          if (t.kind === "depart") { await c.workflow.getHandle(`pickup-${day}-${kid}`).signal("departed"); out.push("depart"); }
+        } catch (e: any) { out.push(`skip ${t.kind}: ${String(e?.message ?? e).slice(0, 60)}`); }
+      }
+      return send(res, 200, { ok: true, out, scale: SCALE });
+    }
+    if (url.pathname === "/api/reminders/push" && req.method === "POST") {
+      if (!["127.0.0.1", "::1", "::ffff:127.0.0.1"].includes(String(req.socket.remoteAddress))) return send(res, 403, { error: "local only" });
+      const b = await body(req, 4_000); reminders.push({ ...b, id: reminders.length + 1, gotMs: Date.now() }); if (reminders.length > 500) reminders.shift();
+      return send(res, 200, { ok: true });
+    }
+    if (url.pathname === "/api/reminders") return send(res, 200, { reminders: reminders.filter((r) => r.id > +(url.searchParams.get("after") ?? 0)) });
 
     if (url.pathname === "/api/feedback" && req.method === "POST") {
       if (!allow(ip, 5)) return send(res, 429, { error: "Too many requests. Wait a minute." });

@@ -1,0 +1,205 @@
+{
+ "synthetic": true,
+ "id": "day-05",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "finn",
+   "name": "Finn",
+   "dob": "2026-03-11",
+   "pickup": [
+    {
+     "name": "Rita Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "zoe",
+   "name": "Zoe",
+   "dob": "2025-06-11",
+   "pickup": [
+    {
+     "name": "Luis Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah",
+   "dob": "2024-06-11",
+   "pickup": [
+    {
+     "name": "Malik Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2023-07-11",
+   "pickup": [
+    {
+     "name": "Ines Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:03",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:26",
+   "text": "Finn here"
+  },
+  {
+   "id": "N3",
+   "t": "07:36",
+   "text": "Zoe arrived 7:36"
+  },
+  {
+   "id": "N4",
+   "t": "07:41",
+   "text": "Jonah in w dad"
+  },
+  {
+   "id": "N5",
+   "t": "07:56",
+   "text": "Ivy here"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast oatmeal and berries. Zoe cleaned the plate, Jonah ate half, Ivy ate all"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Finn 5 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Finn wet, Zoe wet, Jonah wet diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Ivy used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "music and dancing, Finn and Zoe loved it"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch mac and cheese. Zoe ate most, Jonah ate most, Ivy ate most"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Finn, Zoe, Jonah, Ivy down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "12:45 check: Finn, Zoe, Jonah, Ivy sleeping"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "checked Zoe, Jonah, Ivy 1:00"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "1:15 check: Zoe, Jonah, Ivy sleeping"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "1:30 check: Zoe, Jonah, Ivy sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "sleep check 1:45 Zoe Jonah Ivy ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "checked Finn, Zoe, Jonah, Ivy 2:00"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "2:15 check: Finn, Zoe, Jonah, Ivy sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Finn, Zoe, Jonah, Ivy up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate all of it"
+  },
+  {
+   "id": "N22",
+   "t": "16:10",
+   "text": "Finn home w Rita"
+  },
+  {
+   "id": "N23",
+   "t": "16:26",
+   "text": "Zoe out 4:26, dad"
+  },
+  {
+   "id": "N24",
+   "t": "17:04",
+   "text": "Ivy home w Ines"
+  },
+  {
+   "id": "N25",
+   "t": "17:55",
+   "text": "Jonah picked up 5:52 by dad, traffic"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "sleep",
+   "kid": "finn",
+   "what": "no checks on Finn 12:50-1:50"
+  },
+  {
+   "rule": "late",
+   "kid": "jonah",
+   "what": "picked up 5:52"
+  }
+ ]
+}

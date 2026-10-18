@@ -1,0 +1,205 @@
+{
+ "synthetic": true,
+ "id": "day-02",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "idris",
+   "name": "Idris",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Luis Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "tomas",
+   "name": "Tomas",
+   "dob": "2024-12-11",
+   "pickup": [
+    {
+     "name": "Ada Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "lucia",
+   "name": "Lucia",
+   "dob": "2023-12-11",
+   "pickup": [
+    {
+     "name": "Sam Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2023-01-11",
+   "pickup": [
+    {
+     "name": "Rita Jansen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:58",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:23",
+   "text": "Idris arrived 7:23"
+  },
+  {
+   "id": "N3",
+   "t": "07:34",
+   "text": "Tomas in w mom"
+  },
+  {
+   "id": "N4",
+   "t": "07:39",
+   "text": "Lucia arrived 7:39"
+  },
+  {
+   "id": "N5",
+   "t": "07:52",
+   "text": "Nora arrived 7:52"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast cheerios and milk. Tomas had a few bites, Lucia had a few bites, Nora had a few bites"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Idris 5 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Idris wet, Tomas wet, Lucia wet diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Nora used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "playdough, Idris and Tomas loved it"
+  },
+  {
+   "id": "N11",
+   "t": "10:20",
+   "text": "Idris tripped on the rug and scraped her knee, washed it, bandaid"
+  },
+  {
+   "id": "N12",
+   "t": "11:30",
+   "text": "lunch fish sticks and corn. Tomas cleaned the plate, Lucia cleaned the plate, Nora ate all"
+  },
+  {
+   "id": "N13",
+   "t": "12:32",
+   "text": "Idris, Tomas, Lucia, Nora down for nap 12:30"
+  },
+  {
+   "id": "N14",
+   "t": "12:45",
+   "text": "checked Idris, Tomas, Lucia, Nora 12:45"
+  },
+  {
+   "id": "N15",
+   "t": "13:00",
+   "text": "sleep check 1:00 Idris Tomas Lucia Nora ok on backs"
+  },
+  {
+   "id": "N16",
+   "t": "13:15",
+   "text": "1:15 check: Idris, Tomas, Lucia, Nora sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:30",
+   "text": "sleep check 1:30 Idris Tomas Lucia Nora ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "13:45",
+   "text": "sleep check 1:45 Idris Tomas Lucia Nora ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:00",
+   "text": "sleep check 2:00 Idris Tomas Lucia Nora ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "14:15",
+   "text": "2:15 check: Idris, Tomas, Lucia, Nora sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "14:31",
+   "text": "Idris, Tomas, Lucia, Nora up at 2:30"
+  },
+  {
+   "id": "N22",
+   "t": "15:05",
+   "text": "snack goldfish, everyone ate some"
+  },
+  {
+   "id": "N23",
+   "t": "16:11",
+   "text": "Idris out 4:11, dad"
+  },
+  {
+   "id": "N24",
+   "t": "16:21",
+   "text": "Tomas home w Ada"
+  },
+  {
+   "id": "N25",
+   "t": "16:57",
+   "text": "Nora out 4:57, dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "idris",
+   "what": "Idris tripped on the rug and scraped her knee, washed it, bandaid"
+  },
+  {
+   "rule": "attendance",
+   "kid": "lucia",
+   "what": "no sign-out"
+  }
+ ]
+}

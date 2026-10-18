@@ -153,6 +153,49 @@ export default function App() {
   const saveReport = (r) => { updateDay(viewDate, (dd) => ({ ...dd, reports: [...(dd.reports ?? []).filter((x) => !(x.kid === r.kid && x.noteId === r.noteId)), r] })); setIncident(null); setToast({ kind: "ok", text: `Incident report saved for ${r.child}` }); };
   const setMode = (mode) => { setSt((s) => ({ ...s, mode })); setViewDate(today()); if (mode === "mine" && !st.program.roster.length) setSetup(true); };
 
+  // Durable timers (Temporal, local mode): live notes start/stop sleep-check and pickup timers.
+  const [reminders, setReminders] = useState([]);
+  useEffect(() => {
+    if (!server?.timers || !isToday) return;
+    const key = `cubby.timers.${st.mode}.${d.date}`;
+    let sent; try { sent = new Set(JSON.parse(localStorage.getItem(key) ?? "[]")); } catch { sent = new Set(); }
+    const epoch = (min) => new Date(`${d.date}T${hhmm(min)}:00`).getTime();
+    const name = (k) => d.roster.find((c) => c.id === k)?.name ?? k;
+    const timers = [];
+    const live = (e) => /^U/.test(e.noteId);
+    for (const e of d.events) {
+      if (e.type === "nap" && e.start != null && live(e)) for (const k of e.kids ?? []) {
+        const age = ageMonths(d.roster.find((c) => c.id === k), d.date);
+        timers.push({ key: `nap:${k}:${e.start}`, kind: "nap", kid: k, name: name(k), startMs: epoch(e.start), everyMin: age != null && age < pack.sleep.infantMonths ? pack.sleep.infantEveryMin : pack.sleep.everyMin });
+        if (e.end != null) timers.push({ key: `wake:${k}:${e.start}`, kind: "wake", kid: k, napStartMs: epoch(e.start) });
+      }
+      if (e.type === "sleep_check" && live(e)) for (const k of e.kids ?? []) {
+        const nap = d.events.find((n) => n.type === "nap" && n.kids?.includes(k) && n.start <= e.start && (n.end == null || n.end >= e.start) && live(n));
+        if (nap) timers.push({ key: `check:${k}:${e.start}`, kind: "check", kid: k, atMs: epoch(e.start), napStartMs: epoch(nap.start) });
+      }
+      if (e.type === "arrive" && live(e)) for (const k of e.kids ?? []) timers.push({ key: `arrive:${k}`, kind: "arrive", kid: k, name: name(k), closeMs: epoch(dayTime(pack.defaults.close)) });
+      if (e.type === "depart" && live(e)) for (const k of e.kids ?? []) timers.push({ key: `depart:${k}`, kind: "depart", kid: k });
+    }
+    const fresh = timers.filter((t) => !sent.has(t.key));
+    if (!fresh.length) return;
+    fetch("/api/timers", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ day: d.date, timers: fresh }) })
+      .then((r) => r.json()).then(() => { for (const t of fresh) sent.add(t.key); try { localStorage.setItem(key, JSON.stringify([...sent])); } catch {} }).catch(() => {});
+  }, [server, d, isToday, st.mode, pack]);
+  useEffect(() => {
+    if (!server?.timers) return;
+    let after = 0, alive = true;
+    const tick = async () => {
+      try {
+        const j = await (await fetch(`/api/reminders?after=${after}`)).json();
+        for (const r of j.reminders) { after = Math.max(after, r.id); if (r.day !== today()) continue;
+          const text = r.kind === "sleep" ? `Sleep check due for ${r.name} (was due ${fmt(Math.round((new Date(r.dueMs) - new Date(new Date(r.dueMs).toDateString())) / 60000))})` : `${r.name} is still here at closing time`;
+          setReminders((x) => [{ ...r, text }, ...x].slice(0, 6)); setToast({ kind: "err", text: `⏰ ${text}` }); }
+      } catch {}
+      if (alive) setTimeout(tick, 4000);
+    };
+    tick(); return () => { alive = false; };
+  }, [server]);
+
   const needsSetup = !demo && !st.program.roster.length;
   return (
     <div className="app">
@@ -164,6 +207,7 @@ export default function App() {
       </nav>
       <main>
         {needsSetup && tab !== "week" ? <div className="card empty"><h2>Set up your program</h2><p className="muted">Add your children, staff and rules. Everything stays on this device.</p><button className="btn primary" onClick={() => setSetup(true)}>Open setup</button><button className="link" onClick={() => setMode("demo")}>Or look at the demo day</button></div> : <>
+          {tab === "today" && reminders.length > 0 && <div className="card reminders"><h2>Reminders</h2><p className="small muted">Durable timers (Temporal{server?.timerScale > 1 ? `, demo speed ×${server.timerScale}` : ""}). They fire on time even if this server restarts.</p><ul>{reminders.map((r) => <li key={r.id}>⏰ {r.text}</li>)}</ul></div>}
           {tab === "today" && <Today key={d.date + st.mode} d={d} flags={open} go={setTab} pack={pack} />}
           {tab === "fix" && <Fix d={d} flags={flags} day={day} resolve={resolve} unresolve={unresolve} openIncident={setIncident} answer={answer} />}
           {tab === "parents" && <Parents d={d} flags={open} setToast={setToast} />}
@@ -467,7 +511,7 @@ function Week({ ctxFor, pack, viewDate, open, setToast }) {
               <button disabled={r.empty} onClick={() => open(r.date)}>
                 <span className="wd">{new Date(r.date + "T12:00:00").toLocaleDateString(undefined, { weekday: "short" })}<small>{new Date(r.date + "T12:00:00").getDate()}</small></span>
                 {r.empty ? <span className="muted small grow">No notes</span> : <>
-                  <span className="grow"><span className="bar"><i style={{ width: `${(r.opened / max) * 100}%` }} /></span><span className="small muted">{r.attendance} children · {r.opened} flag{r.opened === 1 ? "" : "s"}{r.resolved ? ` · ${r.resolved} resolved` : ""}{r.incidents ? ` · ${r.incidents} incident${r.incidents > 1 ? "s" : ""}` : ""}{r.meds ? ` · ${r.meds} med` : ""}</span></span>
+                  <span className="grow"><span className="wbar"><i style={{ width: `${(r.opened / max) * 100}%` }} /></span><span className="small muted">{r.attendance} children · {r.opened} flag{r.opened === 1 ? "" : "s"}{r.resolved ? ` · ${r.resolved} resolved` : ""}{r.incidents ? ` · ${r.incidents} incident${r.incidents > 1 ? "s" : ""}` : ""}{r.meds ? ` · ${r.meds} med` : ""}</span></span>
                   <span className={`chip ${r.open ? "hot" : "cool"}`}>{r.open ? `${r.open} open` : "clear"}</span>
                 </>}
               </button>

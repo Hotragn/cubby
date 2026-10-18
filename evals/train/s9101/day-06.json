@@ -1,0 +1,205 @@
+{
+ "synthetic": true,
+ "id": "day-06",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "omar",
+   "name": "Omar",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Rita Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2024-10-11",
+   "pickup": [
+    {
+     "name": "Malik Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2024-01-11",
+   "pickup": [
+    {
+     "name": "Tom Brooks",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2022-11-11",
+   "pickup": [
+    {
+     "name": "Sam Brooks",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Bea"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:03",
+   "text": "Bea in"
+  },
+  {
+   "id": "N2",
+   "t": "07:17",
+   "text": "Omar here"
+  },
+  {
+   "id": "N3",
+   "t": "07:33",
+   "text": "Otto dropped off by dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:46",
+   "text": "Leila dropped off by mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:51",
+   "text": "Ivy in w mom"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast yogurt and banana. Omar ate half, Otto had a few bites, Leila had a few bites, Ivy ate half"
+  },
+  {
+   "id": "N7",
+   "t": "09:20",
+   "text": "Omar wet, Otto BM, Leila wet diapers"
+  },
+  {
+   "id": "N8",
+   "t": "09:25",
+   "text": "Ivy used the potty"
+  },
+  {
+   "id": "N9",
+   "t": "10:00",
+   "text": "story time, Omar and Otto loved it"
+  },
+  {
+   "id": "N10",
+   "t": "10:45",
+   "text": "Leila has a goose egg on his forehead after the slide, ice pack"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Omar cleaned the plate, Otto cleaned the plate, Leila didn't touch it, Ivy cleaned the plate"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Omar, Otto, Leila, Ivy down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "sleep check 12:45 Omar Otto Leila Ivy ok on backs"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "sleep check 1:00 Omar Otto Leila Ivy ok on backs"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "checked Omar, Otto, Leila, Ivy 1:15"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "sleep check 1:30 Omar Otto Leila Ivy ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "checked Omar, Otto, Leila, Ivy 1:45"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "checked Omar, Otto, Leila, Ivy 2:00"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "checked Omar, Otto, Leila, Ivy 2:15"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Omar, Otto, Leila, Ivy up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate all of it"
+  },
+  {
+   "id": "N22",
+   "t": "16:14",
+   "text": "Omar picked up by mom"
+  },
+  {
+   "id": "N23",
+   "t": "16:26",
+   "text": "Otto picked up by his uncle Dev"
+  },
+  {
+   "id": "N24",
+   "t": "16:44",
+   "text": "Leila out 4:44, mom"
+  },
+  {
+   "id": "N25",
+   "t": "17:05",
+   "text": "Ivy out 5:05, mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "leila",
+   "what": "Leila has a goose egg on his forehead after the slide, ice pack"
+  },
+  {
+   "rule": "attendance",
+   "kid": "otto",
+   "what": "picked up by his uncle Dev, not on list"
+  }
+ ]
+}

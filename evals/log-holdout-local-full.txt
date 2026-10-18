@@ -5,3 +5,5 @@ day-04 caught 2/2 fa 0 154.6s
 day-05 caught 2/2 fa 0 134.6s  
 day-06 caught 2/2 fa 0 161.8s  
 day-07 caught 4/4 fa 0 172.6s  
+day-08 caught 2/2 fa 1 261.8s  FA attendance:eli Eli: no sign-out time
+day-09 caught 2/2 fa 0 166.4s  

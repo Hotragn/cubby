@@ -1,0 +1,301 @@
+{
+ "synthetic": true,
+ "id": "day-08",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "finn",
+   "name": "Finn",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Dee Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2025-02-11",
+   "pickup": [
+    {
+     "name": "Malik Alvarez",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "eli",
+   "name": "Eli",
+   "dob": "2024-08-11",
+   "pickup": [
+    {
+     "name": "Hugo Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Tom Ellis",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "lucia",
+   "name": "Lucia",
+   "dob": "2023-08-11",
+   "pickup": [
+    {
+     "name": "Dee Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Tylenol",
+     "dose": "5 ml",
+     "until": "2026-10-07"
+    }
+   ]
+  },
+  {
+   "id": "sofia",
+   "name": "Sofia",
+   "dob": "2022-12-11",
+   "pickup": [
+    {
+     "name": "Ines Alvarez",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "hazel",
+   "name": "Hazel",
+   "dob": "2022-03-11",
+   "pickup": [
+    {
+     "name": "Hugo Farah",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  },
+  {
+   "id": "a",
+   "name": "Tia"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:53",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:22",
+   "text": "Finn dropped off by mom"
+  },
+  {
+   "id": "N3",
+   "t": "07:34",
+   "text": "Priya in w dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:39",
+   "text": "Eli dropped off by dad"
+  },
+  {
+   "id": "N5",
+   "t": "07:44",
+   "text": "Ezra here"
+  },
+  {
+   "id": "N6",
+   "t": "07:56",
+   "text": "Lucia dropped off by dad"
+  },
+  {
+   "id": "N7",
+   "t": "08:00",
+   "text": "Tia in"
+  },
+  {
+   "id": "N8",
+   "t": "08:01",
+   "text": "Sofia here"
+  },
+  {
+   "id": "N9",
+   "t": "08:18",
+   "text": "Hazel in w dad"
+  },
+  {
+   "id": "N10",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Finn ate all, Priya had a few bites, Eli had a few bites, Ezra ate half, Lucia ate most, Sofia ate most, Hazel ate half"
+  },
+  {
+   "id": "N11",
+   "t": "09:20",
+   "text": "Finn BM, Priya BM, Eli wet, Ezra BM diapers"
+  },
+  {
+   "id": "N12",
+   "t": "09:25",
+   "text": "Lucia used the potty"
+  },
+  {
+   "id": "N13",
+   "t": "10:00",
+   "text": "playdough, Finn and Priya loved it"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "Tia out"
+  },
+  {
+   "id": "N15",
+   "t": "10:50",
+   "text": "Tia back"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch chicken and rice. Finn ate all, Priya cleaned the plate, Eli cleaned the plate, Ezra cleaned the plate, Lucia ate all, Sofia had a few bites, Hazel ate half"
+  },
+  {
+   "id": "N17",
+   "t": "12:00",
+   "text": "gave Lucia tylenol 5 ml at 12, fever 100.2, Gloria"
+  },
+  {
+   "id": "N18",
+   "t": "12:32",
+   "text": "Finn, Priya, Eli, Ezra, Lucia, Sofia down for nap 12:30"
+  },
+  {
+   "id": "N19",
+   "t": "12:45",
+   "text": "12:45 check: Finn, Priya, Eli, Ezra, Lucia, Sofia sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:00",
+   "text": "sleep check 1:00 Finn Priya Eli Ezra Lucia Sofia ok on backs"
+  },
+  {
+   "id": "N21",
+   "t": "13:15",
+   "text": "sleep check 1:15 Finn Priya Eli Ezra Lucia Sofia ok on backs"
+  },
+  {
+   "id": "N22",
+   "t": "13:30",
+   "text": "checked Finn, Priya, Eli, Ezra, Lucia, Sofia 1:30"
+  },
+  {
+   "id": "N23",
+   "t": "13:45",
+   "text": "1:45 check: Finn, Priya, Eli, Ezra, Lucia, Sofia sleeping"
+  },
+  {
+   "id": "N24",
+   "t": "14:00",
+   "text": "2:00 check: Finn, Priya, Eli, Ezra, Lucia, Sofia sleeping"
+  },
+  {
+   "id": "N25",
+   "t": "14:15",
+   "text": "checked Finn, Priya, Eli, Ezra, Lucia, Sofia 2:15"
+  },
+  {
+   "id": "N26",
+   "t": "14:31",
+   "text": "Finn, Priya, Eli, Ezra, Lucia, Sofia up at 2:30"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack pear and cheese, everyone ate most"
+  },
+  {
+   "id": "N28",
+   "t": "16:15",
+   "text": "Finn home w Dee"
+  },
+  {
+   "id": "N29",
+   "t": "16:27",
+   "text": "Priya home w Malik"
+  },
+  {
+   "id": "N30",
+   "t": "16:47",
+   "text": "Eli picked up by dad"
+  },
+  {
+   "id": "N31",
+   "t": "17:08",
+   "text": "Ezra picked up by mom"
+  },
+  {
+   "id": "N32",
+   "t": "17:22",
+   "text": "Lucia out 5:22, dad"
+  },
+  {
+   "id": "N33",
+   "t": "17:25",
+   "text": "Sofia picked up by dad"
+  },
+  {
+   "id": "N34",
+   "t": "17:25",
+   "text": "Hazel home w Hugo"
+  },
+  {
+   "id": "N35",
+   "t": "17:30",
+   "text": "Tia out"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "lucia",
+   "what": "consent expired"
+  },
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "7 children with one adult"
+  }
+ ]
+}

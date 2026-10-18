@@ -1,0 +1,232 @@
+{
+ "synthetic": true,
+ "id": "day-11",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2026-02-11",
+   "pickup": [
+    {
+     "name": "Sam Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "omar",
+   "name": "Omar",
+   "dob": "2025-04-11",
+   "pickup": [
+    {
+     "name": "Rita Jansen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "maya",
+   "name": "Maya",
+   "dob": "2024-06-11",
+   "pickup": [
+    {
+     "name": "Tom Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2023-09-11",
+   "pickup": [
+    {
+     "name": "Jen Alvarez",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "tomas",
+   "name": "Tomas",
+   "dob": "2022-09-11",
+   "pickup": [
+    {
+     "name": "Tom Ellis",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:59",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:21",
+   "text": "Ivy in w dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:29",
+   "text": "Omar in w dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:46",
+   "text": "Maya here"
+  },
+  {
+   "id": "N5",
+   "t": "07:50",
+   "text": "Otto in w dad"
+  },
+  {
+   "id": "N6",
+   "t": "08:05",
+   "text": "Tomas arrived 8:05"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Omar ate most, Maya ate all, Otto ate most, Tomas didn't touch it"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Ivy 4 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Ivy wet, Omar wet, Maya wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Otto used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "music and dancing, Ivy and Omar loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:10",
+   "text": "Otto fell off the little chair, bumped his chin, cold cloth, Gloria saw"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch bean soup. Omar ate most, Maya didn't touch it, Otto ate half, Tomas ate all"
+  },
+  {
+   "id": "N14",
+   "t": "12:32",
+   "text": "Ivy, Omar, Maya, Otto down for nap 12:30"
+  },
+  {
+   "id": "N15",
+   "t": "12:45",
+   "text": "checked Ivy, Omar, Maya, Otto 12:45"
+  },
+  {
+   "id": "N16",
+   "t": "13:00",
+   "text": "1:00 check: Ivy, Omar, Maya, Otto sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:15",
+   "text": "sleep check 1:15 Ivy Omar Maya Otto ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "13:30",
+   "text": "1:30 check: Ivy, Omar, Maya, Otto sleeping"
+  },
+  {
+   "id": "N19",
+   "t": "13:45",
+   "text": "1:45 check: Ivy, Omar, Maya, Otto sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "14:00",
+   "text": "checked Ivy, Omar, Maya, Otto 2:00"
+  },
+  {
+   "id": "N21",
+   "t": "14:15",
+   "text": "2:15 check: Ivy, Omar, Maya, Otto sleeping"
+  },
+  {
+   "id": "N22",
+   "t": "14:31",
+   "text": "Ivy, Omar, Maya, Otto up at 2:30"
+  },
+  {
+   "id": "N23",
+   "t": "15:05",
+   "text": "snack crackers and cheese, everyone ate all of it"
+  },
+  {
+   "id": "N24",
+   "t": "16:11",
+   "text": "Ivy picked up by dad"
+  },
+  {
+   "id": "N25",
+   "t": "16:37",
+   "text": "Maya home w Tom"
+  },
+  {
+   "id": "N26",
+   "t": "16:47",
+   "text": "Otto out 4:47, dad"
+  },
+  {
+   "id": "N27",
+   "t": "17:55",
+   "text": "Tomas picked up 5:52 by mom, traffic"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "otto",
+   "what": "Otto fell off the little chair, bumped his chin, cold cloth, Gloria saw"
+  },
+  {
+   "rule": "attendance",
+   "kid": "omar",
+   "what": "no sign-out"
+  },
+  {
+   "rule": "late",
+   "kid": "tomas",
+   "what": "picked up 5:52"
+  }
+ ]
+}

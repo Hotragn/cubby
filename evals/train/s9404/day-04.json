@@ -1,0 +1,243 @@
+{
+ "synthetic": true,
+ "id": "day-04",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Kim Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2025-03-11",
+   "pickup": [
+    {
+     "name": "Malik Alvarez",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "felix",
+   "name": "Felix",
+   "dob": "2024-07-11",
+   "pickup": [
+    {
+     "name": "Ada Farah",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "tomas",
+   "name": "Tomas",
+   "dob": "2023-11-11",
+   "pickup": [
+    {
+     "name": "Luis Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Zyrtec",
+     "dose": "2.5 ml",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Dee Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:52",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:20",
+   "text": "Otto in w dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:36",
+   "text": "Nora in w dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:53",
+   "text": "Felix in w dad"
+  },
+  {
+   "id": "N5",
+   "t": "08:01",
+   "text": "Tomas here"
+  },
+  {
+   "id": "N6",
+   "t": "08:13",
+   "text": "Leila in w mom"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Nora had a few bites, Felix had a few bites, Tomas ate half, Leila ate all"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Otto 5 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Otto wet, Nora BM, Felix BM, Tomas BM diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Leila used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "sandbox outside, Otto and Nora loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:30",
+   "text": "gave Nora motrin 2.5 ml for teething"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch pasta with peas. Nora cleaned the plate, Felix cleaned the plate, Tomas had a few bites, Leila cleaned the plate"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "Tomas had her zyrtec"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "Otto, Nora, Felix, Tomas down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "sleep check 12:45 Otto Nora Felix Tomas ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "checked Otto, Nora, Felix, Tomas 1:00"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "sleep check 1:15 Otto Nora Felix Tomas ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "1:30 check: Otto, Nora, Felix, Tomas sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "sleep check 1:45 Otto Nora Felix Tomas ok on backs"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "checked Otto, Nora, Felix, Tomas 2:00"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "2:15 check: Otto, Nora, Felix, Tomas sleeping"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "Otto, Nora, Felix, Tomas up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate most"
+  },
+  {
+   "id": "N25",
+   "t": "16:10",
+   "text": "Otto picked up by dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:27",
+   "text": "Nora picked up by dad"
+  },
+  {
+   "id": "N27",
+   "t": "16:48",
+   "text": "Felix picked up by dad"
+  },
+  {
+   "id": "N28",
+   "t": "17:09",
+   "text": "Tomas picked up by dad"
+  },
+  {
+   "id": "N29",
+   "t": "17:18",
+   "text": "Leila picked up by mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "nora",
+   "what": "no consent"
+  },
+  {
+   "rule": "med",
+   "kid": "tomas",
+   "what": "no dose, no time stated, no giver"
+  }
+ ]
+}

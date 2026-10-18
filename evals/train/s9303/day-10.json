@@ -1,0 +1,226 @@
+{
+ "synthetic": true,
+ "id": "day-10",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "sofia",
+   "name": "Sofia",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Malik Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2025-01-11",
+   "pickup": [
+    {
+     "name": "Jen Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "lucia",
+   "name": "Lucia",
+   "dob": "2024-03-11",
+   "pickup": [
+    {
+     "name": "Rita Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2023-04-11",
+   "pickup": [
+    {
+     "name": "Ines Chen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Hugo Chen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:51",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:22",
+   "text": "Sofia dropped off by dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:35",
+   "text": "Kai arrived 7:35"
+  },
+  {
+   "id": "N4",
+   "t": "07:42",
+   "text": "Lucia dropped off by mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:46",
+   "text": "Leila dropped off by mom"
+  },
+  {
+   "id": "N6",
+   "t": "07:58",
+   "text": "Nora in w dad"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast waffles. Kai had a few bites, Lucia ate most, Leila ate half, Nora ate half"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Sofia 5 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Sofia wet, Kai wet, Lucia wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Leila used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "blocks and trains, Sofia and Kai loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:15",
+   "text": "Felix bit into his apple and said it was the best ever"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch pasta with peas. Kai cleaned the plate, Lucia ate half, Leila ate all, Nora ate most"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "talked about the doctor visit Maya had last week, she showed us her bandaid sticker book"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "Sofia, Kai, Lucia, Leila down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "checked Sofia, Kai, Lucia, Leila 12:45"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "sleep check 1:00 Sofia Kai Lucia Leila ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "1:15 check: Sofia, Kai, Lucia, Leila sleeping"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "1:30 check: Sofia, Kai, Lucia, Leila sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "checked Sofia, Kai, Lucia, Leila 1:45"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "sleep check 2:00 Sofia Kai Lucia Leila ok on backs"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "2:15 check: Sofia, Kai, Lucia, Leila sleeping"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "Sofia, Kai, Lucia, Leila up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate most"
+  },
+  {
+   "id": "N25",
+   "t": "16:18",
+   "text": "Sofia picked up by dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:32",
+   "text": "Kai home w Jen"
+  },
+  {
+   "id": "N27",
+   "t": "16:50",
+   "text": "Lucia home w Rita"
+  },
+  {
+   "id": "N28",
+   "t": "17:02",
+   "text": "Leila picked up by mom"
+  },
+  {
+   "id": "N29",
+   "t": "17:23",
+   "text": "Nora out 5:23, dad"
+  }
+ ],
+ "planted": []
+}

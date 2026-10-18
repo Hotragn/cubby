@@ -1,0 +1,243 @@
+{
+ "synthetic": true,
+ "id": "day-04",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "june",
+   "name": "June",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Paolo Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2025-03-11",
+   "pickup": [
+    {
+     "name": "Hugo Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "maya",
+   "name": "Maya",
+   "dob": "2024-07-11",
+   "pickup": [
+    {
+     "name": "Paolo Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "tomas",
+   "name": "Tomas",
+   "dob": "2023-11-11",
+   "pickup": [
+    {
+     "name": "Jen Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Zyrtec",
+     "dose": "2.5 ml",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "hazel",
+   "name": "Hazel",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Sam Chen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:57",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:18",
+   "text": "June dropped off by dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:26",
+   "text": "Priya arrived 7:26"
+  },
+  {
+   "id": "N4",
+   "t": "07:32",
+   "text": "Maya in w mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:46",
+   "text": "Tomas arrived 7:46"
+  },
+  {
+   "id": "N6",
+   "t": "07:58",
+   "text": "Hazel arrived 7:58"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast waffles. Priya ate most, Maya ate half, Tomas cleaned the plate, Hazel had a few bites"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "June 5 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "June wet, Priya wet, Maya wet, Tomas wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Hazel used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "music and dancing, June and Priya loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:30",
+   "text": "gave Priya motrin 2.5 ml for teething"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch mac and cheese. Priya ate all, Maya ate half, Tomas cleaned the plate, Hazel didn't touch it"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "Tomas had her zyrtec"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "June, Priya, Maya, Tomas down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "checked June, Priya, Maya, Tomas 12:45"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "sleep check 1:00 June Priya Maya Tomas ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "sleep check 1:15 June Priya Maya Tomas ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "1:30 check: June, Priya, Maya, Tomas sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "checked June, Priya, Maya, Tomas 1:45"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "2:00 check: June, Priya, Maya, Tomas sleeping"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "sleep check 2:15 June Priya Maya Tomas ok on backs"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "June, Priya, Maya, Tomas up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack goldfish, everyone ate some"
+  },
+  {
+   "id": "N25",
+   "t": "16:08",
+   "text": "June out 4:08, dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:18",
+   "text": "Priya out 4:18, dad"
+  },
+  {
+   "id": "N27",
+   "t": "16:35",
+   "text": "Maya picked up by mom"
+  },
+  {
+   "id": "N28",
+   "t": "16:54",
+   "text": "Tomas out 4:54, dad"
+  },
+  {
+   "id": "N29",
+   "t": "17:07",
+   "text": "Hazel out 5:07, mom"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "priya",
+   "what": "no consent"
+  },
+  {
+   "rule": "med",
+   "kid": "tomas",
+   "what": "no dose, no time stated, no giver"
+  }
+ ]
+}

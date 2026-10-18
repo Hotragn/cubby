@@ -1,0 +1,243 @@
+{
+ "synthetic": true,
+ "id": "day-04",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Hugo Brooks",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "dob": "2025-03-11",
+   "pickup": [
+    {
+     "name": "Rita Chen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2024-07-11",
+   "pickup": [
+    {
+     "name": "Hugo Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2023-11-11",
+   "pickup": [
+    {
+     "name": "Ines Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Zyrtec",
+     "dose": "2.5 ml",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "maya",
+   "name": "Maya",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Paolo Chen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:55",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:23",
+   "text": "Kai arrived 7:23"
+  },
+  {
+   "id": "N3",
+   "t": "07:40",
+   "text": "Ezra dropped off by dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:48",
+   "text": "Leila arrived 7:48"
+  },
+  {
+   "id": "N5",
+   "t": "07:55",
+   "text": "Wren dropped off by dad"
+  },
+  {
+   "id": "N6",
+   "t": "08:11",
+   "text": "Maya arrived 8:11"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast oatmeal and berries. Ezra ate all, Leila didn't touch it, Wren didn't touch it, Maya didn't touch it"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Kai 4 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Kai BM, Ezra BM, Leila wet, Wren wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Maya used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "playdough, Kai and Ezra loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:30",
+   "text": "gave Ezra motrin 2.5 ml for teething"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Ezra had a few bites, Leila didn't touch it, Wren had a few bites, Maya ate all"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "Wren had her zyrtec"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "Kai, Ezra, Leila, Wren down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "12:45 check: Kai, Ezra, Leila, Wren sleeping"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "checked Kai, Ezra, Leila, Wren 1:00"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "sleep check 1:15 Kai Ezra Leila Wren ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "checked Kai, Ezra, Leila, Wren 1:30"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "1:45 check: Kai, Ezra, Leila, Wren sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "2:00 check: Kai, Ezra, Leila, Wren sleeping"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "checked Kai, Ezra, Leila, Wren 2:15"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "Kai, Ezra, Leila, Wren up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack apple slices, everyone ate most"
+  },
+  {
+   "id": "N25",
+   "t": "16:11",
+   "text": "Kai picked up by mom"
+  },
+  {
+   "id": "N26",
+   "t": "16:24",
+   "text": "Ezra picked up by dad"
+  },
+  {
+   "id": "N27",
+   "t": "16:39",
+   "text": "Leila out 4:39, dad"
+  },
+  {
+   "id": "N28",
+   "t": "17:01",
+   "text": "Wren home w Ines"
+  },
+  {
+   "id": "N29",
+   "t": "17:20",
+   "text": "Maya out 5:20, dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "med",
+   "kid": "ezra",
+   "what": "no consent"
+  },
+  {
+   "rule": "med",
+   "kid": "wren",
+   "what": "no dose, no time stated, no giver"
+  }
+ ]
+}

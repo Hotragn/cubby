@@ -1,0 +1,219 @@
+{
+ "synthetic": true,
+ "id": "day-03",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "idris",
+   "name": "Idris",
+   "dob": "2026-02-11",
+   "pickup": [
+    {
+     "name": "Tom Brooks",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah",
+   "dob": "2025-09-11",
+   "pickup": [
+    {
+     "name": "Malik Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "lucia",
+   "name": "Lucia",
+   "dob": "2025-04-11",
+   "pickup": [
+    {
+     "name": "Malik Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2024-12-11",
+   "pickup": [
+    {
+     "name": "Ines Hale",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  },
+  {
+   "id": "a",
+   "name": "Bea"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:50",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:23",
+   "text": "Idris in w dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:33",
+   "text": "Jonah in w mom"
+  },
+  {
+   "id": "N4",
+   "t": "07:49",
+   "text": "Lucia in w dad"
+  },
+  {
+   "id": "N5",
+   "t": "07:57",
+   "text": "Priya here"
+  },
+  {
+   "id": "N6",
+   "t": "08:00",
+   "text": "Bea in"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast waffles. Jonah cleaned the plate, Lucia had a few bites, Priya ate half"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Idris 6 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Idris wet, Jonah wet, Lucia BM, Priya wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "blocks and trains, Idris and Jonah loved it"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch turkey wraps. Jonah cleaned the plate, Lucia ate most, Priya cleaned the plate"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Idris, Jonah, Lucia, Priya down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "12:45 check: Idris, Jonah, Lucia, Priya sleeping"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "1:00 check: Idris, Jonah, Lucia, Priya sleeping"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "1:15 check: Idris, Jonah, Lucia, Priya sleeping"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "sleep check 1:30 Idris Jonah Lucia Priya ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "1:45 check: Idris, Jonah, Lucia, Priya sleeping"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "sleep check 2:00 Idris Jonah Lucia Priya ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "sleep check 2:15 Idris Jonah Lucia Priya ok on backs"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Idris, Jonah, Lucia, Priya up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack goldfish, everyone ate all of it"
+  },
+  {
+   "id": "N22",
+   "t": "15:10",
+   "text": "Bea out"
+  },
+  {
+   "id": "N23",
+   "t": "16:00",
+   "text": "Bea back"
+  },
+  {
+   "id": "N24",
+   "t": "16:19",
+   "text": "Idris home w Tom"
+  },
+  {
+   "id": "N25",
+   "t": "16:40",
+   "text": "Jonah out 4:40, mom"
+  },
+  {
+   "id": "N26",
+   "t": "16:54",
+   "text": "Lucia out 4:54, dad"
+  },
+  {
+   "id": "N27",
+   "t": "17:10",
+   "text": "Priya home w Ines"
+  },
+  {
+   "id": "N28",
+   "t": "17:30",
+   "text": "Bea out"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "4 under 2 with one adult"
+  }
+ ]
+}

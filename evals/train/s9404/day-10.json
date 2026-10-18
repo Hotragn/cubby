@@ -1,0 +1,226 @@
+{
+ "synthetic": true,
+ "id": "day-10",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2025-11-11",
+   "pickup": [
+    {
+     "name": "Dee Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "ezra",
+   "name": "Ezra",
+   "dob": "2025-01-11",
+   "pickup": [
+    {
+     "name": "Rita Chen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2024-03-11",
+   "pickup": [
+    {
+     "name": "Jen Hale",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "eli",
+   "name": "Eli",
+   "dob": "2023-04-11",
+   "pickup": [
+    {
+     "name": "Rita Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2022-08-11",
+   "pickup": [
+    {
+     "name": "Jen Farah",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:51",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:14",
+   "text": "Nora in w mom"
+  },
+  {
+   "id": "N3",
+   "t": "07:27",
+   "text": "Ezra in w dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:39",
+   "text": "Kai in w mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:55",
+   "text": "Eli arrived 7:55"
+  },
+  {
+   "id": "N6",
+   "t": "08:00",
+   "text": "Wren in w mom"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Ezra ate all, Kai ate most, Eli cleaned the plate, Wren cleaned the plate"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Nora 6 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Nora wet, Ezra wet, Kai wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Eli used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "playdough, Nora and Ezra loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:15",
+   "text": "Felix bit into his apple and said it was the best ever"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch fish sticks and corn. Ezra ate all, Kai ate half, Eli ate most, Wren ate half"
+  },
+  {
+   "id": "N14",
+   "t": "11:40",
+   "text": "talked about the doctor visit Maya had last week, she showed us her bandaid sticker book"
+  },
+  {
+   "id": "N15",
+   "t": "12:32",
+   "text": "Nora, Ezra, Kai, Eli down for nap 12:30"
+  },
+  {
+   "id": "N16",
+   "t": "12:45",
+   "text": "sleep check 12:45 Nora Ezra Kai Eli ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:00",
+   "text": "1:00 check: Nora, Ezra, Kai, Eli sleeping"
+  },
+  {
+   "id": "N18",
+   "t": "13:15",
+   "text": "checked Nora, Ezra, Kai, Eli 1:15"
+  },
+  {
+   "id": "N19",
+   "t": "13:30",
+   "text": "1:30 check: Nora, Ezra, Kai, Eli sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:45",
+   "text": "sleep check 1:45 Nora Ezra Kai Eli ok on backs"
+  },
+  {
+   "id": "N21",
+   "t": "14:00",
+   "text": "2:00 check: Nora, Ezra, Kai, Eli sleeping"
+  },
+  {
+   "id": "N22",
+   "t": "14:15",
+   "text": "sleep check 2:15 Nora Ezra Kai Eli ok on backs"
+  },
+  {
+   "id": "N23",
+   "t": "14:31",
+   "text": "Nora, Ezra, Kai, Eli up at 2:30"
+  },
+  {
+   "id": "N24",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate most"
+  },
+  {
+   "id": "N25",
+   "t": "16:09",
+   "text": "Nora home w Dee"
+  },
+  {
+   "id": "N26",
+   "t": "16:21",
+   "text": "Ezra out 4:21, dad"
+  },
+  {
+   "id": "N27",
+   "t": "16:36",
+   "text": "Kai home w Jen"
+  },
+  {
+   "id": "N28",
+   "t": "16:47",
+   "text": "Eli out 4:47, dad"
+  },
+  {
+   "id": "N29",
+   "t": "16:57",
+   "text": "Wren home w Jen"
+  }
+ ],
+ "planted": []
+}

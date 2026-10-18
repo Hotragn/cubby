@@ -1,0 +1,274 @@
+{
+ "synthetic": true,
+ "id": "day-12",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "kai",
+   "name": "Kai",
+   "dob": "2026-04-11",
+   "pickup": [
+    {
+     "name": "Hugo Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": [
+    {
+     "med": "Diaper cream",
+     "dose": "thin layer",
+     "until": "2026-12-31"
+    }
+   ]
+  },
+  {
+   "id": "zoe",
+   "name": "Zoe",
+   "dob": "2026-01-11",
+   "pickup": [
+    {
+     "name": "Paolo Chen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "nora",
+   "name": "Nora",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Tom Dube",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "idris",
+   "name": "Idris",
+   "dob": "2025-08-11",
+   "pickup": [
+    {
+     "name": "Ines Ito",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "wren",
+   "name": "Wren",
+   "dob": "2024-04-11",
+   "pickup": [
+    {
+     "name": "Rita Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "maya",
+   "name": "Maya",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Luis Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  },
+  {
+   "id": "a",
+   "name": "Joy"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:56",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:23",
+   "text": "Kai dropped off by dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:39",
+   "text": "Zoe dropped off by mom"
+  },
+  {
+   "id": "N4",
+   "t": "07:43",
+   "text": "Nora arrived 7:43"
+  },
+  {
+   "id": "N5",
+   "t": "07:54",
+   "text": "Idris dropped off by mom"
+  },
+  {
+   "id": "N6",
+   "t": "08:00",
+   "text": "Joy in"
+  },
+  {
+   "id": "N7",
+   "t": "08:10",
+   "text": "Wren arrived 8:10"
+  },
+  {
+   "id": "N8",
+   "t": "08:19",
+   "text": "Maya in w dad"
+  },
+  {
+   "id": "N9",
+   "t": "08:30",
+   "text": "breakfast yogurt and banana. Nora had a few bites, Idris ate all, Wren cleaned the plate, Maya didn't touch it"
+  },
+  {
+   "id": "N10",
+   "t": "08:35",
+   "text": "Kai 5 oz bottle"
+  },
+  {
+   "id": "N11",
+   "t": "08:35",
+   "text": "Zoe 5 oz bottle"
+  },
+  {
+   "id": "N12",
+   "t": "09:20",
+   "text": "Kai wet, Zoe wet, Nora wet, Idris BM, Wren BM diapers"
+  },
+  {
+   "id": "N13",
+   "t": "09:25",
+   "text": "Maya used the potty"
+  },
+  {
+   "id": "N14",
+   "t": "10:00",
+   "text": "story time, Kai and Zoe loved it"
+  },
+  {
+   "id": "N15",
+   "t": "10:55",
+   "text": "Kai diaper cream at the 10:55 change"
+  },
+  {
+   "id": "N16",
+   "t": "11:30",
+   "text": "lunch pasta with peas. Nora ate most, Idris ate half, Wren ate most, Maya ate all"
+  },
+  {
+   "id": "N17",
+   "t": "12:32",
+   "text": "Kai, Zoe, Nora, Idris, Wren, Maya down for nap 12:30"
+  },
+  {
+   "id": "N18",
+   "t": "12:45",
+   "text": "sleep check 12:45 Kai Zoe Nora Idris Wren Maya ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "13:00",
+   "text": "1:00 check: Kai, Zoe, Nora, Idris, Wren, Maya sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "13:15",
+   "text": "1:15 check: Kai, Zoe, Nora, Idris, Wren, Maya sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "13:30",
+   "text": "1:30 check: Kai, Zoe, Nora, Idris, Wren, Maya sleeping"
+  },
+  {
+   "id": "N22",
+   "t": "13:45",
+   "text": "sleep check 1:45 Kai Zoe Nora Idris Wren Maya ok on backs"
+  },
+  {
+   "id": "N23",
+   "t": "14:00",
+   "text": "checked Kai, Zoe, Nora, Idris, Wren, Maya 2:00"
+  },
+  {
+   "id": "N24",
+   "t": "14:15",
+   "text": "2:15 check: Kai, Zoe, Nora, Idris, Wren, Maya sleeping"
+  },
+  {
+   "id": "N25",
+   "t": "14:31",
+   "text": "Kai, Zoe, Nora, Idris, Wren, Maya up at 2:30"
+  },
+  {
+   "id": "N26",
+   "t": "15:00",
+   "text": "Joy out"
+  },
+  {
+   "id": "N27",
+   "t": "15:05",
+   "text": "snack crackers and cheese, everyone ate most"
+  },
+  {
+   "id": "N28",
+   "t": "16:08",
+   "text": "Kai home w Hugo"
+  },
+  {
+   "id": "N29",
+   "t": "16:30",
+   "text": "Zoe out 4:30, mom"
+  },
+  {
+   "id": "N30",
+   "t": "16:48",
+   "text": "Nora home w Tom"
+  },
+  {
+   "id": "N31",
+   "t": "17:03",
+   "text": "Idris out 5:03, mom"
+  },
+  {
+   "id": "N32",
+   "t": "17:11",
+   "text": "Wren home w Rita"
+  },
+  {
+   "id": "N33",
+   "t": "17:25",
+   "text": "Maya picked up by dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "after Joy leaves: 4 under 2 with one adult"
+  }
+ ]
+}

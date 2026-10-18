@@ -198,6 +198,7 @@ label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(-
 .weekdays button { width: 100%; display: flex; align-items: center; gap: 12px; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 10px 12px; cursor: pointer; min-height: 56px; }
 .weekdays li.on button { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink) inset; } .weekdays li.nodata button { opacity: .55; cursor: default; }
 .wd { width: 40px; flex: none; font-weight: 700; font-size: 13px; display: grid; } .wd small { font: 800 18px/1 var(--display); }
-.bar { display: block; height: 6px; background: var(--surface2); border-radius: 9px; overflow: hidden; margin-bottom: 4px; } .bar i { display: block; height: 100%; background: var(--hot); border-radius: 9px; }
+.wbar { display: block; height: 6px; background: var(--surface2); border-radius: 9px; overflow: hidden; margin-bottom: 4px; } .wbar i { display: block; height: 100%; background: var(--hot); border-radius: 9px; }
 .nomic { width: 44px; height: 44px; flex: none; border-radius: 99px; border: 1px dashed var(--line); background: transparent; opacity: .6; cursor: pointer; }
 @media (max-width: 380px) { .brand { flex-wrap: wrap; } .modes button { padding: 7px 8px; } .weektot { grid-template-columns: repeat(2, 1fr); } .tabs button { padding: 0 6px; font-size: 14px; } }
+.reminders { border-color: var(--hot); margin-bottom: 14px; } .reminders ul { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; } .reminders li { background: var(--hot-bg); color: var(--hot); border-radius: 10px; padding: 8px 10px; font-weight: 600; font-size: 14px; }

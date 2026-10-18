@@ -1,0 +1,219 @@
+{
+ "synthetic": true,
+ "id": "day-03",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "amara",
+   "name": "Amara",
+   "dob": "2026-02-11",
+   "pickup": [
+    {
+     "name": "Dee Jansen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "omar",
+   "name": "Omar",
+   "dob": "2025-09-11",
+   "pickup": [
+    {
+     "name": "Dee Khan",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2025-04-11",
+   "pickup": [
+    {
+     "name": "Hugo Ellis",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "sofia",
+   "name": "Sofia",
+   "dob": "2024-12-11",
+   "pickup": [
+    {
+     "name": "Kim Alvarez",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Bea"
+  },
+  {
+   "id": "a",
+   "name": "Bea"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:58",
+   "text": "Bea in"
+  },
+  {
+   "id": "N2",
+   "t": "07:21",
+   "text": "Amara arrived 7:21"
+  },
+  {
+   "id": "N3",
+   "t": "07:36",
+   "text": "Omar dropped off by dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:51",
+   "text": "Otto in w mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:58",
+   "text": "Sofia dropped off by dad"
+  },
+  {
+   "id": "N6",
+   "t": "08:00",
+   "text": "Bea in"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast toast and eggs. Omar ate all, Otto ate all, Sofia ate all"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "Amara 6 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "Amara wet, Omar wet, Otto BM, Sofia wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "painting at the easel, Amara and Omar loved it"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch pasta with peas. Omar had a few bites, Otto cleaned the plate, Sofia ate half"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Amara, Omar, Otto, Sofia down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "checked Amara, Omar, Otto, Sofia 12:45"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "sleep check 1:00 Amara Omar Otto Sofia ok on backs"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "sleep check 1:15 Amara Omar Otto Sofia ok on backs"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "sleep check 1:30 Amara Omar Otto Sofia ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "checked Amara, Omar, Otto, Sofia 1:45"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "2:00 check: Amara, Omar, Otto, Sofia sleeping"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "2:15 check: Amara, Omar, Otto, Sofia sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Amara, Omar, Otto, Sofia up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack pear and cheese, everyone ate most"
+  },
+  {
+   "id": "N22",
+   "t": "15:10",
+   "text": "Bea out"
+  },
+  {
+   "id": "N23",
+   "t": "16:00",
+   "text": "Bea back"
+  },
+  {
+   "id": "N24",
+   "t": "16:15",
+   "text": "Amara out 4:15, dad"
+  },
+  {
+   "id": "N25",
+   "t": "16:30",
+   "text": "Omar home w Dee"
+  },
+  {
+   "id": "N26",
+   "t": "16:39",
+   "text": "Otto picked up by mom"
+  },
+  {
+   "id": "N27",
+   "t": "17:01",
+   "text": "Sofia out 5:01, dad"
+  },
+  {
+   "id": "N28",
+   "t": "17:30",
+   "text": "Bea out"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "ratio",
+   "kid": null,
+   "what": "4 under 2 with one adult"
+  }
+ ]
+}

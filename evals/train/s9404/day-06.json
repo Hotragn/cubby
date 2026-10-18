@@ -1,0 +1,205 @@
+{
+ "synthetic": true,
+ "id": "day-06",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2025-10-11",
+   "pickup": [
+    {
+     "name": "Ada Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "june",
+   "name": "June",
+   "dob": "2024-10-11",
+   "pickup": [
+    {
+     "name": "Rita Chen",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "tomas",
+   "name": "Tomas",
+   "dob": "2024-01-11",
+   "pickup": [
+    {
+     "name": "Malik Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "idris",
+   "name": "Idris",
+   "dob": "2022-11-11",
+   "pickup": [
+    {
+     "name": "Rita Lund",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Marcus"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:54",
+   "text": "Marcus in"
+  },
+  {
+   "id": "N2",
+   "t": "07:16",
+   "text": "Leila dropped off by mom"
+  },
+  {
+   "id": "N3",
+   "t": "07:22",
+   "text": "June dropped off by dad"
+  },
+  {
+   "id": "N4",
+   "t": "07:33",
+   "text": "Tomas here"
+  },
+  {
+   "id": "N5",
+   "t": "07:39",
+   "text": "Idris in w dad"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast oatmeal and berries. Leila ate most, June ate most, Tomas didn't touch it, Idris didn't touch it"
+  },
+  {
+   "id": "N7",
+   "t": "09:20",
+   "text": "Leila wet, June wet, Tomas BM diapers"
+  },
+  {
+   "id": "N8",
+   "t": "09:25",
+   "text": "Idris used the potty"
+  },
+  {
+   "id": "N9",
+   "t": "10:00",
+   "text": "painting at the easel, Leila and June loved it"
+  },
+  {
+   "id": "N10",
+   "t": "10:45",
+   "text": "Tomas has a goose egg on his forehead after the slide, ice pack"
+  },
+  {
+   "id": "N11",
+   "t": "11:30",
+   "text": "lunch chicken and rice. Leila ate most, June didn't touch it, Tomas ate all, Idris didn't touch it"
+  },
+  {
+   "id": "N12",
+   "t": "12:32",
+   "text": "Leila, June, Tomas, Idris down for nap 12:30"
+  },
+  {
+   "id": "N13",
+   "t": "12:45",
+   "text": "sleep check 12:45 Leila June Tomas Idris ok on backs"
+  },
+  {
+   "id": "N14",
+   "t": "13:00",
+   "text": "1:00 check: Leila, June, Tomas, Idris sleeping"
+  },
+  {
+   "id": "N15",
+   "t": "13:15",
+   "text": "1:15 check: Leila, June, Tomas, Idris sleeping"
+  },
+  {
+   "id": "N16",
+   "t": "13:30",
+   "text": "sleep check 1:30 Leila June Tomas Idris ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:45",
+   "text": "sleep check 1:45 Leila June Tomas Idris ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "14:00",
+   "text": "sleep check 2:00 Leila June Tomas Idris ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:15",
+   "text": "2:15 check: Leila, June, Tomas, Idris sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "14:31",
+   "text": "Leila, June, Tomas, Idris up at 2:30"
+  },
+  {
+   "id": "N21",
+   "t": "15:05",
+   "text": "snack crackers and cheese, everyone ate all of it"
+  },
+  {
+   "id": "N22",
+   "t": "16:12",
+   "text": "Leila home w Ada"
+  },
+  {
+   "id": "N23",
+   "t": "16:22",
+   "text": "June picked up by his uncle Dev"
+  },
+  {
+   "id": "N24",
+   "t": "16:31",
+   "text": "Tomas picked up by dad"
+  },
+  {
+   "id": "N25",
+   "t": "16:39",
+   "text": "Idris picked up by dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "tomas",
+   "what": "Tomas has a goose egg on his forehead after the slide, ice pack"
+  },
+  {
+   "rule": "attendance",
+   "kid": "june",
+   "what": "picked up by his uncle Dev, not on list"
+  }
+ ]
+}

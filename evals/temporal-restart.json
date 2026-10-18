@@ -1,0 +1,1 @@
+{"test":"worker killed at 5 s, restarted at 12 s, 20 s sleep-check timer","result":{"timerMs":20000,"workerKilledAtMs":5011,"workerRestartedAtMs":12014,"reminderAtMs":20108,"lateByMs":108},"ranAt":"2026-10-18T23:14Z","temporal":"temporal CLI dev server (local), @temporalio/* 1.24"}

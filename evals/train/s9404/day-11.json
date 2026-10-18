@@ -1,0 +1,232 @@
+{
+ "synthetic": true,
+ "id": "day-11",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "june",
+   "name": "June",
+   "dob": "2026-02-11",
+   "pickup": [
+    {
+     "name": "Hugo Jansen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "priya",
+   "name": "Priya",
+   "dob": "2025-04-11",
+   "pickup": [
+    {
+     "name": "Dee Khan",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "mateo",
+   "name": "Mateo",
+   "dob": "2024-06-11",
+   "pickup": [
+    {
+     "name": "Kim Greer",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "finn",
+   "name": "Finn",
+   "dob": "2023-09-11",
+   "pickup": [
+    {
+     "name": "Malik Chen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "felix",
+   "name": "Felix",
+   "dob": "2022-09-11",
+   "pickup": [
+    {
+     "name": "Sam Chen",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Gloria"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "07:02",
+   "text": "Gloria in"
+  },
+  {
+   "id": "N2",
+   "t": "07:24",
+   "text": "June arrived 7:24"
+  },
+  {
+   "id": "N3",
+   "t": "07:36",
+   "text": "Priya dropped off by mom"
+  },
+  {
+   "id": "N4",
+   "t": "07:47",
+   "text": "Mateo dropped off by dad"
+  },
+  {
+   "id": "N5",
+   "t": "08:00",
+   "text": "Finn arrived 8:00"
+  },
+  {
+   "id": "N6",
+   "t": "08:17",
+   "text": "Felix arrived 8:17"
+  },
+  {
+   "id": "N7",
+   "t": "08:30",
+   "text": "breakfast cheerios and milk. Priya ate half, Mateo ate half, Finn cleaned the plate, Felix ate all"
+  },
+  {
+   "id": "N8",
+   "t": "08:35",
+   "text": "June 4 oz bottle"
+  },
+  {
+   "id": "N9",
+   "t": "09:20",
+   "text": "June wet, Priya wet, Mateo wet diapers"
+  },
+  {
+   "id": "N10",
+   "t": "09:25",
+   "text": "Finn used the potty"
+  },
+  {
+   "id": "N11",
+   "t": "10:00",
+   "text": "story time, June and Priya loved it"
+  },
+  {
+   "id": "N12",
+   "t": "10:10",
+   "text": "Finn fell off the little chair, bumped his chin, cold cloth, Gloria saw"
+  },
+  {
+   "id": "N13",
+   "t": "11:30",
+   "text": "lunch fish sticks and corn. Priya cleaned the plate, Mateo ate all, Finn ate half, Felix didn't touch it"
+  },
+  {
+   "id": "N14",
+   "t": "12:32",
+   "text": "June, Priya, Mateo, Finn down for nap 12:30"
+  },
+  {
+   "id": "N15",
+   "t": "12:45",
+   "text": "12:45 check: June, Priya, Mateo, Finn sleeping"
+  },
+  {
+   "id": "N16",
+   "t": "13:00",
+   "text": "sleep check 1:00 June Priya Mateo Finn ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:15",
+   "text": "sleep check 1:15 June Priya Mateo Finn ok on backs"
+  },
+  {
+   "id": "N18",
+   "t": "13:30",
+   "text": "checked June, Priya, Mateo, Finn 1:30"
+  },
+  {
+   "id": "N19",
+   "t": "13:45",
+   "text": "checked June, Priya, Mateo, Finn 1:45"
+  },
+  {
+   "id": "N20",
+   "t": "14:00",
+   "text": "2:00 check: June, Priya, Mateo, Finn sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "14:15",
+   "text": "sleep check 2:15 June Priya Mateo Finn ok on backs"
+  },
+  {
+   "id": "N22",
+   "t": "14:31",
+   "text": "June, Priya, Mateo, Finn up at 2:30"
+  },
+  {
+   "id": "N23",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate all of it"
+  },
+  {
+   "id": "N24",
+   "t": "16:21",
+   "text": "June picked up by mom"
+  },
+  {
+   "id": "N25",
+   "t": "16:51",
+   "text": "Mateo out 4:51, dad"
+  },
+  {
+   "id": "N26",
+   "t": "17:05",
+   "text": "Finn out 5:05, mom"
+  },
+  {
+   "id": "N27",
+   "t": "17:55",
+   "text": "Felix picked up 5:52 by mom, traffic"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "finn",
+   "what": "Finn fell off the little chair, bumped his chin, cold cloth, Gloria saw"
+  },
+  {
+   "rule": "attendance",
+   "kid": "priya",
+   "what": "no sign-out"
+  },
+  {
+   "rule": "late",
+   "kid": "felix",
+   "what": "picked up 5:52"
+  }
+ ]
+}

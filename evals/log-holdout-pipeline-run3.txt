@@ -1,3 +1,29 @@
 day-01 caught 0/0 fa 1 31.1s  FA med: Note mentions "medicine" but no medication was logged
 day-02 caught 2/2 fa 0 29.5s  
 day-03 caught 1/1 fa 0 32.5s  
+day-04 caught 2/2 fa 0 32.4s  
+day-05 caught 2/2 fa 0 33.0s  
+day-06 caught 2/2 fa 1 34.2s  FA attendance:leila Leila: who picked up at 4:43 pm?
+day-07 caught 4/4 fa 0 34.4s  
+day-08 caught 2/2 fa 0 42.8s  
+day-09 caught 2/2 fa 0 33.7s  
+day-10 caught 0/0 fa 0 32.6s  
+day-11 caught 3/3 fa 0 30.6s  
+day-12 caught 1/1 fa 1 95.2s  FA med:lucia Lucia: medication log is missing dose, who gave it
+hand-A caught 8/8 fa 1 42.5s  FA attendance:bodhi Bodhi: no sign-out time
+hand-B caught 8/8 fa 0 40.5s  
+{
+  mode: 'pipeline-holdout',
+  model: 'gemma-4-26b-a4b-it',
+  ranAt: '2026-10-18T23:16:30.241Z',
+  days: 14,
+  planted: 37,
+  caught: 37,
+  missed: 0,
+  fa: 4,
+  ms: 544897,
+  inT: 49651,
+  outT: 44712,
+  notes: 383,
+  avgSecPerDay: 38.9
+}

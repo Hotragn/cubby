@@ -1,0 +1,242 @@
+{
+ "synthetic": true,
+ "id": "day-07",
+ "date": "2026-10-14",
+ "state": "MA",
+ "settings": {
+  "open": "7:00",
+  "close": "17:30"
+ },
+ "roster": [
+  {
+   "id": "ivy",
+   "name": "Ivy",
+   "dob": "2025-12-11",
+   "pickup": [
+    {
+     "name": "Tom Alvarez",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "finn",
+   "name": "Finn",
+   "dob": "2025-05-11",
+   "pickup": [
+    {
+     "name": "Rita Ellis",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "leila",
+   "name": "Leila",
+   "dob": "2024-09-11",
+   "pickup": [
+    {
+     "name": "Hugo Alvarez",
+     "rel": "mom"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "otto",
+   "name": "Otto",
+   "dob": "2023-10-11",
+   "pickup": [
+    {
+     "name": "Ines Hale",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  },
+  {
+   "id": "lucia",
+   "name": "Lucia",
+   "dob": "2023-02-11",
+   "pickup": [
+    {
+     "name": "Paolo Ito",
+     "rel": "dad"
+    }
+   ],
+   "consents": []
+  }
+ ],
+ "staff": [
+  {
+   "id": "p",
+   "name": "Bea"
+  }
+ ],
+ "notes": [
+  {
+   "id": "N1",
+   "t": "06:57",
+   "text": "Bea in"
+  },
+  {
+   "id": "N2",
+   "t": "07:19",
+   "text": "Ivy dropped off by dad"
+  },
+  {
+   "id": "N3",
+   "t": "07:27",
+   "text": "Finn arrived 7:27"
+  },
+  {
+   "id": "N4",
+   "t": "07:41",
+   "text": "Leila in w mom"
+  },
+  {
+   "id": "N5",
+   "t": "07:45",
+   "text": "Otto here"
+  },
+  {
+   "id": "N6",
+   "t": "08:30",
+   "text": "breakfast yogurt and banana. Finn didn't touch it, Leila ate most, Otto ate half, Lucia ate most"
+  },
+  {
+   "id": "N7",
+   "t": "08:35",
+   "text": "Ivy 6 oz bottle"
+  },
+  {
+   "id": "N8",
+   "t": "09:20",
+   "text": "Ivy wet, Finn BM, Leila wet diapers"
+  },
+  {
+   "id": "N9",
+   "t": "09:25",
+   "text": "Otto used the potty"
+  },
+  {
+   "id": "N10",
+   "t": "10:00",
+   "text": "bubbles in the yard, Ivy and Finn loved it"
+  },
+  {
+   "id": "N11",
+   "t": "11:00",
+   "text": "Finn bit Leila on the hand, left a mark, talked about gentle hands"
+  },
+  {
+   "id": "N12",
+   "t": "11:30",
+   "text": "lunch fish sticks and corn. Finn cleaned the plate, Leila ate most, Otto ate most, Lucia didn't touch it"
+  },
+  {
+   "id": "N13",
+   "t": "12:32",
+   "text": "Ivy, Finn, Leila, Otto, Lucia down for nap 12:30"
+  },
+  {
+   "id": "N14",
+   "t": "12:45",
+   "text": "12:45 check: Ivy, Finn, Leila, Otto, Lucia sleeping"
+  },
+  {
+   "id": "N15",
+   "t": "13:00",
+   "text": "checked Ivy, Finn, Leila, Otto, Lucia 1:00"
+  },
+  {
+   "id": "N16",
+   "t": "13:15",
+   "text": "sleep check 1:15 Ivy Finn Leila Otto Lucia ok on backs"
+  },
+  {
+   "id": "N17",
+   "t": "13:30",
+   "text": "1:30 check: Ivy, Finn, Leila, Otto, Lucia sleeping"
+  },
+  {
+   "id": "N18",
+   "t": "13:45",
+   "text": "sleep check 1:45 Ivy Finn Leila Otto Lucia ok on backs"
+  },
+  {
+   "id": "N19",
+   "t": "14:00",
+   "text": "2:00 check: Ivy, Finn, Leila, Otto, Lucia sleeping"
+  },
+  {
+   "id": "N20",
+   "t": "14:15",
+   "text": "2:15 check: Ivy, Finn, Leila, Otto, Lucia sleeping"
+  },
+  {
+   "id": "N21",
+   "t": "14:31",
+   "text": "Ivy, Finn, Leila, Otto, Lucia up at 2:30"
+  },
+  {
+   "id": "N22",
+   "t": "14:40",
+   "text": "Ivy napped 2:30 to 1:10"
+  },
+  {
+   "id": "N23",
+   "t": "15:05",
+   "text": "snack rice cakes, everyone ate all of it"
+  },
+  {
+   "id": "N24",
+   "t": "16:14",
+   "text": "Ivy out 4:14, dad"
+  },
+  {
+   "id": "N25",
+   "t": "16:32",
+   "text": "Finn out 4:32, dad"
+  },
+  {
+   "id": "N26",
+   "t": "16:43",
+   "text": "Leila picked up by mom"
+  },
+  {
+   "id": "N27",
+   "t": "17:02",
+   "text": "Otto out 5:02, dad"
+  },
+  {
+   "id": "N28",
+   "t": "17:16",
+   "text": "Lucia out 5:16, dad"
+  }
+ ],
+ "planted": [
+  {
+   "rule": "incident",
+   "kid": "leila",
+   "what": "bitten"
+  },
+  {
+   "rule": "incident",
+   "kid": "finn",
+   "what": "biter: behavior incident record (7.11(5)(f))"
+  },
+  {
+   "rule": "time",
+   "kid": "ivy",
+   "what": "nap ends before it starts"
+  },
+  {
+   "rule": "attendance",
+   "kid": "lucia",
+   "what": "no sign-in"
+  }
+ ]
+}
