@@ -42,18 +42,18 @@ None of those pricing pages mention medication consent or incident-report checks
    - late pickups, and times that can't be right
 
    **Every flag shows the note that caused it and the rule it comes from.**
-4. **Send.** Each parent gets a short sheet built from the checked events. Gemma can make it warmer or write it in Spanish, Portuguese, Haitian Creole, Arabic and more. Before anyone sees it, code checks every time, number, food and health word against the log. If Gemma added anything, the plain version is used. Injuries and medicine are **never re-worded**: they stay exactly as logged. (A [public App Store review](https://apps.apple.com/us/app/id428376881) of another daycare app describes a Spanish machine translation that turned a child being "out" sick into a child who had "died".)
+4. **Send.** Each parent gets a short sheet built from the checked events. Gemma can make it warmer or write it in Spanish, Portuguese, Haitian Creole, Arabic and more. Before anyone sees it, code checks every time, number, food and health word against the log. If Gemma added anything, the plain version is used. Injuries and medicine are **never re-worded**: they stay in the provider's exact words. And one parent's sheet never names another child ("Another child bit Leo on the arm…"). (A [public App Store review](https://apps.apple.com/us/app/id428376881) of another daycare app describes a Spanish machine translation that turned a child being "out" sick into a child who had "died".)
 5. **Inspector log.** One tap exports the day as PDF or CSV. Each entry keeps the note it came from.
 
 ## Demo
 
 **Live:** https://cubby-daycare.onrender.com. It opens on a fictional day with 4 fictional children and 9 planted problems, so the flags are there on first load. It's built for a phone.
 
-![Today: over ratio right now](https://cubby-daycare.onrender.com/shots/today.png)
+![Today at 2:50 pm: over ratio right now](https://cubby-daycare.onrender.com/shots/today.jpg)
 
-![To fix: a sleep-check gap with the notes that prove it](https://cubby-daycare.onrender.com/shots/fix.png)
+![To fix: the ratio problem, with the two notes that prove it and the rule](https://cubby-daycare.onrender.com/shots/fix.jpg)
 
-![Ava's sheet in Spanish, checked against the log](https://cubby-daycare.onrender.com/shots/sheet.png)
+![Ava's sheet in Spanish, checked against the log; the incident line stays exactly as logged](https://cubby-daycare.onrender.com/shots/sheet.jpg)
 
 Try typing a note in the bottom bar (made-up names only, please), for example "Theo scraped his elbow on the fence at 4:30, bandaid, Rosa". Within a few seconds it shows up as an incident, and the To fix list grows by one, with a pre-filled report.
 
