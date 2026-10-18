@@ -8,14 +8,17 @@ Deadline: DEV Hacktoberfest Week 2 ends 2026-10-19 06:59 UTC (publish target 04:
 - First user: no real person. Use public forum posts (Reddit, daycare.com, app reviews) as cited research. Never fake a user.
 - Never touch week2/ (Stitch Math), its Render service or its DEV draft.
 
-## Status (updated ~23:30 UTC Oct 18)
-- LIVE: https://cubby-daycare.onrender.com (Render free plan, service srv-dbakemvbtjjs73fh5ceg, autodeploy from Hotragn/cubby master; GitHub Actions keep-awake every 10 min)
-- DEV draft (unpublished): id 4874285, edit https://dev.to/hotragn/cubby-a-home-daycare-talks-through-its-day-gemma-writes-the-log-and-code-catches-37-of-37-6a-temp-slug-3747251/edit (AI disclosure some_ai). Source in docs/post.md.
-- Evals done: dev 21/21 (2 FA) vs Gemma-alone 16/21 (67 FA); held-out 37/37 (6 FA) vs 30/37 (72 FA); local E4B on 2 hand days 16/16 (4 FA), 108.6 s/day on M4. docs/REPORT.md.
-- Verified on live: first load (375x812, 320x568, narrow pane), add note → event + new flag, Spanish sheet + grounding check, ElevenLabs voice, PDF/CSV export (PDF fixed), Mongo feedback (one smoke-test doc labelled as such).
-- NOT verified: real WhatsApp / Brave in-app browsers and a real phone mic (can't run them here). Founder should open the link from WhatsApp once.
+## Status (Oct 18, ~23:50 UTC): all 8 requested items done except the founder's phone test
+- LIVE: https://cubby-daycare.onrender.com (Render free plan, srv-dbakemvbtjjs73fh5ceg). DEV draft 4874285 (unpublished, some_ai).
+- Built: setup (My program: children, staff, rules, import/export), week view + weekly PDF/CSV, answers + aliases, phone fallbacks, Temporal timers (local), Tinker LoRA reader (experiment), local mode in the app.
+- Final numbers: docs/REPORT.md, top table. Cloud 37/37 4 FA · Gemma alone 30/37 72 FA · local E4B 37/37 18 FA · Tinker Qwen3.5-4B 37/37 10 FA (3.5 s/day). 11 tests pass. Secret scan clean.
+- WAITING ON FOUNDER: run docs/PHONE-TEST.md (WhatsApp, Brave, real voice), say when to make Hotragn/cubby public (right before publishing), find a first tester (docs/TEST-KIT.md).
+
+## To reproduce locally
+temporal server start-dev · CUBBY_URL=http://localhost:8788 node src/temporal/worker.ts · PORT=8788 GEMMA_LOCAL=1 TEMPORAL_ADDRESS=localhost:7233 TIMER_SCALE=60 node src/server.ts
+Tinker: .venv (python 3.13) · .venv/bin/python ml/train_tinker.py · score: EXTRACTOR=tinker RESCORE=1 RAW_TAG=tinker-qwen3.5-4b DAYS=evals/holdout node evals/run.ts pipeline
 
 ## Before publishing (founder)
-1. Make Hotragn/cubby public (founder said private until work is over). I scan for secrets first.
-2. Open the live link from WhatsApp/Brave on a phone.
-3. Recheck DEV for new daycare rivals and compare with Stitch Math draft 4872054; publish only one.
+1. Phone test results back (fix anything found).
+2. Make Hotragn/cubby public (I re-scan first).
+3. Recheck DEV for rivals; compare with the Stitch Math draft 4872054; publish only one.

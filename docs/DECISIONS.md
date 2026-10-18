@@ -11,4 +11,6 @@
 9. Render free plan (Starter needed a card on file); keep-awake via GitHub Actions. Sentry DSN is shared with week2's project; events tagged app=cubby.
 10. MongoDB stores only anonymous tester feedback, database "cubby". No child data on any server.
 11. React Bits: VoicePill, CountUp, StatusMark, SpringCheck, ClickSpark. BlurText was dropped because it stayed blank until a re-render; the headline uses a CSS blur-in instead.
-12. Tinker and Temporal: not used (not enough time to do them honestly). Nap-check reminders are "next check by" chips in the app instead.
+12. Temporal: local dev server only (no account). napWatch/pickupWatch workflows; restart test in evals/temporal-restart.json. The hosted demo has timers off.
+13. Tinker: Qwen3.5-4B LoRA distilled from Gemma 26B labels (31B was too slow that night). It matches Gemma's catches with more false alarms, so it's not the default and the post calls it an experiment.
+14. Eval cache keyed by model and set (evals/raw/<model>/<set>/); RESCORE=1 re-scores after rule changes. One cache mix-up (dev overwrote held-out) was found and fixed; numbers come from clean re-runs.
