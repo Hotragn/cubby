@@ -1,6 +1,37 @@
+<div align="center">
+
+<img src="public/icon.svg" alt="Cubby logo" width="96" height="96">
+
 # Cubby
 
-**Daily parent sheets and licensing logs for home daycare, from quick notes.**
+**Talk through your daycare day. Cubby writes the paperwork.**
+
+Quick notes become each parent's daily report and your state log, with a warning before an inspector would cite you.
+
+[![Live demo](https://img.shields.io/badge/demo-live-FF6B4A?style=for-the-badge)](https://cubby-daycare.onrender.com)
+[![Gemma 4](https://img.shields.io/badge/AI-Gemma%204-2F7BFF?style=for-the-badge)](https://ai.google.dev/gemma)
+[![Runs locally](https://img.shields.io/badge/runs%20locally-Ollama-00A87E?style=for-the-badge)](#local-mode-nothing-leaves-the-machine)
+[![Tests](https://img.shields.io/badge/tests-11%20passing-8B5CF6?style=for-the-badge)](test/)
+
+[**Try the demo**](https://cubby-daycare.onrender.com/app?tour=1) · [How it works](#how-it-works) · [Test report](docs/REPORT.md) · [DEV post](https://dev.to/hotragn)
+
+<img src="public/shots/cover.jpg" alt="Cubby: talk through your day, Cubby writes the paperwork" width="100%">
+
+</div>
+
+## At a glance
+
+| | |
+|---|---|
+| **Who it's for** | Home (family) daycare providers |
+| **What goes in** | Quick typed or spoken notes: "Ava and Leo napped 1:10 to 2:40" |
+| **What comes out** | Each parent's daily report, the inspector's log (PDF/CSV), and a list of problems to fix |
+| **Rules checked** | Massachusetts 606 CMR 7.00: sleep checks, ratios, medication consent, incident reports, sign-in/out, pickups |
+| **Results** | On 14 set-aside synthetic days: 37/37 planted problems caught, 4 false alarms (Gemma alone: 30/37, 72 false alarms) |
+| **Privacy** | Data stays on the device; runs fully offline with Gemma 4 E4B on Ollama |
+
+<p align="center"><img src="public/shots/panel-day.jpg" alt="A made-up day at Rosa's: see the day, jot a note, fix what's flagged" width="100%"></p>
+
 
 A home daycare provider talks or types quick notes all day ("Ava and Leo napped 1:10 to 2:40"). Gemma, an open model, turns each note into structured events per child. Plain code then builds every parent's daily sheet and checks every licensing rule. Each flag shows the note that caused it and the regulation it comes from. The provider reviews, fixes and sends.
 
