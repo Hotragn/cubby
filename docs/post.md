@@ -47,7 +47,7 @@ None of those pricing pages mention medication consent or incident-report checks
 
 ## Demo
 
-**Live:** https://cubby-daycare.onrender.com, built for a phone.
+**Live:** https://cubby-daycare.onrender.com, a one-page explainer, built for a phone. **Try the demo day** there opens the app (https://cubby-daycare.onrender.com/app) with the tour.
 
 **Start here: tap the tour.** It opens by itself on your first visit; the **?** button replays it. Three steps on the real screens:
 1. a made-up day at Rosa's home daycare

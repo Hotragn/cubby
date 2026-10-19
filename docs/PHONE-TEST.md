@@ -1,10 +1,10 @@
 # Phone test: 3 minutes, real phone
 
-Live link: https://cubby-daycare.onrender.com
+Live link: https://cubby-daycare.onrender.com (landing page; "Try the demo day" opens the app at /app with the tour)
 Use the demo (fictional kids) only. Send the link to yourself in WhatsApp, then open it from there.
 
 ## A. WhatsApp in-app browser (tap the link inside a WhatsApp chat), about 60 s
-1. **First screen:** the headline "…at Rosa's", 3 number tiles, "Over ratio right now" in red, and Mila and Theo listed. Nothing cut off at the sides, and no sideways scroll.
+1. **Landing page:** can you tell what Cubby is in 10 seconds? Tap **Try the demo day**. The tour should start; go through all 3 steps. Nothing cut off at the sides, and no sideways scroll.
 2. **Fix tab:** the first card is "2:45 pm–3:15 pm: 4 children under 2…", with 2 quoted notes and "606 CMR 7.10(4)". Scroll to the end and back: smooth, and the bottom note bar never covers a button you need.
 3. **Answer a question:** on "Which child is 'the baby'?", tap **Mila**. Expect the toast: “the baby” means Mila for the rest of today.
 4. **Mic button** (bottom bar): tap it.
