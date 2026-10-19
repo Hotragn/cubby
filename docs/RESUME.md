@@ -18,6 +18,9 @@ Deadline: DEV Hacktoberfest Week 2 ends 2026-10-19 06:59 UTC (publish target 04:
 temporal server start-dev · CUBBY_URL=http://localhost:8788 node src/temporal/worker.ts · PORT=8788 GEMMA_LOCAL=1 TEMPORAL_ADDRESS=localhost:7233 TIMER_SCALE=60 node src/server.ts
 Tinker: .venv (python 3.13) · .venv/bin/python ml/train_tinker.py · score: EXTRACTOR=tinker RESCORE=1 RAW_TAG=tinker-qwen3.5-4b DAYS=evals/holdout node evals/run.ts pipeline
 
+## Oct 19 ~04:35 UTC: first-time experience rebuilt
+Plain-English intro, a 3-step tour (auto on first visit, replay with ?), How it works sheet, tab subtitles, labelled replay slider, the tile matches the Fix count, no heading animation, light theme by default (dark toggle), AA contrast fixes. Live and verified at 375/320 in a fresh browser; the post's Demo section is updated.
+
 ## Before publishing (founder)
 1. Phone test results back (fix anything found).
 2. Make Hotragn/cubby public (I re-scan first).
