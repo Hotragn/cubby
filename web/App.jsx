@@ -254,30 +254,29 @@ function Header({ st, d, pack, fixes, setMode, openSetup, isToday, backToToday, 
   return (
     <header className="hero">
       <div className="brand">
-        <span className="logo" aria-hidden="true"><i /><i /><i /><i /></span>
-        <b>Cubby</b>
+        <a className="home" href="/" aria-label="Cubby home"><span className="logo" aria-hidden="true"><i /><i /><i /><i /></span><b>Cubby</b></a>
         <div className="modes" role="group" aria-label="Which program">
           <button className={demo ? "on" : ""} onClick={() => setMode("demo")}>Demo</button>
           <button className={!demo ? "on" : ""} onClick={() => setMode("mine")}>My program</button>
         </div>
-        <button className="gear" onClick={startTour} aria-label="Take the tour">?</button>
-        <button className="gear" onClick={openSetup} aria-label="Setup">⚙</button>
+        <button className="gear" onClick={startTour} aria-label="Take the tour" title="Take the tour">?</button>
+        <button className="gear" onClick={openSetup} aria-label="Setup" title="Setup">⚙</button>
       </div>
       <h1 className="h1">Your daycare's daily paperwork, written from quick notes.</h1>
       <p className="sub">You jot what happens (“Mila napped 1:10 to 2:40”). Cubby writes each parent's daily report and your state log, and warns you before an inspector would.</p>
-      <p className="for"><b>For home daycare providers.</b> <button className="link" onClick={openHow}>How it works</button> · <button className="link" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>{theme === "dark" ? "Light mode" : "Dark mode"}</button></p>
-      <div className="dayline" data-tour="day">
-        <span>{demo ? <>Demo: a made-up day at <b>Rosa's home daycare</b>, {d.roster.length} kids · {dateStr}</> : <><b>{d.host}</b> · {dateStr}</>}</span>
-        {demo && <button className="btn primary small" onClick={startTour}>Start the 1-minute tour</button>}
+      <div className="daycard" data-tour="day">
+        <div className="daytop">
+          <div><b>{demo ? "Rosa's home daycare" : d.host}</b>{demo && <span className="demotag">made-up demo</span>}<div className="muted small">{dateStr} · {d.roster.length} {d.roster.length === 1 ? "child" : "kids"}</div></div>
+          {demo && <button className="btn primary small" onClick={startTour}>Take the tour</button>}
+        </div>
+        <div className="stats">
+          <div><span className="num">{d.notes.length}</span><span>notes jotted</span></div>
+          <div><span className="num">{d.events.length}</span><span>log lines written</span></div>
+          <div className={fixes ? "hot" : "cool"}><span className="num">{fixes}</span><span>{fixes === 1 ? "thing" : "things"} to fix</span></div>
+        </div>
+        <p className="daylinks"><button className="link" onClick={openHow}>How it works</button><span aria-hidden="true">·</span><button className="link" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>{theme === "dark" ? "Light mode" : "Dark mode"}</button></p>
       </div>
       {!isToday && <button className="pastday" onClick={backToToday}>Viewing a past day · back to today</button>}
-      <div className="stats">
-        <div><span className="num">{d.notes.length}</span><span>notes jotted</span></div>
-        <div className="arrow" aria-hidden="true">→</div>
-        <div><span className="num">{d.events.length}</span><span>log lines written</span></div>
-        <div className="arrow" aria-hidden="true">→</div>
-        <div className={fixes ? "hot" : "cool"}><span className="num">{fixes}</span><span>things to fix</span></div>
-      </div>
     </header>
   );
 }
@@ -367,6 +366,7 @@ function Today({ d, flags, go, pack }) {
   const lo = times.length ? Math.min(...times) : last;
   const [at, setAt] = useState(d.sample && d.date === today() ? Math.min(last, 14 * 60 + 50) : last);
   const byKid = (id) => flags.filter((f) => f.kids?.includes(id) && f.level === "fix").length;
+  const [showAll, setShowAll] = useState(false);
   const adults = Object.entries(presence(d).adults).filter(([, ws]) => ws.some((w) => (w.in ?? 0) <= at && (w.out == null || at < w.out))).map(([id]) => d.staff.find((s) => s.id === id)?.name);
   const over = flags.find((f) => f.rule === "ratio" && f.window && f.window[0] <= at && at < f.window[1]);
   return (
@@ -381,15 +381,15 @@ function Today({ d, flags, go, pack }) {
             <li key={c.id} className={`kid ${st.s}`}>
               <Avatar c={c} />
               <div className="grow"><b>{c.name}</b> <span className="muted">{ageLabel(ageMonths(c, d.date))}</span>{c.allergies?.length ? <span className="allergy" title="Allergies on file">⚠ {c.allergies.join(", ")}</span> : null}<div className="state"><i className={`dot ${st.s}`} />{st.label}</div>{st.due != null && <div className={`due ${st.late ? "late" : ""}`}>{st.late ? `Sleep check overdue since ${fmt(st.due)}` : `Next sleep check by ${fmt(st.due)}`}</div>}</div>
-              {n ? <button className="chip hot" onClick={() => go("fix")}>{n} to fix</button> : <span className="chip cool">OK</span>}
+              {n ? <button className="chip hot" onClick={() => go("fix")}>{n} to fix</button> : <span className="chip cool">All good</span>}
             </li>); })}
         </ul>
       </div>
       <div className="card">
-        <div className="row between"><h2>Notes</h2><span className="muted">{d.notes.length} notes · {d.events.length} entries</span></div>
+        <div className="row between"><h2>Latest notes</h2><span className="muted small">newest first</span></div>
         {!d.notes.length && <p className="muted">No notes yet. Type or hold the mic below: “{d.roster[0]?.name ?? "Ava"} here, mom dropped off”.</p>}
         <ol className="feed">
-          {[...d.notes].reverse().map((n) => {
+          {[...d.notes].reverse().slice(0, showAll ? undefined : 6).map((n) => {
             const evs = d.events.filter((e) => e.noteId === n.id || e.endNoteId === n.id);
             return (
               <li key={n.id}>
@@ -402,6 +402,7 @@ function Today({ d, flags, go, pack }) {
             );
           })}
         </ol>
+        {d.notes.length > 6 && <button className="btn wide" onClick={() => setShowAll(!showAll)}>{showAll ? "Show fewer notes" : `Show all ${d.notes.length} notes`}</button>}
       </div>
     </section>
   );
@@ -423,6 +424,19 @@ function Evidence({ ev }) {
   );
 }
 
+// One plain next step per kind of problem, so a beginner knows what to do before reading the rule.
+const NEXT = {
+  ratio: "Keep a second adult here whenever the children present are over the limit, or log when they came back.",
+  sleep: "Look in on napping children at least every 15 minutes, and log each check.",
+  incident: "Fill in the incident report (it's pre-filled) and tell the parent in writing today.",
+  med: "Only give medicine with a current signed consent, and log the dose, time and who gave it.",
+  attendance: "Log every arrival and pickup with the time and who it was.",
+  late: "Note the late pickup for your records; your fee policy may apply.",
+  allergy: "Check what was actually served and tell the parent.",
+  time: "Fix the time in the note so the log is right.",
+  evidence: "Check this entry against the note; Cubby couldn't match the words.",
+  question: "Answer this so Cubby can file the note correctly.",
+};
 const RULE_LABEL = { sleep: "Sleep checks", incident: "Incident report", med: "Medication", ratio: "Ratio", attendance: "Attendance", late: "Late pickup", time: "Times", evidence: "Evidence", question: "Question", allergy: "Allergy" };
 const isWhichChild = (ask) => /which (child|kid|children|kids)|who is|whose|the baby|which one/i.test(ask);
 
@@ -434,7 +448,7 @@ function Fix({ d, flags, day, resolve, unresolve, openIncident, answer }) {
   if (!flags.length && !reports.length) return <div className="card empty"><StatusMark status="done" size={44} /><h2>Nothing to fix</h2><p className="muted">Every rule passed for this day's log.</p></div>;
   return (
     <section className="stack">
-      <p className="lede">Each item shows the words that triggered it and the rule it comes from. Gemma only read the notes; these checks are code.</p>
+      <p className="lede">{open.length ? (() => { const fx = open.filter((f) => f.level === "fix").length, ck = open.length - fx; return `${fx} to fix${ck ? ` and ${ck} to double-check` : ""}, most important first. Tick one off when it's handled.`; })() : "Everything is handled."}</p>
       {open.map((f, i) => (
         <article key={f.key} className={`flag ${f.level}`} style={{ animationDelay: `${Math.min(i, 8) * 45}ms` }}>
           <div className="row between top">
@@ -442,9 +456,13 @@ function Fix({ d, flags, day, resolve, unresolve, openIncident, answer }) {
             <span className="kidsmini">{(f.kids ?? []).map((k) => { const c = d.roster.find((x) => x.id === k); return c ? <Avatar key={k} c={c} size={22} /> : null; })}</span>
           </div>
           <h3>{f.title}</h3>
-          {f.detail && <p className="detail">{f.detail}</p>}
-          <Evidence ev={f.evidence ?? []} />
-          {f.cite && <a className="cite" href={f.cite.url} target="_blank" rel="noreferrer"><b>{f.cite.sec}</b> {f.cite.text}</a>}
+          {NEXT[f.rule] && <p className="nextstep"><span>What to do</span>{NEXT[f.rule]}</p>}
+          <details className="why" open={i === 0}>
+            <summary>Why Cubby flagged this</summary>
+            {f.detail && <p className="detail">{f.detail}</p>}
+            <Evidence ev={f.evidence ?? []} />
+            {f.cite && <a className="cite" href={f.cite.url} target="_blank" rel="noreferrer"><b>{f.cite.sec}</b> {f.cite.text}</a>}
+          </details>
           <div className="actions">
             {f.fix?.kind === "incident" && <button className="btn primary" onClick={() => openIncident(f.fix.draft)}>Open pre-filled report</button>}
             {f.rule === "question" ? (isWhichChild(f.title)

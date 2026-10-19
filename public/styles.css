@@ -217,3 +217,25 @@ label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(-
 .tour-step { font: 700 12px/1 var(--body); text-transform: uppercase; letter-spacing: .06em; color: var(--coral); }
 @media (max-width: 380px) { .brand .gear { width: 34px; height: 34px; } .modes button { padding: 7px 7px; font-size: 11.5px; } }
 @media (max-width: 360px) { .brand { flex-wrap: nowrap !important; gap: 6px; } .brand .logo { display: none; } .modes button { padding: 7px 6px; } }
+
+/* calmer, beginner-first layout */
+.brand .home { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.hero .h1 { font-size: clamp(24px, 6.4vw, 34px); margin: 14px 0 8px; }
+.hero .sub { font-size: 15.5px; margin-bottom: 14px; color: var(--ink2); }
+.daycard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; box-shadow: var(--shadow); margin-bottom: 6px; }
+.daytop { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.daytop b { font-family: var(--display); font-size: 18px; }
+.demotag { margin-left: 8px; font: 600 11px/1 var(--body); padding: 4px 7px; border-radius: 99px; background: var(--warn-bg); color: var(--warn); vertical-align: 2px; }
+.daycard .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.daycard .stats > div:not(.arrow) { box-shadow: none; background: var(--surface2); border-color: transparent; padding: 10px; }
+.daycard .stats .hot { background: var(--ink) !important; }
+.daycard .stats .num { font-size: 26px; }
+.daylinks { margin: 10px 0 0; display: flex; gap: 8px; font-size: 13.5px; color: var(--muted); }
+.daylinks .link { color: var(--ink2); }
+.nextstep { margin: 6px 0 4px; padding: 10px 12px; border-radius: 12px; background: var(--surface2); font-size: 14.5px; color: var(--ink); }
+.nextstep span { display: block; font: 700 11px/1 var(--body); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 5px; }
+.why { margin-top: 8px; } .why summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink2); padding: 6px 0; min-height: 32px; }
+.why[open] summary { margin-bottom: 4px; }
+.flag h3 { font-size: 17px; }
+.tabsub { margin-bottom: 10px; }
+.daytop .btn { white-space: nowrap; flex: none; }
