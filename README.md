@@ -12,6 +12,7 @@ Quick notes become each parent's daily report and your state log, with a warning
 [![Gemma 4](https://img.shields.io/badge/AI-Gemma%204-2F7BFF?style=for-the-badge)](https://ai.google.dev/gemma)
 [![Runs locally](https://img.shields.io/badge/runs%20locally-Ollama-00A87E?style=for-the-badge)](#local-mode-nothing-leaves-the-machine)
 [![Tests](https://img.shields.io/badge/tests-11%20passing-8B5CF6?style=for-the-badge)](test/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-14152B?style=for-the-badge)](LICENSE)
 
 [**Try the demo**](https://cubby-daycare.onrender.com/app?tour=1) · [How it works](#how-it-works) · [Test report](docs/REPORT.md) · [DEV post](https://dev.to/hotragn/cubby-a-home-daycare-talks-through-its-day-gemma-writes-the-log-and-code-catches-37-of-37-n3c)
 
