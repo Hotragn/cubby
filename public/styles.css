@@ -239,3 +239,4 @@ label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(-
 .flag h3 { font-size: 17px; }
 .tabsub { margin-bottom: 10px; }
 .daytop .btn { white-space: nowrap; flex: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .hero .daycard { margin-top: 14px; }

@@ -262,8 +262,7 @@ function Header({ st, d, pack, fixes, setMode, openSetup, isToday, backToToday, 
         <button className="gear" onClick={startTour} aria-label="Take the tour" title="Take the tour">?</button>
         <button className="gear" onClick={openSetup} aria-label="Setup" title="Setup">⚙</button>
       </div>
-      <h1 className="h1">Your daycare's daily paperwork, written from quick notes.</h1>
-      <p className="sub">You jot what happens (“Mila napped 1:10 to 2:40”). Cubby writes each parent's daily report and your state log, and warns you before an inspector would.</p>
+      <h1 className="sr-only">Cubby: your daycare's daily paperwork, written from quick notes</h1>
       <div className="daycard" data-tour="day">
         <div className="daytop">
           <div><b>{demo ? "Rosa's home daycare" : d.host}</b>{demo && <span className="demotag">made-up demo</span>}<div className="muted small">{dateStr} · {d.roster.length} {d.roster.length === 1 ? "child" : "kids"}</div></div>
