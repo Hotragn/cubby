@@ -13,7 +13,7 @@ Quick notes become each parent's daily report and your state log, with a warning
 [![Runs locally](https://img.shields.io/badge/runs%20locally-Ollama-00A87E?style=for-the-badge)](#local-mode-nothing-leaves-the-machine)
 [![Tests](https://img.shields.io/badge/tests-11%20passing-8B5CF6?style=for-the-badge)](test/)
 
-[**Try the demo**](https://cubby-daycare.onrender.com/app?tour=1) · [How it works](#how-it-works) · [Test report](docs/REPORT.md) · [DEV post](https://dev.to/hotragn)
+[**Try the demo**](https://cubby-daycare.onrender.com/app?tour=1) · [How it works](#how-it-works) · [Test report](docs/REPORT.md) · [DEV post](https://dev.to/hotragn/cubby-a-home-daycare-talks-through-its-day-gemma-writes-the-log-and-code-catches-37-of-37-n3c)
 
 <img src="public/shots/cover.jpg" alt="Cubby: talk through your day, Cubby writes the paperwork" width="100%">
 
