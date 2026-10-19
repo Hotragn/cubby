@@ -52,6 +52,8 @@ It also works for a real program, not just the demo. Under "My program" you add 
 
 ## Code
 
+{% embed https://github.com/Hotragn/cubby %}
+
 It's all on GitHub: [github.com/Hotragn/cubby](https://github.com/Hotragn/cubby). The interesting parts are the rule checks (`public/lib/rules.js`), the Massachusetts rules with their citations (`public/lib/states.js`), the prompt Gemma reads notes with (`src/gemma.ts`), and the tests (`evals/`, written up in `docs/REPORT.md`).
 
 ## How I Built It
