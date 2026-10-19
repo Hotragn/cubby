@@ -120,6 +120,16 @@ It also keeps the business viable. Providers complain in public reviews about pe
 
 And openness lets anyone check the work. Every rule cites its regulation, every flag shows its evidence, and a provider can read the exact line of code that flagged them.
 
+## My First User
+
+I sent the demo link to Ravi on WhatsApp (first name only, with permission). Ravi opened it and wrote back: "Checked out the demo, super cool project!"
+
+- **Would Ravi pay?** "$9 flat is honestly a steal, especially since everyone else charges per kid. Totally fair!"
+- **What next?** "maybe a quick daily summary/report you can shoot to parents would be awesome."
+- **The honest part:** Cubby already does that; the Parents tab writes each child's daily report. Ravi missed it, and when I pointed it out replied: "oh nice, my bad.good to know it already does that." So the parent report needs to be easier to find. Ravi's last message: "Let me know when it's fully ready to buy, definitely want to grab it!"
+
+![The WhatsApp chat with Ravi, last name and profile photo blurred](https://cubby-daycare.onrender.com/shots/first-user.jpg)
+
 ## Prize Categories
 
 - **Gemma:** Gemma 4 does all the reading. It's measured on the held-out days in the cloud (26B: 37/37, 4 false alarms) and locally (E4B: 37/37, 18), against Gemma alone (30/37, 72).
@@ -130,6 +140,6 @@ And openness lets anyone check the work. Every rule cites its regulation, every 
 - **Tinker:** a Qwen3.5-4B LoRA reader: 37/37 at 3.5 s per day, but 10 false alarms to Gemma's 4, so it's an experiment, not the default.
 - **MongoDB Atlas:** stores only anonymous tester feedback, never child data.
 
-**Honest limits:** I wrote the rules and the tests, and the generated held-out days share templates with the dev days (the two hand-written days don't). Only Massachusetts is encoded, minus one ratio clause. Whisper tiny mishears names, so notes stay editable. It isn't legal advice. And there's no first user yet: a 2-minute test kit is ready, and I won't claim a user until one has tried it.
+**Honest limits:** I wrote the rules and the tests, and the generated held-out days share templates with the dev days (the two hand-written days don't). Only Massachusetts is encoded, minus one ratio clause. Whisper tiny mishears names, so notes stay editable. It isn't legal advice. And so far one person has tried the demo (above); nobody has used it on a real day yet.
 
 *How I used AI: I picked this idea and directed the build. Claude Code wrote the code, generated the synthetic test days, ran the evaluations and drafted this post from the repo's results. Every child, adult and note in the demo and the tests is invented.*
