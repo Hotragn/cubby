@@ -1,145 +1,120 @@
 *This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle](https://dev.to/challenges/hacktoberfest-week2-2026-10-12)*
 
-It's 2:45 pm at a home daycare. Two toddlers just woke up, the baby is fussing, and the assistant heads out for the school run. The provider taps a note into her phone: **"Dana out for school run."**
+It's 2:45 on a weekday afternoon at a home daycare. Two toddlers have just woken up, the baby is fussing, and the assistant heads out for the school run. The provider taps a quick note into her phone: "Dana out for school run."
 
-Four of the children in the house are under two. Massachusetts allows one adult to have up to six children, but [no more than three under age two](https://www.law.cornell.edu/regulations/massachusetts/606-CMR-7-10). For the next 30 minutes the house is out of ratio, and nobody notices. It's in the notes. It just isn't anywhere anyone will look.
+There are four kids under two in the house. In Massachusetts, one adult can look after up to six children, but [no more than three of them under two](https://www.law.cornell.edu/regulations/massachusetts/606-CMR-7-10). So for the next half hour the house is out of ratio, and nobody notices. It's right there in the notes. It's just not anywhere anyone will look.
 
-Earlier, 35 minutes passed without a check on the sleeping baby. The rule is every 15. That's in the notes too.
+Earlier that day, 35 minutes went by without anyone checking on the sleeping baby. The rule is every 15. That's in the notes too.
 
-(Rosa, Dana and the kids are invented. The demo day is fictional, and so is every test day below.)
+(Rosa, Dana and the kids are made up. So is every test day in this post.)
 
-**Cubby** reads those notes. On 14 held-out synthetic days, it caught **37 of 37 planted licensing problems, with 4 false alarms**. The same open model asked to find the problems on its own caught 30 and raised 72 false alarms.
+I built **Cubby** to read those notes. On 14 test days I'd set aside before running anything on them, it caught all 37 problems I'd planted, with 4 false alarms. When I gave the same AI model the same notes and asked it to find the problems itself, it caught 30 and raised 72 false alarms.
 
 ## What I Built
 
-Cubby is a daily-report and licensing-log assistant for **home daycare providers**. Running a licensed daycare out of your own home is a classic side business, and one of the most paperwork-heavy. Child Care Aware of America counted [94,227 licensed family child care homes in 2023](https://www.childcareaware.org/?p=76062) across the 39 states with data, down 12% since 2019.
+Running a licensed daycare out of your own home is a classic side hustle, and it comes with a lot of paperwork. Child Care Aware of America counted [94,227 licensed family child care homes in 2023](https://www.childcareaware.org/?p=76062), across the 39 states that reported numbers.
 
-Every day a provider owes each parent a daily sheet (food, sleep, diapers, mood) and owes the licensing inspector accurate logs (sign-ins, sleep checks, medication, incidents, ratios). Most write them from memory at nap time, or pay for an app. Here's what the apps I checked publish (2026-10-18):
+Every day, a provider owes each parent a short report (what they ate, how long they slept, diapers, mood) and owes the state inspector exact logs: sign-ins, sleep checks, medicine, injuries, ratios. Most of it gets written from memory at nap time, or in an app. Here's what the apps publish for pricing (as of Oct 18):
 
 | App | Published price |
 |---|---|
-| [Daily Connect](https://en.dailyconnect.com/pricing) | $8.99/mo up to 3 kids, $12.99/mo up to 6, or $16/mo billed annually for 10 kids + $1.60 each extra |
+| [Daily Connect](https://en.dailyconnect.com/pricing) | $8.99/mo up to 3 kids, $12.99/mo up to 6, or $16/mo billed yearly for 10 kids + $1.60 per extra kid |
 | [Famly (US)](https://www.famly.co/us/pricing) | from $49/month |
 | [Brightwheel](https://mybrightwheel.com/pricing), [Procare](https://www.procaresoftware.com/pricing/), [Lillio](https://www.lillio.com/features/pricing), [Playground](https://www.tryplayground.com/pricing) | contact sales |
 
-None of those pricing pages mention medication consent or incident-report checks, yet that's exactly what inspectors cite. Public California inspection reports show family child care homes cited for [having no infant sleep log](https://readyrule.com/daycare/483009518-forcella-sherrie-fcch/report/2024-01-04) and [leaving out the time of each 15-minute check](https://readyrule.com/daycare/483010237-james-bethany-fcch/report/2023-10-16). Providers clearly pay for daily reports. Cubby adds the part that keeps their license safe.
+None of those pricing pages mention checking medication consent or incident reports against the rules. That's the stuff inspectors actually write people up for. Public California inspection reports show home daycares cited for [having no infant sleep log](https://readyrule.com/daycare/483009518-forcella-sherrie-fcch/report/2024-01-04) and for [leaving out the time of each 15-minute check](https://readyrule.com/daycare/483010237-james-bethany-fcch/report/2023-10-16).
 
-**How it works:**
+Here's how a day goes with Cubby:
 
-1. **Capture.** Type or hold the mic and talk. "Ava and Leo napped 1:10 to 2:40" is one note about two children. Speech-to-text is Whisper running *in the browser*, so audio never leaves the phone.
-2. **Read.** Gemma turns each note into events (meals, naps, sleep checks, diapers, incidents, medicine, pickups), each carrying the **exact words** it came from. If a note is unclear ("the baby had a 4 oz bottle"), Gemma asks *which child?* instead of guessing.
-3. **Check.** Plain code, no model, checks every rule in Massachusetts' family child care regulations ([606 CMR 7.00](https://www.law.cornell.edu/regulations/massachusetts/606-CMR-7-10)):
-   - napping children checked at least every 15 minutes (7.10(7)(d))
-   - ratio minute by minute from sign-in/out times (7.10(4))
-   - medication with consent on file, a matching dose, and the log fields (7.11(2)); oral over-the-counter consent renews weekly
-   - any injury mentioned without a finished incident report, with a pre-filled draft (7.08(8))
-   - every child signed in and out to someone on the pickup list (7.04(4))
-   - late pickups, and times that can't be right
+1. **You jot notes as things happen**, typed or spoken. "Ava and Leo napped 1:10 to 2:40" is one note about two kids. Speech-to-text (Whisper) runs on the phone itself, so the audio never leaves it.
+2. **Gemma reads each note** and turns it into log lines (meals, naps, sleep checks, diapers, injuries, medicine, pickups), each with the exact words it came from. If a note is unclear, like "the baby had a 4 oz bottle", it asks which child instead of guessing.
+3. **Plain code checks the log** against Massachusetts' family child care rules ([606 CMR 7.00](https://www.law.cornell.edu/regulations/massachusetts/606-CMR-7-10)):
+   - sleep checks at least every 15 minutes
+   - the ratio, minute by minute
+   - medicine only with a current signed consent and a matching dose
+   - an incident report for every injury (Cubby pre-fills it)
+   - every child signed in and out to someone on their pickup list
+   - late pickups, and times that don't add up
 
-   **Every flag shows the note that caused it and the rule it comes from.**
-4. **Send.** Each parent gets a short sheet built from the checked events. Gemma can warm it up or translate it, and code checks every time, number, food and health word against the log first; if Gemma added anything, the plain version is used. Injuries and medicine are **never re-worded**, and one parent's sheet never names another child ("Another child bit Leo on the arm…"). (A [public App Store review](https://apps.apple.com/us/app/id428376881) of another daycare app describes a Spanish machine translation that turned a child being "out" sick into a child who had "died".)
-5. **Inspector log.** One tap exports the day, or the whole week, as PDF or CSV. Each entry keeps the note it came from.
+   Every warning shows the note behind it, the rule, and what to do about it.
+4. **Each parent gets a daily report.** Gemma can make it warmer or translate it, but code checks every time, number, food and health word against the log before anyone sees it; if anything doesn't match, you get the plain version. Injuries and medicine are never reworded, and one parent's report never names another child ("Another child bit Leo on the arm…"). That last part came from reading reviews: in one [public App Store review](https://apps.apple.com/us/app/id428376881) of a different daycare app, a Spanish translation turned a child who was "out" sick into a child who had "died".
+5. **The inspector's log** for the day or the week exports as a PDF or CSV, and every line keeps the note it came from.
 
-**For a real program, not just the demo:**
-- **My program:** each child's date of birth, allergies (checked against every logged food), medication consents with expiry dates, photo consent and pickup list, plus staff and the program's rules. The rules start at the state's numbers and warn if set looser. Everything stays on the device, with export and import as a file.
-- **Questions get answered once:** tap Mila for "Which child is 'the baby'?", and the bottle moves to her sheet, every rule re-runs, and the next "the baby napped 3:30 to 4" lands on Mila without asking again.
-- **Week view:** attendance, flags opened and resolved, incidents and medicine for each day.
+It also works for a real program, not just the demo. Under "My program" you add your own kids (birthdays, allergies, medicine consents, photo consent, who can pick them up), your staff, and your rules, which start at the state's numbers. It all stays on your device. If Gemma asks "which child is 'the baby'?" you tap Mila once, and the rest of the day "the baby" means Mila. There's a week view too.
 
 ## Demo
 
-**Live:** https://cubby-daycare.onrender.com, a one-page explainer, built for a phone. **Try the demo day** there opens the app (https://cubby-daycare.onrender.com/app) with the tour.
+**[cubby-daycare.onrender.com](https://cubby-daycare.onrender.com)** is a one-page explainer. Tap **Try the demo day** and the app ([/app](https://cubby-daycare.onrender.com/app)) opens with a three-step tour of a made-up day at Rosa's: you send a note and watch it become a log line, then see the 8 things an inspector would flag and Ava's finished report. The **?** button replays the tour. It's built for a phone.
 
-**Start here: tap the tour.** It opens by itself on your first visit; the **?** button replays it. Three steps on the real screens:
-1. a made-up day at Rosa's home daycare
-2. sending a note and watching it become a log line
-3. the 8 things an inspector would flag, then Ava's finished report
+![The app on a phone: Rosa's made-up day, 39 notes, 46 log lines, 8 things to fix](https://cubby-daycare.onrender.com/shots/home.jpg)
 
-Tap **My program** to set up your own.
+![A note you send becomes a log line](https://cubby-daycare.onrender.com/shots/tour-note.jpg)
 
-![First screen: what Cubby is, in one line, with the demo day and the tour button](https://cubby-daycare.onrender.com/shots/home.jpg)
+![The ratio problem, with the two notes that prove it and the rule](https://cubby-daycare.onrender.com/shots/tour-fix.jpg)
 
-![Tour step 2: a note you send becomes a log line](https://cubby-daycare.onrender.com/shots/tour-note.jpg)
+![Ava's report in Spanish, checked against the log; the incident line stays exactly as written](https://cubby-daycare.onrender.com/shots/sheet.jpg)
 
-![Tour step 3: the ratio problem, with the two notes that prove it and the rule](https://cubby-daycare.onrender.com/shots/tour-fix.jpg)
+![The week at a glance, with a weekly export for the inspector](https://cubby-daycare.onrender.com/shots/week.jpg)
 
-![Ava's report in Spanish, checked against the log; the incident line stays exactly as logged](https://cubby-daycare.onrender.com/shots/sheet.jpg)
-
-![The week: flags, incidents and medicine per day, with a weekly inspector export](https://cubby-daycare.onrender.com/shots/week.jpg)
-
-![Local mode: Gemma 4 E4B read "Theo down for nap now" on the laptop, and a Temporal timer raised the sleep-check reminder (demo speed)](https://cubby-daycare.onrender.com/shots/timers.jpg)
+![Running fully on my laptop: Gemma 4 E4B read "Theo down for nap now" and a Temporal timer raised the sleep-check reminder (sped up for the demo)](https://cubby-daycare.onrender.com/shots/timers.jpg)
 
 ## Code
 
-[github.com/Hotragn/cubby](https://github.com/Hotragn/cubby): the rule engine (`public/lib/rules.js`), the Massachusetts rule pack with citations (`public/lib/states.js`), the Gemma prompt (`src/gemma.ts`), the Temporal workflows (`src/temporal/`), and the evaluation (`evals/`, `docs/REPORT.md`).
+It's all on GitHub: [github.com/Hotragn/cubby](https://github.com/Hotragn/cubby). The interesting parts are the rule checks (`public/lib/rules.js`), the Massachusetts rules with their citations (`public/lib/states.js`), the prompt Gemma reads notes with (`src/gemma.ts`), and the tests (`evals/`, written up in `docs/REPORT.md`).
 
 ## How I Built It
 
-**The split is the whole design: the model reads, code judges.** I didn't want an LLM deciding whether a baby's nap was safely supervised. So Gemma's only job is turning "checked all 1:40" into `{"type":"sleep_check","kids":["all"],"time":"1:40"}`. Even that isn't trusted:
-- names must be on the roster
-- times must parse ("1:10" means pm, and Whisper writes it as "110")
-- the quote must really be in the note
+The whole design comes down to one split: **the AI reads, the code decides.** I didn't want a language model deciding whether a baby's nap was supervised safely. So Gemma's only job is to turn "checked all 1:40" into `{"type":"sleep_check","kids":["all"],"time":"1:40"}`, and even that gets double-checked. Names have to be on the roster, times have to make sense (providers write "1:10" meaning 1:10 pm, and Whisper writes it as "110"), and the quoted words have to actually appear in the note. After that, about 250 lines of plain rule code do the checking, right in the browser.
 
-Then about 250 lines of rule code run in the browser, so the day's data stays on the device.
+There's a safety net too. Code scans every note for injury and medicine words, so "goose egg on his forehead" still raises a warning even if Gemma misses it.
 
-A backstop catches what the model misses: code also scans the raw notes for injury and medicine words, so "goose egg on his forehead" raises a flag even if Gemma logs no incident.
+**Testing it honestly.** I wrote a generator for made-up days with problems planted in every rule type, plus two days I wrote by hand in a messy, spoken style ("um Clara had her Motrin three ml at like 10:15 I gave it"). The first 12 days were for finding bugs, and they found real ones: "had a few bites" of toast counted as an injury, and a 06:59 sign-in was read as 6:59 pm. Once I'd fixed those, I saved a separate set of 14 days, with the answer key, before running anything on it.
 
-**Testing it honestly.** I wrote a generator for synthetic days with problems planted in every rule type, plus two hand-written days in a messy, spoken style ("um Clara had her Motrin three ml at like 10:15 I gave it"). The first 12 days were a dev set, and they found real bugs in my code: "had a few bites" of toast counted as an injury, and a 06:59 sign-in was read as 6:59 pm.
-
-After fixing those, I committed a **held-out set** of 14 days, answer key included, before running it. The first run caught 37 of 37 with 6 false alarms. The table shows the latest run, after the fixes described below:
-
-| Held-out (37 planted) | Caught | False alarms |
+| 14 set-aside test days, 37 planted problems | Caught | False alarms |
 |---|---|---|
-| **Cubby** (Gemma reads, code checks) | **37** | **4** |
-| **Gemma alone** (same model, same rules in plain English, same notes) | 30 | 72 |
+| Cubby (Gemma reads, code checks) | **37** | **4** |
+| Gemma alone (same notes, same rules written out in plain English) | 30 | 72 |
 
-Gemma alone missed 3 of 4 ratio problems (it doesn't count heads minute by minute) and every 20-minute sleep-check gap on a hand-written day. **Where Gemma alone wins:** it uses about a quarter of the tokens, and it caught every incident too.
+The first run on those days caught all 37 with 6 false alarms. Two of them were "grapes cut in quarters" tripping my injury-word check, which I fixed after seeing it. The other 4 are real weaknesses: a pretend doctor kit, "Bodhi's mom here" not being read as a sign-out, diaper cream logged without a dose, and a pickup note that didn't say who it was. Gemma on its own missed 3 of the 4 ratio problems (it doesn't count heads minute by minute) and a whole day of 20-minute sleep-check gaps. To be fair to it, it used about a quarter of the tokens and caught every injury. The full write-up is in `docs/REPORT.md`.
 
-Two of Cubby's first-run false alarms were "grapes cut in quarters" tripping my injury-word backstop, which I fixed after seeing it. The other 4 are real weaknesses:
-- a pretend doctor kit
-- "Bodhi's mom here" not read as a sign-out
-- diaper cream logged without a dose
-- a pickup note that named no one
+Speed and cost for a day of notes (about 27 of them):
 
-The full report is in `docs/REPORT.md`.
+- **In the cloud** (Gemma 4 26B A4B): 34 to 39 seconds. That's [free on Google AI Studio's free tier](https://ai.google.dev/gemini-api/docs/pricing), or about a tenth of a cent at [OpenRouter's price](https://openrouter.ai/google/gemma-4-26b-a4b-it).
+- **On my laptop** (Gemma 4 E4B through Ollama on an M4 Mac, inside the real app): 162 seconds for the demo day's 39 notes, with all 9 planted problems flagged. On the test days it also caught all 37, but with 18 false alarms. The small model misses more wake-up times and pickups, and the code then flags those as missing.
+- **A fine-tuned 4B model** (Qwen3.5-4B with a LoRA trained on [Tinker](https://thinkingmachines.ai/tinker/), from Gemma's own reading of 1,291 separate made-up notes): all 37 caught with 10 false alarms, in 3.5 seconds a day.
 
-**Speed and cost per day of notes** (about 27 notes):
-
-- **Cloud** (Gemma 4 26B A4B): 34–39 s and about 6.7k tokens. That's [free on AI Studio's free tier](https://ai.google.dev/gemini-api/docs/pricing), or about $0.001 at [OpenRouter's price](https://openrouter.ai/google/gemma-4-26b-a4b-it).
-- **Local** (Gemma 4 E4B on Ollama, M4 Mac, in the real app): the demo day's 39 notes took 162 s, with all 9 planted problems flagged. On the held-out set it caught 37 of 37 with 18 false alarms: the small model misses more wake-ups and sign-outs, and code then flags them as missing.
-- **Fine-tuned 4B reader** (Qwen3.5-4B + LoRA trained on [Tinker](https://thinkingmachines.ai/tinker/) from Gemma's labels on 1,291 separate synthetic notes): 37 of 37 with 10 false alarms, at 3.5 s per day.
-
-**Stack:** Node 26, React with [React Bits](https://github.com/DavidHDev/react-bits) components, jsPDF, and transformers.js for Whisper.
+The front end is React with a few [React Bits](https://github.com/DavidHDev/react-bits) components, on a small Node server.
 
 ## Why Does Open Innovation Matter?
 
-Because the data is **children's**. Nap times, diapers, injuries and medicine are about the most private records a small business keeps.
+Because this is children's data. Nap times, diapers, injuries and medicine are about as private as a small business's records get.
 
-With an open-weight model, the whole pipeline runs on the provider's own laptop. Gemma 4 E4B goes through Ollama, Whisper runs in the browser, and the rule engine runs in the page. No note, voice or photo goes to anyone. The hosted demo uses Google AI Studio *only* because every child in it is made up.
+With an open model, the whole thing can run on the provider's own laptop: Gemma through Ollama, Whisper in the browser, and the checks in the page. Nothing leaves the house. The hosted demo only uses Google's cloud because every child in it is made up.
 
-It also keeps the business viable. Providers complain in public reviews about per-child pricing they found after a trial. With an open model, a day of reading costs a tenth of a cent hosted, or nothing locally, so I'd charge a **flat $9 a month for up to 12 children**. The open-source version stays free to self-host.
+It's also what makes the price work. Providers complain in public reviews about per-child pricing they only found out about after a trial. When a day of notes costs a tenth of a cent to read in the cloud, or nothing locally, I can charge a flat $9 a month for up to 12 kids, and it stays free if you run it yourself.
 
-And openness lets anyone check the work. Every rule cites its regulation, every flag shows its evidence, and a provider can read the exact line of code that flagged them.
+And because it's open, anyone can check the work. Every warning cites its rule and shows its evidence, and a provider can read the exact line of code that flagged them.
 
 ## My First User
 
-I sent the demo link to Ravi on WhatsApp (first name only, with permission). Ravi opened it and wrote back: "Checked out the demo, super cool project!"
+I sent the demo to Ravi on WhatsApp (first name only, with permission). Ravi's first reaction: "Checked out the demo, super cool project!"
 
-- **Would Ravi pay?** "$9 flat is honestly a steal, especially since everyone else charges per kid. Totally fair!"
-- **What next?** "maybe a quick daily summary/report you can shoot to parents would be awesome."
-- **The honest part:** Cubby already does that; the Parents tab writes each child's daily report. Ravi missed it, and when I pointed it out replied: "oh nice, my bad.good to know it already does that." So the parent report needs to be easier to find. Ravi's last message: "Let me know when it's fully ready to buy, definitely want to grab it!"
+On price: "$9 flat is honestly a steal, especially since everyone else charges per kid. Totally fair!"
+
+On what to build next: "maybe a quick daily summary/report you can shoot to parents would be awesome." Cubby already does that; the Parents tab writes each child's daily report. Ravi just hadn't found it ("oh nice, my bad.good to know it already does that."), which tells me that report needs to be much easier to find. Ravi's last message: "Let me know when it's fully ready to buy, definitely want to grab it!"
 
 ![The WhatsApp chat with Ravi, last name and profile photo blurred](https://cubby-daycare.onrender.com/shots/first-user.jpg)
 
 ## Prize Categories
 
-- **Gemma:** Gemma 4 does all the reading. It's measured on the held-out days in the cloud (26B: 37/37, 4 false alarms) and locally (E4B: 37/37, 18), against Gemma alone (30/37, 72).
-- **Render:** the live demo is a Render web service, built from the repo on every push.
-- **ElevenLabs:** "Listen" reads the checked parent sheet aloud.
-- **Sentry Agent Tracing:** every Gemma call is a `gen_ai.chat` span with model and token counts, and never note text or names.
-- **Temporal:** sleep-check and late-pickup timers are workflows. With the worker killed mid-timer and restarted, a 20 s reminder still fired at 20.1 s (local dev server only).
-- **Tinker:** a Qwen3.5-4B LoRA reader: 37/37 at 3.5 s per day, but 10 false alarms to Gemma's 4, so it's an experiment, not the default.
-- **MongoDB Atlas:** stores only anonymous tester feedback, never child data.
+- **Gemma:** Gemma 4 does all the reading, measured in the cloud (26B: 37/37, 4 false alarms) and on a laptop (E4B: 37/37, 18) against Gemma on its own (30/37, 72).
+- **Render:** the live demo runs on Render and redeploys from the repo on every push.
+- **ElevenLabs:** a "Listen" button reads the finished parent report out loud.
+- **Sentry Agent Tracing:** every Gemma call is traced with its model and token counts, and never the note text or names.
+- **Temporal:** sleep-check and late-pickup reminders run as workflows. I killed the worker partway through a 20-second timer and restarted it, and the reminder still fired at 20.1 seconds (local dev server only).
+- **Tinker:** I fine-tuned a Qwen3.5-4B reader. It's 10 times faster but noisier (10 false alarms to Gemma's 4), so it's an experiment, not the default.
+- **MongoDB Atlas:** it stores anonymous feedback from testers and nothing about children.
 
-**Honest limits:** I wrote the rules and the tests, and the generated held-out days share templates with the dev days (the two hand-written days don't). Only Massachusetts is encoded, minus one ratio clause. Whisper tiny mishears names, so notes stay editable. It isn't legal advice. And so far one person has tried the demo (above); nobody has used it on a real day yet.
+A few honest limits. I wrote both the rules and the tests, and the generated test days share templates with the days I debugged on; only the two hand-written days are truly new. Only Massachusetts is in so far, minus one ratio rule. Whisper sometimes mishears names, so notes stay editable before you send them. It isn't legal advice. And so far one person has tried the demo; nobody has used it on a real day yet.
 
-*How I used AI: I picked this idea and directed the build. Claude Code wrote the code, generated the synthetic test days, ran the evaluations and drafted this post from the repo's results. Every child, adult and note in the demo and the tests is invented.*
+*How I used AI: I picked the idea and directed the build. Claude Code wrote the code, generated the made-up test days, ran the tests, and drafted this post from the results. Every child, adult and note in the demo and the tests is invented.*
