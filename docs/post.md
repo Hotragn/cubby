@@ -91,7 +91,7 @@ And because it's open, anyone can check the work. Every warning cites its rule a
 
 ## My First User
 
-I sent the demo to Ravi on WhatsApp (first name only, with permission). Ravi's first reaction: "Checked out the demo, super cool project!"
+I sent the demo to my friend Ravi on WhatsApp (first name only, with permission). Ravi's first reaction: "Checked out the demo, super cool project!"
 
 On price: "$9 flat is honestly a steal, especially since everyone else charges per kid. Totally fair!"
 
