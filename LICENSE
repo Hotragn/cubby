@@ -20,7 +20,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
-Third-party code: the UI components in web/bits/ are adapted from React Bits
-(https://github.com/DavidHDev/react-bits) and remain under their own license,
-MIT + Commons Clause, included at web/bits/LICENSE.md.
