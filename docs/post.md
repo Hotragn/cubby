@@ -46,17 +46,9 @@ It also works for a real program, not just the demo. Under "My program" you add 
 
 **[cubby-daycare.onrender.com](https://cubby-daycare.onrender.com)** is a one-page explainer. Tap **Try the demo day** and the app ([/app](https://cubby-daycare.onrender.com/app)) opens with a three-step tour of a made-up day at Rosa's: you send a note and watch it become a log line, then see the 8 things an inspector would flag and Ava's finished report. The **?** button replays the tour. It's built for a phone.
 
-![The app on a phone: Rosa's made-up day, 39 notes, 46 log lines, 8 things to fix](https://cubby-daycare.onrender.com/shots/home.jpg)
+![A made-up day at Rosa's: see the whole day, jot a note and get a log line, fix what's flagged](https://cubby-daycare.onrender.com/shots/panel-day.jpg)
 
-![A note you send becomes a log line](https://cubby-daycare.onrender.com/shots/tour-note.jpg)
-
-![The ratio problem, with the two notes that prove it and the rule](https://cubby-daycare.onrender.com/shots/tour-fix.jpg)
-
-![Ava's report in Spanish, checked against the log; the incident line stays exactly as written](https://cubby-daycare.onrender.com/shots/sheet.jpg)
-
-![The week at a glance, with a weekly export for the inspector](https://cubby-daycare.onrender.com/shots/week.jpg)
-
-![Running fully on my laptop: Gemma 4 E4B read "Theo down for nap now" and a Temporal timer raised the sleep-check reminder (sped up for the demo)](https://cubby-daycare.onrender.com/shots/timers.jpg)
+![Each parent's report (checked, even when translated), the week with the inspector's log, and Cubby running on a laptop with sleep-check reminders](https://cubby-daycare.onrender.com/shots/panel-more.jpg)
 
 ## Code
 
