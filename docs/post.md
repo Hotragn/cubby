@@ -47,19 +47,26 @@ None of those pricing pages mention medication consent or incident-report checks
 
 ## Demo
 
-**Live:** https://cubby-daycare.onrender.com. It opens on a fictional week for 4 fictional children, with 9 planted problems on the latest day, so the flags are there on first load. Tap **My program** to set up your own. It's built for a phone.
+**Live:** https://cubby-daycare.onrender.com, built for a phone.
 
-![Today at 2:50 pm: over ratio right now](https://cubby-daycare.onrender.com/shots/today.jpg)
+**Start here: tap the tour.** It opens by itself on your first visit; the **?** button replays it. Three steps on the real screens:
+1. a made-up day at Rosa's home daycare
+2. sending a note and watching it become a log line
+3. the 8 things an inspector would flag, then Ava's finished report
 
-![To fix: the ratio problem, with the two notes that prove it and the rule](https://cubby-daycare.onrender.com/shots/fix.jpg)
+Tap **My program** to set up your own.
 
-![Ava's sheet in Spanish, checked against the log; the incident line stays exactly as logged](https://cubby-daycare.onrender.com/shots/sheet.jpg)
+![First screen: what Cubby is, in one line, with the demo day and the tour button](https://cubby-daycare.onrender.com/shots/home.jpg)
+
+![Tour step 2: a note you send becomes a log line](https://cubby-daycare.onrender.com/shots/tour-note.jpg)
+
+![Tour step 3: the ratio problem, with the two notes that prove it and the rule](https://cubby-daycare.onrender.com/shots/tour-fix.jpg)
+
+![Ava's report in Spanish, checked against the log; the incident line stays exactly as logged](https://cubby-daycare.onrender.com/shots/sheet.jpg)
 
 ![The week: flags, incidents and medicine per day, with a weekly inspector export](https://cubby-daycare.onrender.com/shots/week.jpg)
 
 ![Local mode: Gemma 4 E4B read "Theo down for nap now" on the laptop, and a Temporal timer raised the sleep-check reminder (demo speed)](https://cubby-daycare.onrender.com/shots/timers.jpg)
-
-Try typing a note in the bottom bar (made-up names only, please), for example "Theo scraped his elbow on the fence at 4:30, bandaid, Rosa". Within a few seconds it shows up as an incident, and the Fix list grows by one, with a pre-filled report.
 
 ## Code
 
