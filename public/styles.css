@@ -215,6 +215,5 @@ label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(-
 .tour-card { position: fixed; left: 12px; right: 12px; max-width: 460px; margin: 0 auto; background: var(--surface); color: var(--ink); border-radius: 18px; padding: 14px 16px 16px; box-shadow: 0 18px 50px -12px rgba(0,0,0,.5); pointer-events: auto; }
 .tour-card p { margin: 6px 0 12px; font-size: 16px; line-height: 1.45; }
 .tour-step { font: 700 12px/1 var(--body); text-transform: uppercase; letter-spacing: .06em; color: var(--coral); }
-.tour ~ .capture, .capture { z-index: 41; }
 @media (max-width: 380px) { .brand .gear { width: 34px; height: 34px; } .modes button { padding: 7px 7px; font-size: 11.5px; } }
 @media (max-width: 360px) { .brand { flex-wrap: nowrap !important; gap: 6px; } .brand .logo { display: none; } .modes button { padding: 7px 6px; } }

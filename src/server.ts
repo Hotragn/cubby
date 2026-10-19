@@ -15,7 +15,7 @@ const { extract, warmSheet, newUsage, LOCAL, MODEL } = await import("./gemma.ts"
 const PORT = +(process.env.PORT ?? 8787);
 const BOOT = Date.now().toString(36);
 const ROOT = join(import.meta.dirname, "..", "public");
-const TYPES: Record<string, string> = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".json": "application/json", ".webmanifest": "application/manifest+json", ".mp3": "audio/mpeg", ".jpg": "image/jpeg", ".woff2": "font/woff2" };
+const TYPES: Record<string, string> = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".json": "application/json", ".webmanifest": "application/manifest+json", ".mp3": "audio/mpeg", ".jpg": "image/jpeg", ".woff2": "font/woff2", ".md": "text/plain; charset=utf-8" };
 
 // A small per-IP budget so the public demo key can't be drained.
 const hits = new Map<string, number[]>();
@@ -148,7 +148,9 @@ const server = createServer(async (req, res) => {
 
     // Static files.
     let p = normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, "");
-    if (p === "/" || p === "") p = "/index.html";
+    // "/" is the landing page; the app lives at /app. Old app links ("/?..." or "/index.html") still open the app.
+    if (p === "/" || p === "") p = url.search ? "/index.html" : "/landing.html";
+    if (p === "/app" || p === "/app/") p = "/index.html";
     const file = join(ROOT, p);
     if (!file.startsWith(ROOT)) return send(res, 403, { error: "no" });
     const s = await stat(file).catch(() => null);
@@ -156,7 +158,7 @@ const server = createServer(async (req, res) => {
     const ext = extname(file);
     res.writeHead(200, { "content-type": TYPES[ext] ?? "application/octet-stream", "cache-control": p.startsWith("/build/chunk-") || p.includes("autotable") || p.includes("html2canvas") ? "public, max-age=86400" : "no-cache" });
     // index.html: stamp asset URLs with the boot time so a new deploy is never served stale.
-    if (p === "/index.html") return res.end(String(await readFile(file)).replace(/(\/(?:build\/main|styles)\.(?:js|css))"/g, `$1?v=${BOOT}"`));
+    if (p === "/index.html" || p === "/landing.html") return res.end(String(await readFile(file)).replace(/(\/(?:build\/main|styles)\.(?:js|css))"/g, `$1?v=${BOOT}"`));
     res.end(await readFile(file));
   } catch (e: any) {
     if (tracing) { const S: any = await import("@sentry/node"); S.captureException(e); }

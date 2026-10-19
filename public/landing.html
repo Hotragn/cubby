@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cubby · talk through your day, Cubby writes the paperwork</title>
+<meta name="description" content="For home daycare providers: quick notes become each parent's daily report and your state log, with a warning before an inspector would cite you.">
+<meta name="theme-color" content="#F3F4FB">
+<meta property="og:title" content="Cubby · talk through your day, Cubby writes the paperwork">
+<meta property="og:description" content="Quick notes become each parent's daily report and your state log, with a warning before an inspector would cite you.">
+<meta property="og:image" content="https://cubby-daycare.onrender.com/shots/home.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  body { background: var(--bg); }
+  .page { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
+  .top { display: flex; align-items: center; gap: 10px; padding: calc(16px + env(safe-area-inset-top)) 0 0; font-family: var(--display); font-size: 20px; }
+  .top a.btn { margin-left: auto; }
+  .hero2 { padding: 28px 0 8px; display: grid; gap: 28px; align-items: center; }
+  .hero2 h1 { font: 800 clamp(34px, 9vw, 60px)/1.02 var(--display); letter-spacing: -.035em; margin: 0 0 14px; text-wrap: balance; }
+  .hero2 .lead { font-size: 18px; line-height: 1.5; color: var(--ink2); margin: 0 0 20px; max-width: 34em; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  a.btn { text-decoration: none; }
+  .btn.big { min-height: 52px; padding: 0 22px; font-size: 16px; border-radius: 14px; text-decoration: none; }
+  .btn.coral { background: var(--coral); border-color: var(--coral); color: #fff; }
+  .phone { border-radius: 28px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 30px 60px -30px rgba(20,21,43,.45); background: var(--surface); max-width: 340px; margin: 0 auto; }
+  .phone img { display: block; width: 100%; height: auto; }
+  section { padding: 44px 0 8px; }
+  h2.sec { font: 800 clamp(26px, 6vw, 38px)/1.1 var(--display); letter-spacing: -.03em; margin: 0 0 14px; }
+  .kicker { font: 700 12px/1 var(--body); text-transform: uppercase; letter-spacing: .08em; color: var(--coral); margin-bottom: 10px; }
+  .problem { display: grid; gap: 10px; font-size: 17px; }
+  .problem p { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+  .steps { display: grid; gap: 16px; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 18px; box-shadow: var(--shadow); }
+  .step h3 { margin: 0 0 6px; font-size: 20px; }
+  .step p { margin: 0 0 12px; color: var(--ink2); }
+  .flow { display: grid; gap: 10px; align-items: start; }
+  .flow figure { margin: 0; }
+  .flow figcaption { font-size: 12.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin: 0 0 6px; }
+  .flow img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); display: block; }
+  .arrowd { text-align: center; color: var(--muted); font-size: 20px; line-height: 1; }
+  .ba { display: grid; gap: 16px; }
+  .ba figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 14px; }
+  .ba figcaption { font-weight: 700; margin-bottom: 10px; }
+  .ba img { width: 100%; border-radius: 12px; display: block; border: 1px solid var(--line); }
+  .ba .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .private { display: grid; gap: 10px; }
+  .private li { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; list-style: none; }
+  .private ul { padding: 0; margin: 0; display: grid; gap: 10px; }
+  .result { background: var(--ink); color: var(--bg); border-radius: 22px; padding: 22px; font-size: 18px; }
+  .result b { color: var(--sun); }
+  .result a { color: var(--bg); }
+  table.price { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 18px; overflow: hidden; border: 1px solid var(--line); font-size: 15px; }
+  table.price th, table.price td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.price tr.us td { background: var(--cool-bg); font-weight: 600; }
+  table.price th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .note { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  footer.lf { margin-top: 44px; padding: 20px 0 30px; border-top: 1px solid var(--line); color: var(--ink2); font-size: 14px; display: grid; gap: 8px; }
+  footer.lf a { color: var(--ink); }
+  @media (min-width: 820px) {
+    .hero2 { grid-template-columns: 1.15fr .85fr; padding-top: 48px; }
+    .problem { grid-template-columns: repeat(3, 1fr); }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .ba { grid-template-columns: 1fr 1fr; }
+    .private ul { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span><b>Cubby</b><a class="btn" href="/app?tour=1">Open the demo</a></div>
+
+  <header class="hero2">
+    <div>
+      <h1>Talk through your day. Cubby writes the paperwork.</h1>
+      <p class="lead">For home daycare providers: quick notes become each parent's daily report and your state log, with a warning before an inspector would cite you.</p>
+      <div class="ctas"><a class="btn primary big" href="/app?tour=1">Try the demo day</a><a class="btn big" href="#how">See how it works</a></div>
+      <p class="note">The demo is a made-up day at a made-up home daycare. Every child in it is fictional.</p>
+    </div>
+    <div class="phone"><img src="/shots/home.jpg" alt="The Cubby app on a phone: the made-up day at Rosa's home daycare, 39 notes, 46 log lines, 8 things to fix" width="750" height="1624"></div>
+  </header>
+
+  <section>
+    <div class="kicker">The problem</div>
+    <h2 class="sec">One adult, a room of toddlers, and two kinds of paperwork.</h2>
+    <div class="problem">
+      <p>A home daycare provider is often alone with 4 to 6 children all day.</p>
+      <p>Every parent wants a daily report, and the licensing inspector wants exact logs: sign-ins, naps and sleep checks, medicine, injuries.</p>
+      <p>Most of it gets written from memory at nap time, and inspectors cite what's missing, like a sleep log <a href="https://readyrule.com/daycare/483010237-james-bethany-fcch/report/2023-10-16" target="_blank" rel="noreferrer">without the time of each 15-minute check</a>.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="kicker">How it works</div>
+    <h2 class="sec">You jot it. Cubby logs it, checks it and writes it up.</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. A nap becomes a log line and a parent report</h3>
+        <p>Type or say it the way you'd say it out loud.</p>
+        <div class="flow">
+          <figure><figcaption>The note</figcaption><img src="/shots/l-notebar.jpg" alt="The note bar with: Ava and Leo napped 1:10 to 2:40" loading="lazy"></figure>
+          <div class="arrowd" aria-hidden="true">↓</div>
+          <figure><figcaption>The log line, for both children</figcaption><img src="/shots/l-loglines.jpg" alt="Log: Ava + Leo, nap 1:10 pm to 2:40 pm" loading="lazy"></figure>
+          <div class="arrowd" aria-hidden="true">↓</div>
+          <figure><figcaption>Ava's daily report for her parents</figcaption><img src="/shots/l-report.jpg" alt="Ava's report: arrived 7:31, breakfast, diaper, playdough, lunch, nap 1:10 to 2:40, snack, an incident line, went home 5:50" loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="step">
+        <h3>2. A bump becomes a warning and a ready report</h3>
+        <p>Cubby checks every note against your state's rules and shows you exactly why.</p>
+        <div class="flow">
+          <figure><figcaption>The warning, with the note and the rule</figcaption><img src="/shots/l-warning.jpg" alt="Warning: Theo, injury mentioned, no incident report. Note: Theo bumped his forehead on the train table. Rule 606 CMR 7.08(8)" loading="lazy"></figure>
+          <div class="arrowd" aria-hidden="true">↓</div>
+          <figure><figcaption>The incident report, filled in from the note</figcaption><img src="/shots/l-incident.jpg" alt="Incident report for Theo with time 10:20, seen by Dana, forehead, ice pack 5 min filled in; parent-told time and signature left for the provider" loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
+    <p class="note">3. Before anything goes out, you review it, fix it and send it. These are real screens from the demo.</p>
+  </section>
+
+  <section>
+    <div class="kicker">Before and after</div>
+    <h2 class="sec">From one line to a finished day.</h2>
+    <div class="ba">
+      <figure><figcaption>Before: a quick note</figcaption><img src="/shots/l-notebar.jpg" alt="The note bar with a typed note" loading="lazy"></figure>
+      <figure><figcaption>After: the parent's report, and the list of things to fix</figcaption><div class="pair"><img src="/shots/l-report.jpg" alt="A finished daily report" loading="lazy"><img src="/shots/fix.jpg" alt="The Fix list, starting with a ratio problem from 2:45 to 3:15 pm" loading="lazy"></div></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">Private by design</div>
+    <h2 class="sec">Children's records stay with you.</h2>
+    <div class="private"><ul>
+      <li><b>On your device.</b> Your children, notes and photos are saved in your browser, not on our server.</li>
+      <li><b>An open AI model you can run yourself.</b> Cubby uses Gemma, an open model, and can run it on your own computer, so notes never leave it.</li>
+      <li><b>The AI only reads.</b> Plain code decides what's a problem, and every warning shows the note and the rule behind it.</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="result">On 14 made-up test days with 37 planted problems, Cubby caught <b>all 37</b>, with <b>4 false alarms</b>. The same AI model on its own made <b>72 false alarms</b>. <a href="/report.md">Read the full report</a>.</div>
+  </section>
+
+  <section>
+    <div class="kicker">Pricing (proposed)</div>
+    <h2 class="sec">One simple price.</h2>
+    <table class="price">
+      <thead><tr><th>App</th><th>Published price (checked Oct 18, 2026)</th></tr></thead>
+      <tbody>
+        <tr class="us"><td>Cubby (proposed)</td><td>$9 a month, flat, up to 12 children. Free if you run it yourself.</td></tr>
+        <tr><td><a href="https://en.dailyconnect.com/pricing" target="_blank" rel="noreferrer">Daily Connect</a></td><td>$8.99/mo up to 3 children, $12.99/mo up to 6, or $16/mo (billed yearly) for 10 + $1.60 per extra child</td></tr>
+        <tr><td><a href="https://www.famly.co/us/pricing" target="_blank" rel="noreferrer">Famly (US)</a></td><td>from $49/month</td></tr>
+        <tr><td><a href="https://mybrightwheel.com/pricing" target="_blank" rel="noreferrer">Brightwheel</a>, <a href="https://www.procaresoftware.com/pricing/" target="_blank" rel="noreferrer">Procare</a>, <a href="https://www.lillio.com/features/pricing" target="_blank" rel="noreferrer">Lillio</a></td><td>Not published; contact sales</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Cubby isn't for sale yet; this is the price we'd charge.</p>
+  </section>
+
+  <section>
+    <div class="ctas"><a class="btn primary big" href="/app?tour=1">Try the demo day</a><a class="btn big" href="/app">Set up my own program</a></div>
+  </section>
+
+  <footer class="lf">
+    <div><b>All demo children are fictional.</b> The demo and the test days are made up; don't enter real children in the hosted demo.</div>
+    <div><a href="https://github.com/Hotragn/cubby">GitHub</a> · <a href="/feedback.html">Tell us what you think</a> · <a href="/report.md">Test report</a></div>
+    <div>Cubby checks against Massachusetts' family child care rules (606 CMR 7.00). It isn't legal advice.</div>
+  </footer>
+</div>
+</body>
+</html>

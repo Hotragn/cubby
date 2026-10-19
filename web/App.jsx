@@ -76,7 +76,12 @@ export default function App() {
   const [theme, setThemeS] = useState(() => { try { return localStorage.getItem("cubby.theme") || "light"; } catch { return "light"; } });
   const setTheme = (t) => { setThemeS(t); try { localStorage.setItem("cubby.theme", t); } catch {} };
   useEffect(() => { document.documentElement.dataset.theme = theme; }, [theme]);
-  useEffect(() => { let seen = false; try { seen = !!localStorage.getItem("cubby.tour.done"); } catch {} if (!seen && st.mode === "demo") setTimeout(() => setTour(0), 600); }, []);
+  useEffect(() => {
+    let seen = false; try { seen = !!localStorage.getItem("cubby.tour.done"); } catch {}
+    const asked = new URLSearchParams(location.search).get("tour") === "1"; // "Try the demo day" on the landing page
+    if (asked) { setSt((s) => ({ ...s, mode: "demo" })); setNoteSent(false); }
+    if (asked || (!seen && st.mode === "demo")) setTimeout(() => setTour(0), 600);
+  }, []);
   useEffect(() => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch {} }, [st]);
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(null), 4200); return () => clearTimeout(t); }, [toast]);
   useEffect(() => { fetch("/api/health").then((r) => r.json()).then(setServer).catch(() => {}); }, []);
