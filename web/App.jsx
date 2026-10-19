@@ -8,7 +8,6 @@ import { SAMPLE_NOTES, sampleRoster, SAMPLE_STAFF, DEMO_WEEK } from "../public/l
 import SAMPLE_X from "../public/lib/sample-extract.json";
 import SAMPLE_W from "../public/lib/sample-week.json";
 import VoicePill from "./bits/VoicePill.jsx";
-import CountUp from "./bits/CountUp.jsx";
 import StatusMark from "./bits/StatusMark.jsx";
 import SpringCheck from "./bits/SpringCheck.jsx";
 import ClickSpark from "./bits/ClickSpark.jsx";
@@ -69,6 +68,15 @@ export default function App() {
   const [setup, setSetup] = useState(false);
   const [busy, setBusy] = useState(0);
   const [server, setServer] = useState(null);
+  const [text, setText] = useState("");
+  const [how, setHow] = useState(false);
+  const [tour, setTour] = useState(null); // step index or null
+  const [noteSent, setNoteSent] = useState(false);
+  const [parentKid, setParentKid] = useState(null);
+  const [theme, setThemeS] = useState(() => { try { return localStorage.getItem("cubby.theme") || "light"; } catch { return "light"; } });
+  const setTheme = (t) => { setThemeS(t); try { localStorage.setItem("cubby.theme", t); } catch {} };
+  useEffect(() => { document.documentElement.dataset.theme = theme; }, [theme]);
+  useEffect(() => { let seen = false; try { seen = !!localStorage.getItem("cubby.tour.done"); } catch {} if (!seen && st.mode === "demo") setTimeout(() => setTour(0), 600); }, []);
   useEffect(() => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch {} }, [st]);
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(null), 4200); return () => clearTimeout(t); }, [toast]);
   useEffect(() => { fetch("/api/health").then((r) => r.json()).then(setServer).catch(() => {}); }, []);
@@ -104,7 +112,8 @@ export default function App() {
   async function addNote(text) {
     if (!demo && !st.program.roster.length) { setSetup(true); setToast({ kind: "err", text: "Add your children in Setup first." }); return; }
     const id = `U${Date.now().toString(36)}`;
-    const note = { id, t: nowHHMM(), text: text.trim() };
+    // The demo is a made-up day, so new demo notes land mid-afternoon inside it, not at the real clock time.
+    const note = { id, t: demo ? "15:05" : nowHHMM(), text: text.trim() };
     if (!note.text) return;
     const date = today();
     if (viewDate !== date) setViewDate(date);
@@ -196,26 +205,34 @@ export default function App() {
     tick(); return () => { alive = false; };
   }, [server]);
 
+  const startTour = () => { if (st.mode !== "demo") setMode("demo"); setViewDate(today()); setNoteSent(false); setText(""); setTour(0); };
+  const endTour = () => { setTour(null); try { localStorage.setItem("cubby.tour.done", "1"); } catch {} };
+  useEffect(() => { if (tour === 1 && !noteSent) setText(TOUR_NOTE); if (tour === 3) setParentKid("ava"); }, [tour]);
+  const tourSend = async () => { setText(""); await addNote(TOUR_NOTE); setNoteSent(true); setTimeout(() => window.scrollTo({ top: document.querySelector(".feed")?.getBoundingClientRect().top + scrollY - 140 }), 50); };
+
   const needsSetup = !demo && !st.program.roster.length;
   return (
     <div className="app">
-      <Header st={st} d={d} pack={pack} fixes={fixes.length} setMode={setMode} openSetup={() => setSetup(true)} isToday={isToday} backToToday={() => setViewDate(today())} />
+      <Header st={st} d={d} pack={pack} fixes={fixes.length} setMode={setMode} openSetup={() => setSetup(true)} isToday={isToday} backToToday={() => setViewDate(today())} openHow={() => setHow(true)} startTour={startTour} theme={theme} setTheme={setTheme} />
       <nav className="tabs" role="tablist">
         {[["today", "Today"], ["fix", "Fix", fixes.length], ["parents", "Parents"], ["week", "Week"], ["log", "Log"]].map(([k, l, n]) => (
           <button key={k} role="tab" aria-selected={tab === k} className={tab === k ? "on" : ""} onClick={() => setTab(k)}>{l}{n ? <span className="badge">{n}</span> : null}</button>
         ))}
       </nav>
+      <p className="tabsub">{{ today: "Who's here now, and every note from today.", fix: "Problems to sort out before an inspector or a parent finds them.", parents: "Each child's daily report, ready to send.", week: "This week at a glance, and the weekly log.", log: "The inspector's record: every entry with the note it came from." }[tab]}</p>
       <main>
         {needsSetup && tab !== "week" ? <div className="card empty"><h2>Set up your program</h2><p className="muted">Add your children, staff and rules. Everything stays on this device.</p><button className="btn primary" onClick={() => setSetup(true)}>Open setup</button><button className="link" onClick={() => setMode("demo")}>Or look at the demo day</button></div> : <>
           {tab === "today" && reminders.length > 0 && <div className="card reminders"><h2>Reminders</h2><p className="small muted">Durable timers (Temporal{server?.timerScale > 1 ? `, demo speed ×${server.timerScale}` : ""}). They fire on time even if this server restarts.</p><ul>{reminders.map((r) => <li key={r.id}>⏰ {r.text}</li>)}</ul></div>}
           {tab === "today" && <Today key={d.date + st.mode} d={d} flags={open} go={setTab} pack={pack} />}
           {tab === "fix" && <Fix d={d} flags={flags} day={day} resolve={resolve} unresolve={unresolve} openIncident={setIncident} answer={answer} />}
-          {tab === "parents" && <Parents d={d} flags={open} setToast={setToast} />}
+          {tab === "parents" && <Parents d={d} flags={open} setToast={setToast} kid={parentKid} setKid={setParentKid} />}
           {tab === "week" && <Week ctxFor={ctxFor} pack={pack} viewDate={viewDate} open={(date) => { setViewDate(date); setTab("today"); }} setToast={setToast} />}
           {tab === "log" && <Log d={d} flags={open} pack={pack} />}
         </>}
       </main>
-      {isToday && <Capture onSend={addNote} busy={busy} roster={d.roster} setToast={setToast} />}
+      {isToday && <Capture onSend={async (t) => { await addNote(t); if (tour === 1 && t.trim() === TOUR_NOTE) setNoteSent(true); }} busy={busy} roster={d.roster} setToast={setToast} text={text} setText={setText} />}
+      {how && <HowItWorks pack={pack} onClose={() => setHow(false)} />}
+      {tour != null && <Tour step={tour} setStep={setTour} onClose={endTour} sendNote={tourSend} setTab={setTab} noteSent={noteSent} fixCount={fixes.length} />}
       {incident && <IncidentSheet draft={incident} onClose={() => setIncident(null)} onSave={saveReport} />}
       {setup && <Setup program={st.program} onChange={(program) => setSt((s) => ({ ...s, program }))} onClose={() => setSetup(false)} st={st} setSt={setSt} setToast={setToast} reReadDay={reReadDay} canReRead={day.notes.length > 0} server={server} />}
       {toast && <div className={`toast ${toast.kind}`} role="status">{toast.text}</div>}
@@ -226,31 +243,99 @@ export default function App() {
   );
 }
 
-function Header({ st, d, pack, fixes, setMode, openSetup, isToday, backToToday }) {
+function Header({ st, d, pack, fixes, setMode, openSetup, isToday, backToToday, openHow, startTour, theme, setTheme }) {
   const dateStr = new Date(d.date + "T12:00:00").toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
-  const title = `${dateStr} at ${d.host}`;
+  const demo = st.mode === "demo";
   return (
     <header className="hero">
       <div className="brand">
         <span className="logo" aria-hidden="true"><i /><i /><i /><i /></span>
         <b>Cubby</b>
         <div className="modes" role="group" aria-label="Which program">
-          <button className={st.mode === "demo" ? "on" : ""} onClick={() => setMode("demo")}>Demo</button>
-          <button className={st.mode === "mine" ? "on" : ""} onClick={() => setMode("mine")}>My program</button>
+          <button className={demo ? "on" : ""} onClick={() => setMode("demo")}>Demo</button>
+          <button className={!demo ? "on" : ""} onClick={() => setMode("mine")}>My program</button>
         </div>
+        <button className="gear" onClick={startTour} aria-label="Take the tour">?</button>
         <button className="gear" onClick={openSetup} aria-label="Setup">⚙</button>
       </div>
-      <h1 className="h1" key={title} aria-label={title}>{title.split(" ").map((w, i) => <span key={i} aria-hidden="true" style={{ animationDelay: `${i * 70}ms` }}>{w}&nbsp;</span>)}</h1>
+      <h1 className="h1">Your daycare's daily paperwork, written from quick notes.</h1>
+      <p className="sub">You jot what happens (“Mila napped 1:10 to 2:40”). Cubby writes each parent's daily report and your state log, and warns you before an inspector would.</p>
+      <p className="for"><b>For home daycare providers.</b> <button className="link" onClick={openHow}>How it works</button> · <button className="link" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>{theme === "dark" ? "Light mode" : "Dark mode"}</button></p>
+      <div className="dayline" data-tour="day">
+        <span>{demo ? <>Demo: a made-up day at <b>Rosa's home daycare</b>, {d.roster.length} kids · {dateStr}</> : <><b>{d.host}</b> · {dateStr}</>}</span>
+        {demo && <button className="btn primary small" onClick={startTour}>Start the 1-minute tour</button>}
+      </div>
       {!isToday && <button className="pastday" onClick={backToToday}>Viewing a past day · back to today</button>}
-      <p className="sub">{st.mode === "demo" ? <>Fictional demo day. </> : null}Talk through the day. Gemma turns your notes into a log. Code checks it against <a href={pack.cites.ratio.url} target="_blank" rel="noreferrer">{pack.short}</a> and writes each parent's sheet.</p>
       <div className="stats">
-        <div><CountUp key={"n" + d.date + d.notes.length} to={d.notes.length} duration={0.9} trigger="load" className="num" /><span>quick notes</span></div>
+        <div><span className="num">{d.notes.length}</span><span>notes jotted</span></div>
         <div className="arrow" aria-hidden="true">→</div>
-        <div><CountUp key={"e" + d.date + d.events.length} to={d.events.length} duration={1.1} trigger="load" className="num" /><span>log entries</span></div>
+        <div><span className="num">{d.events.length}</span><span>log lines written</span></div>
         <div className="arrow" aria-hidden="true">→</div>
-        <div className={fixes ? "hot" : "cool"}><CountUp key={"f" + d.date + fixes} to={fixes} duration={1.3} trigger="load" className="num" /><span>to fix before close</span></div>
+        <div className={fixes ? "hot" : "cool"}><span className="num">{fixes}</span><span>things to fix</span></div>
       </div>
     </header>
+  );
+}
+
+function HowItWorks({ pack, onClose }) {
+  return (
+    <div className="sheet-wrap" role="dialog" aria-modal="true" aria-label="How it works" onClick={(e) => e.target === e.currentTarget && onClose()}>
+      <div className="sheet">
+        <div className="grab" />
+        <div className="row between"><h2>How it works</h2><button className="x" onClick={onClose} aria-label="Close">✕</button></div>
+        <ol className="how">
+          <li><b>You jot or say quick notes</b> through the day. Speech-to-text (Whisper) runs on your phone.</li>
+          <li><b>Gemma, an open AI model, reads each note</b> into log lines: who napped, ate, got hurt, got medicine. If a note is unclear, it asks instead of guessing.</li>
+          <li><b>Plain code checks the log</b> against your state's rules ({pack.name}): sleep checks, ratios, medication consent, incident reports, sign-in and sign-out. Every warning shows the note it came from and the rule.</li>
+          <li><b>Cubby writes each parent's daily report</b> and the inspector's log. You review, fix and send.</li>
+        </ol>
+        <p className="small muted">The AI never decides whether something is safe; the code does. In the demo every child is made up. For real children, run Cubby on your own computer (see the README) so nothing leaves it.</p>
+      </div>
+    </div>
+  );
+}
+
+const TOUR_NOTE = "Leo had crackers and milk for snack, ate most";
+function Tour({ step, setStep, onClose, sendNote, setTab, noteSent, fixCount }) {
+  const steps = [
+    { sel: "[data-tour=day]", tab: "today", n: 1, text: "This is a made-up day at Rosa's home daycare, 4 kids. She jotted 39 quick notes today; Cubby turned them into a log, parent reports and a list of problems.", top: true },
+    { sel: noteSent ? ".feed li" : ".capture .bar", tab: "today", n: 2, text: noteSent ? "Done. Gemma turned your note into a log line; it's at the top of Notes now." : "Type or say a note here. We filled one in for you; tap the orange send arrow.", action: noteSent ? null : "send" },
+    { sel: ".flag", tab: "fix", n: 3, text: `Cubby found ${fixCount} things an inspector would flag. This one: for 30 minutes, one adult had 4 children under 2. Each warning shows the notes that caused it and the rule.` },
+    { sel: ".sheetcard", tab: "parents", n: 3, text: "And here's Ava's finished daily report for her parents, written from the same notes. Tap “Write in Spanish” to translate it." },
+  ];
+  const s = steps[step];
+  const [rect, setRect] = useState(null);
+  useEffect(() => { setTab(s.tab); }, [step]);
+  useEffect(() => {
+    let raf, tries = 0;
+    const find = () => {
+      const el = document.querySelector(s.sel);
+      if (el) {
+        if (s.top) window.scrollTo({ top: 0, behavior: "instant" });
+        else if (s.sel !== ".capture .bar") window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.42, behavior: "instant" });
+        const r = el.getBoundingClientRect(); setRect({ top: r.top, left: r.left, width: r.width, height: Math.min(r.height, window.innerHeight - r.top - 8) });
+      } else if (tries++ < 60) raf = requestAnimationFrame(find);
+    };
+    const t = setTimeout(find, 80);
+    const onResize = () => find();
+    window.addEventListener("resize", onResize); window.addEventListener("scroll", onResize, true);
+    return () => { clearTimeout(t); cancelAnimationFrame(raf); window.removeEventListener("resize", onResize); window.removeEventListener("scroll", onResize, true); };
+  }, [step, noteSent]);
+  // Put the card where there's room: under the target if it's near the top, otherwise above it.
+  const below = rect && (s.top || window.innerHeight - (rect.top + rect.height) > rect.top);
+  return (
+    <div className="tour" role="dialog" aria-label="Tour">
+      {rect && <div className="tour-hole" style={{ top: rect.top - 6, left: rect.left - 6, width: rect.width + 12, height: rect.height + 12 }} />}
+      <div className={`tour-card ${below ? "below" : "above"}`} style={rect ? (below ? { top: rect.top + rect.height + 14 } : { bottom: window.innerHeight - rect.top + 14, maxHeight: Math.max(rect.top - 24, 160), overflowY: "auto" }) : { top: 80 }}>
+        <div className="row between"><span className="tour-step">Step {s.n} of 3</span><button className="link small" onClick={onClose}>Skip tour</button></div>
+        <p>{s.text}</p>
+        <div className="row gap wrap">
+          {s.action === "send" && <button className="btn primary" onClick={sendNote}>Send it for me</button>}
+          {step > 0 && <button className="btn" onClick={() => setStep(step - 1)}>Back</button>}
+          {step < steps.length - 1 ? <button className="btn primary" disabled={s.action === "send"} onClick={() => setStep(step + 1)}>Next</button> : <button className="btn primary" onClick={onClose}>Finish</button>}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -281,11 +366,11 @@ function Today({ d, flags, go, pack }) {
   const over = flags.find((f) => f.rule === "ratio" && f.window && f.window[0] <= at && at < f.window[1]);
   return (
     <section className="stack">
-      <div className="card">
+      <div className="card" data-tour="kids">
         <div className="row between"><h2>Who's here</h2><span className="muted mono">{fmt(at)}</span></div>
         <p className="adults muted small">Adults signed in: <b>{adults.length ? adults.join(", ") : "none"}</b></p>
         {over && <button className="over" onClick={() => go("fix")}><b>Over ratio right now.</b> {over.title.split(": ")[1]}</button>}
-        {lo < last && <input type="range" className="scrub" min={lo} max={last} step={5} value={at} onChange={(e) => setAt(+e.target.value)} aria-label="Scrub through the day" />}
+        {lo < last && <label className="scrublabel">Replay the day: drag to see who was here at any time.<input type="range" className="scrub" min={lo} max={last} step={5} value={at} onChange={(e) => setAt(+e.target.value)} /></label>}
         <ul className="kids">
           {d.roster.map((c) => { const st = statusOf(d, c, at, pack); const n = byKid(c.id); return (
             <li key={c.id} className={`kid ${st.s}`}>
@@ -405,8 +490,7 @@ function IncidentSheet({ draft, onClose, onSave }) {
   );
 }
 
-function Parents({ d, flags, setToast }) {
-  const [kid, setKid] = useState(d.roster[0]?.id);
+function Parents({ d, flags, setToast, kid, setKid }) {
   const c = d.roster.find((x) => x.id === kid) ?? d.roster[0];
   if (!c) return null;
   return (
@@ -548,8 +632,7 @@ function Log({ d, flags, pack }) {
   );
 }
 
-function Capture({ onSend, busy, roster, setToast }) {
-  const [text, setText] = useState("");
+function Capture({ onSend, busy, roster, setToast, text, setText }) {
   const [rec, setRec] = useState(null);
   const [stt, setStt] = useState(null);
   const vs = useMemo(voiceSupport, []);
